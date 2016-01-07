@@ -22,4 +22,4 @@ madlib = madlib + time_frame+". \n"
 onomonopea = input("Please enter onomonopea: ")
 
 madlib = madlib + onomonopea + " is the only sound the " + plural_noun + " can hear in these woods."
-print(madlib)
+print("\n\n\n\nYour madlib:\n\n"+madlib+"\n\n\nYou're mad!\n\n\n")

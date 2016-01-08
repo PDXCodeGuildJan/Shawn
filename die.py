@@ -18,7 +18,12 @@ def die():
 def custom_die(lower, upper):
 	
 	roll = randint(lower, upper)
-	print("It's a custom sized die---->" + str(roll))
+	if roll == lower:
+		print("It's a custom sized die---->" + str(roll) + " CRITICAL FAIL!!!")
+	elif roll == upper:
+		print("It's a custom sized die---->" + str(roll) + " CRITICAL HIT!!!")
+	else:
+		print("It's a custom sized die---->" + str(roll))
 
 
 def main():

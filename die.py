@@ -22,16 +22,27 @@ def custom_die(lower, upper):
 
 
 def main():
-	#Ask how many dice
-	total_rolls = input("How many dice you rollin'? ")
-	total_rolls = int(total_rolls)
+	print("Welcome to die roller. Enter q to exit")
+	entree = ""
 
-	#How big the die
-	max_num = input("How many sides per dice? ")
-	max_num = int(max_num)
+	#Wrap the core logic in a while loop
+	#
+	while entree != "q":
+		#Ask how many dice
+		entree = input("How many dice you rollin'? ")
+		if entree == "q":
+			exit()
+		total_rolls = int(entree)
 
-	#Roll that many dice
-	for something in range(1, total_rolls+1):
-		custom_die(1, max_num)
+		#How big the die
+		entree = input("How many sides per dice? ")
+		if entree == "q":
+			exit()
+
+		max_num = int(entree)
+
+		#Roll that many dice
+		for something in range(1, total_rolls+1):
+			custom_die(1, max_num)
 
 main()

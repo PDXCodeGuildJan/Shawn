@@ -35,13 +35,13 @@ def main():
 	while entree != "q":
 		#Ask how many dice
 		entree = input("How many dice you rollin'? ")
-		if entree == "q":
+		if entree.lower() == "q":						#input sanitized
 			exit()
 		total_rolls = int(entree)
 
 		#How big the die
 		entree = input("How many sides per dice? ")
-		if entree == "q":
+		if entree.lower() == "q":						#input sanitized
 			exit()
 
 		max_num = int(entree)

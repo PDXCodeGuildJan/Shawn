@@ -16,6 +16,7 @@
 from random import randint
 
 
+
 #Global variable for how the character feels
 Feel = "capricious and impatient"
 exit_message = "\nLater lazy goat!"
@@ -100,8 +101,24 @@ def loft():
 	print("A loft")
 
 def intro():
-	print("\n\nYou are lucky. You don't use punctuation, since you are a goat.\nYou know 'q' quits and 'p' pees. Mind your q's and p's!")
-	print( """	                         //  
+	
+	print( """                                                                                                                                            
+                     =DMM7                  NM    ,MMM+                          nm                                   
+                  $MMMMMM.                 MM    MMMMMMM                         NM:                                  
+              . MMO    ~   NMMM   MMMMM  8MMMMM MM?  .MM  MM   MM.  MMMN   $MMMM.NMMMMZ                               
+             .MM7       ,MMNMMM  N8=ZMM  MMMMM DMN    MM, MM+  MM  MMM:MM7 OMO:$M ZMMMMM                              
+           .MM?  OMMM ,MM  .MM    ..OMM  MM?  .MM     MM+ MMM  MM+ MM= .MMD MM8.    ?MM                               
+          OMM. .MMMM MMM   MM, NMMMMMM  ,MM   NMM    ,MM. MMM  DMM NMMMMMMM$ MMMMMM  ,MM                              
+        ,MM8   .MM. MMO  =MM.,MM: .MM   MM.   MMM    MMM  MMM  ?MM  MM777777   ?NMMM~ :MM:                            
+       DMMM   MMM .MMI  NMM ZMM   MMO  MMM    MMM   ,MMM  8MM  DMMD $MM     .      MMD .MM=                           
+      NMMMMMMMM$  MMM7NMMO :MMO.NMMM   MMMMM  MMMMMMMMM   ,MMMMMMMM  MMMI =DM  MN~ IMM~  MMMMM                        
+    .IMMMMMMMM   MMMMMMM   MMMMMNMM . +MMMM   ,MMMMMMM,    MMMMMZMM   MMMMMMMD  MMMMMMM   OMMMM.                      
+    .ZMMMMO.    .DMMMI     MMM:,MM~    DMMM    .MMMMM       MMM, MM?    MMMMM+   NMMMMO     =NMMI                     
+                                                 . MMM                                                              
+                                                    MMM:                                                               
+                                                      ~MMM 
+
+		                 //  
 	                        ((   
 	                         \\__,
 	                        /6 (%)\,
@@ -117,9 +134,11 @@ def intro():
 	                              L_|      LL_|
 	                              LW/      LLW/"""+"\n")
 
+print("\n\nYou are lucky. You don't use punctuation, since you are a goat.\nYou know 'q' quits and 'p' pees. Mind your q's and p's!")
 
 
 def main():
+	
 	intro()
 	function_next = barn_floor()
 	function_next()

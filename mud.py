@@ -16,45 +16,45 @@
 
 
 #################### MAP of GOAT MUD############################################
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
-MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
-MMMMMMMMMMMMMMMMMMMM............... Ravine (Leap or die)...................MMMMM
-MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
-MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
-MMMMMMMMMMMMMMMMMMMM$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$MMMMM
-MMMMMMMMMMMMMMMMMMMMZ.........................................OOOOOOOOOOOOOMMMMM
-MMMMMMMMMMMMMMMMMMMMZ.........................................OOOO  Play  OMMMMM
-MMMMMMMMMMMMMMMMMMMMZ........... Pasture .....................OOOO  Hill  OMMMMM
-MMMMMMMMMMMMMMMMMMMMZ.........................................OOOO  (Win) OMMMMM
-MMMMMMMMMMMMMMMMMMMMZ.........................................OOOOOOOOOOOOOMMMMM
-MMMMMMMMMMMMMMMMMMMM$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$OOOOOOOOOOOOOMMMMM
-MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
-MMMMMMNZZZ warm ZZZZO.......Barn Floor.........ZZZ pigs ZZZMMMMMMMMMMMMMMMMMMMMM
-MMMMMMNZZZ stall ZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
-MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
-MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
-MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
-MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
-MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZZZZZZZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZ loft ZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZZZZZZZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZZZZZZZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
+#MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
+#MMMMMMMMMMMMMMMMMMMM............... Ravine (Leap or die)...................MMMMM
+#MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
+#MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
+#MMMMMMMMMMMMMMMMMMMM$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$MMMMM
+#MMMMMMMMMMMMMMMMMMMMZ.........................................OOOOOOOOOOOOOMMMMM
+#MMMMMMMMMMMMMMMMMMMMZ.........................................OOOO  Play  OMMMMM
+#MMMMMMMMMMMMMMMMMMMMZ........... Pasture .....................OOOO  Hill  OMMMMM
+#MMMMMMMMMMMMMMMMMMMMZ.........................................OOOO  (Win) OMMMMM
+#MMMMMMMMMMMMMMMMMMMMZ.........................................OOOOOOOOOOOOOMMMMM
+#MMMMMMMMMMMMMMMMMMMM$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$OOOOOOOOOOOOOMMMMM
+#MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMNZZZ warm ZZZZO.......Barn Floor.........ZZZ pigs ZZZMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMNZZZ stall ZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZZZZZZZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZ loft ZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZZZZZZZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZZZZZZZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
 from random import randint
 import os
@@ -73,6 +73,8 @@ beep_fast = lambda x: os.system("echo -n '\a';sleep .05;" * x)
 Feel = "capricious and impatient"
 exit_message = "\nLater lazy goat!"
 
+
+	
 ####################################################################################
 #ROOM
 #"The barn floor."
@@ -91,10 +93,11 @@ def barn_floor():
 		
 		lol = input("\n\t>Look or leap? ")
 		
+		
 		#LOOK#########################
 		if lol.lower() == "look":
 			
-			print("\n\nBehind you is a staircase to an empty loft.\nRight is a pen filled with restless pigs.\nforwards is an open door.\nLeft is a warm stall.")
+			print("\n\nBehind you is a staircase to an empty loft.\nRight is a pen filled with restless pigs.\nforwards is an open door.\nLeft is a dark stall.")
 			direction = input("\n\t>Which way to move? forwards, backwards, left, or right? ")
 				
 			if direction.lower() == "forwards":
@@ -126,8 +129,6 @@ def barn_floor():
 				return barn_floor
 				
 
-
-
 		#LEAP########################
 		elif lol.lower() == "leap":
 			beep_fast(5)
@@ -149,8 +150,10 @@ def barn_floor():
 		#GIBBERISH HANDLING#########
 		else:
 			lol = ""
-			print("What?")
-#################################End of barn function###############################
+			print("What? Remember you have two choices:")
+			#End of barn function#
+
+
 
 ####################################################################################
 #ROOM
@@ -160,7 +163,7 @@ def pigs():
 	
 	lol = "" #l.ook o.r l.eap variable initialed
 	direction ="" #Direction of travel variable.
-	leap_direction = "right"
+	leap_direction = "backwards"
 	location = "pig pen"
 
 	print("\n\nPigs! They are biting your legs. Ga-a-a-a-a-a-a!!! What do we do?")
@@ -197,11 +200,10 @@ def pigs():
 		#GIBBERISH HANDLING#########
 		else:
 			lol = ""
-			print("What?")
+			print("What? Remember you have two choices:")
+			#End of Pigs#
 
-	
 
-#################################End of Pigs########################################
 
 ####################################################################################
 #ROOM
@@ -211,7 +213,9 @@ def pigs():
 def ravine():
 	print("\n\nRavine!")
 	return death
-#################################End of Ravine######################################
+	#End of Ravine#
+
+
 
 ####################################################################################
 #ROOM
@@ -220,7 +224,9 @@ def ravine():
 def play_hill():
 	print("\n\nplay_hill")
 	return win
-#################################End of Play Hill###################################
+	#End of Play Hill#
+
+
 
 ####################################################################################
 #ROOM
@@ -229,25 +235,167 @@ def play_hill():
 def pasture():
 	print("\n\nPasture")
 	return barn_floor
-#################################End of Pasture#####################################
+	#End of Pasture#
+
+
 
 ####################################################################################
 #ROOM
 #Warm Stall
 ####################################################################################
 def warm_stall():
-	print("\n\nA dark, warm stall")
-	return barn_floor
-#################################End of Warm Stall##################################
+	lol = "" #l.ook o.r l.eap variable initialed
+	direction ="" #Direction of travel variable.
+	leap_direction = "right"
+	location = "stall"
+
+	print("\n\nThe stall is pretty dark, but warm.")
+	
+	#Lets offer some options and get input
+	while lol == "":
+		
+		lol = input("\n\t>Look or leap? ")
+		
+		
+		#LOOK#########################
+		if lol.lower() == "look":
+			
+			print("\n\nThere's not much here except the door back behind you. \nIt looks like a good place to sleep.")
+			direction = input("\n\t>Which way to move? forwards, backwards, left, or right? ")
+				
+			if direction.lower() == "forwards":
+				print("\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
+				beep_medium(1)
+				return warm_stall
+			elif direction.lower() == "backwards":
+				print("\nYou leap {}".format(direction))
+				beep_medium(3)
+				return barn_floor
+			elif direction.lower() == "right":
+				print("\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
+				beep_medium(1)
+				return warm_stall
+			elif direction.lower() == "left":
+				print("\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
+				beep_medium(1)
+				return warm_stall
+			elif direction.lower() == "q":
+				print(exit_message)
+				exit()
+			elif direction.lower() == "p":
+				print("\nAhhh. This is my {} now.".format(location))
+				beep_slow(1)
+				return warm_stall
+			elif direction.lower() == "sleep":
+				print("\n...zzzzzzzzzzz...".format(location))
+				return warm_stall
+			else:
+				print("\nThat makes no sense. One to many headbutts maybe, eh?")
+				beep_slow(1)
+				return warm_stall
+				
+
+		#LEAP########################
+		elif lol.lower() == "leap":
+			beep_fast(5)
+			print("\n\nYou leap bodly!!!")
+			return barn_floor
+
+		#QUIT#######################
+		elif lol.lower() == "q":
+			print(exit_message)
+			exit()
+		
+		#PEE#######################
+		elif lol.lower() == "p":
+			print(exit_message)
+			print("\nAhhh. This is my {} now.".format(location))
+			beep_slow(1)
+			return warm_stall		
+		
+		#GIBBERISH HANDLING#########
+		else:
+			lol = ""
+			print("What? Remember you have two choices:")
+			
+	#End of Warm Stall#
+
+
 
 ####################################################################################
 #ROOM
 #Loft
 ####################################################################################
 def loft():
-	print("\n\nA loft")
-	return death
-#################################End of Loft########################################
+	lol = "" #l.ook o.r l.eap variable initialed
+	direction ="" #Direction of travel variable.
+	leap_direction = "backwards"
+	location = "loft"
+
+	print("\n\nUp! Up! Up!\nClimbing stairs is good goat fun,\n but up here this loft looks scary and there's no hay?\n")
+	
+	#Lets offer some options and get input
+	while lol == "":
+		
+		lol = input("\n\t>Look or leap? ")
+
+		#LOOK#########################
+		if lol.lower() == "look":
+			
+			print("\n\nLeft there is a dangerous drop to the barn floor far below.\nBackwards is the staircase back down.\nOn the right is a wall.\nForwards: another wall.")
+			direction = input("\n\t>Which way to move? forwards, backwards, left, or right? ")
+				
+			if direction.lower() == "forwards":
+				print("\n\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
+				beep_medium(1)
+				return loft
+			elif direction.lower() == "backwards":
+				print("\nYou go {}.".format(direction))
+				beep_medium(3)
+				return barn_floor
+			elif direction.lower() == "right":
+				print("\n\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
+				beep_medium(1)
+				return loft
+			elif direction.lower() == "left":
+				print("\nYou leap {} to your death!?!".format(direction))
+				beep_fast(5)
+				return death
+			elif direction.lower() == "q":
+				print(exit_message)
+				exit()
+			elif direction.lower() == "p":
+				print("\nAhhh. This is my {} now.".format(location))
+				beep_slow(1)
+				return loft
+			else:
+				print("\nThat makes no sense. One to many headbutts maybe, eh?")
+				return loft
+			
+		#LEAP########################
+		elif lol.lower() == "leap":
+			beep_fast(5)
+			print("\n\nYou leap bodly!!!\nTo your death?!?")
+			return death
+
+		#QUIT#######################
+		elif lol.lower() == "q":
+			print(exit_message)
+			exit()
+		
+		#PEE#######################
+		elif lol.lower() == "p":
+			print("\nAhhh. This is my {} now.".format(location))
+			beep_slow(1)
+			return loft		
+		
+		#GIBBERISH HANDLING#########
+		else:
+			lol = ""
+			print("What? Remember you have two choices:")
+	#End of Loft#
+
+
 
 ####################################################################################
 #DEATH
@@ -285,6 +433,8 @@ $$$$^^^$$$$$$$$$$uuu   uu$$$$$$$$$^^^$$$^
      $$$^                         $$$$^"""+"\n\n\n")
 	beep_slow(5)
 	exit()
+
+
 
 def intro():
 	
@@ -324,7 +474,6 @@ print("\n\nYou are lucky. You don't use punctuation, since you are a goat.\nYou 
 
 
 
-
 def main():
 	
 	intro()
@@ -332,5 +481,7 @@ def main():
 
 	while 1 == 1:
 		function_next = function_next()
+
+
 
 main()

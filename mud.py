@@ -12,6 +12,49 @@
 #	update feeling and hitpoints
 #	room statement
 #loop back to look or leap
+#
+
+
+#################### MAP of GOAT MUD############################################
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
+MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
+MMMMMMMMMMMMMMMMMMMM............... Ravine (Leap or die)...................MMMMM
+MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
+MMMMMMMMMMMMMMMMMMMM.......................................................MMMMM
+MMMMMMMMMMMMMMMMMMMM$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$MMMMM
+MMMMMMMMMMMMMMMMMMMMZ.........................................OOOOOOOOOOOOOMMMMM
+MMMMMMMMMMMMMMMMMMMMZ.........................................OOOO  Play  OMMMMM
+MMMMMMMMMMMMMMMMMMMMZ........... Pasture .....................OOOO  Hill  OMMMMM
+MMMMMMMMMMMMMMMMMMMMZ.........................................OOOO  (Win) OMMMMM
+MMMMMMMMMMMMMMMMMMMMZ.........................................OOOOOOOOOOOOOMMMMM
+MMMMMMMMMMMMMMMMMMMM$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$OOOOOOOOOOOOOMMMMM
+MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+MMMMMMNZZZ warm ZZZZO.......Barn Floor.........ZZZ pigs ZZZMMMMMMMMMMMMMMMMMMMMM
+MMMMMMNZZZ stall ZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+MMMMMMNZZZZZZZZZZZZZO..........................ZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMO..........................MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZZZZZZZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZ loft ZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZZZZZZZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMZZZZZZZZZZZZZZZZZZZZZZZZZZZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
 from random import randint
 import os
@@ -19,6 +62,8 @@ import os
 
 ####################################################################################
 #Some sound effects
+####################################################################################
+
 beep_slow = lambda x: os.system("echo -n '\a';sleep .4;" * x)
 beep_medium = lambda x: os.system("echo -n '\a';sleep .2;" * x)
 beep_fast = lambda x: os.system("echo -n '\a';sleep .05;" * x)
@@ -28,7 +73,10 @@ beep_fast = lambda x: os.system("echo -n '\a';sleep .05;" * x)
 Feel = "capricious and impatient"
 exit_message = "\nLater lazy goat!"
 
-#Room "The barn floor."
+####################################################################################
+#ROOM
+#"The barn floor."
+####################################################################################
 def barn_floor():
 	
 	lol = "" #l.ook o.r l.eap variable initialed
@@ -102,14 +150,18 @@ def barn_floor():
 		else:
 			lol = ""
 			print("What?")
-#################################End of barn function###################################################
+#################################End of barn function###############################
 
+####################################################################################
+#ROOM
+#Pig Pen
+####################################################################################
 def pigs():
 	
 	lol = "" #l.ook o.r l.eap variable initialed
 	direction ="" #Direction of travel variable.
 	leap_direction = "right"
-	location = "barn"
+	location = "pig pen"
 
 	print("\n\nPigs! They are biting your legs. Ga-a-a-a-a-a-a!!! What do we do?")
 	
@@ -149,28 +201,58 @@ def pigs():
 
 	
 
-#####################################END OF PIGS FUNCTION#############################################
+#################################End of Pigs########################################
+
+####################################################################################
+#ROOM
+#Ravine
+####################################################################################
 
 def ravine():
 	print("\n\nRavine!")
 	return death
+#################################End of Ravine######################################
 
+####################################################################################
+#ROOM
+#Play Hill
+####################################################################################
 def play_hill():
 	print("\n\nplay_hill")
 	return win
+#################################End of Play Hill###################################
 
+####################################################################################
+#ROOM
+#Pasture
+####################################################################################
 def pasture():
 	print("\n\nPasture")
 	return barn_floor
+#################################End of Pasture#####################################
 
+####################################################################################
+#ROOM
+#Warm Stall
+####################################################################################
 def warm_stall():
 	print("\n\nA dark, warm stall")
 	return barn_floor
+#################################End of Warm Stall##################################
 
+####################################################################################
+#ROOM
+#Loft
+####################################################################################
 def loft():
 	print("\n\nA loft")
 	return death
+#################################End of Loft########################################
 
+####################################################################################
+#DEATH
+#Function
+####################################################################################
 def death():
 	print("""
 	
@@ -241,7 +323,7 @@ def intro():
 print("\n\nYou are lucky. You don't use punctuation, since you are a goat.\nYou know 'q' quits and 'p' pees. Mind your q's and p's!")
 
 
-#def recurse_through_rooms(go_on):
+
 
 def main():
 	

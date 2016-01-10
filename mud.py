@@ -14,6 +14,9 @@
 #loop back to look or leap
 
 from random import randint
+import os
+
+
 
 
 
@@ -29,38 +32,45 @@ def barn_floor():
 	leap_direction = "right"
 	location = "barn"
 
-	print("The musty dirt under your goat hooves smells familiar,\nbut that's all you recognize in this old barn.\nYou feel {}.".format(Feel))
+	print("\n\nThe musty dirt under your goat hooves smells familiar,\nbut that's all you recognize in this old barn.\nYou feel {}.".format(Feel))
 	
 	#Lets offer some options and get input
 	while lol == "":
 		
-		lol = input("Look or leap? ")
+		lol = input("\n\t>Look or leap? ")
 		
 		#LOOK#########################
 		if lol.lower() == "look":
-			print("Behind you is a staircase to an empty loft.\nRight is a pen filled with restless pigs.\nforwards is an open door.\nLeft is a warm stall.")
-			direction = input("Which way to move? forwards, backwards, left, or right? ")
+			
+			print("\n\nBehind you is a staircase to an empty loft.\nRight is a pen filled with restless pigs.\nforwards is an open door.\nLeft is a warm stall.")
+			direction = input("\n\t>Which way to move? forwards, backwards, left, or right? ")
 				
 			if direction.lower() == "forwards":
 				print("\nYou leap {}.".format(direction))
+				beep_medium(3)
 				return pasture
 			elif direction.lower() == "backwards":
 				print("\nYou leap {}.".format(direction))
+				beep_medium(3)
 				return loft
 			elif direction.lower() == "right":
 				print("\nYou leap {}.".format(direction))
+				beep_medium(3)
 				return pigs
 			elif direction.lower() == "left":
 				print("\nYou leap {}.".format(direction))
+				beep_medium(3)
 				return warm_stall
 			elif direction.lower() == "q":
 				print(exit_message)
 				exit()
 			elif direction.lower() == "p":
 				print("\nAhhh. This is my {}".format(location))
+				beep_slow(1)
 				return barn_floor
 			else:
 				print("\nThat makes no sense. One to many headbutts maybe, eh?")
+				beep_slow(1)
 				return barn_floor
 				
 
@@ -68,7 +78,8 @@ def barn_floor():
 
 		#LEAP########################
 		elif lol.lower() == "leap":
-			print("You leap into a pig pen.")
+			beep_fast(5)
+			print("\n\nYou leap bodly!!!")
 			return pigs
 
 		#QUIT#######################
@@ -83,22 +94,22 @@ def barn_floor():
 	
 
 def pigs():
-	print("Pigs!")
+	print("\n\nPigs! They are biting your legs. Ga-a-a-a-a-a-a!!! What do we do?")
 
 def ravine():
-	print("Ravine!")
+	print("\n\nRavine!")
 
 def play_hill():
-	print("play_hill")
+	print("\n\nplay_hill")
 
 def pasture():
-	print("Pasture")
+	print("\n\nPasture")
 
 def warm_stall():
-	print("A warm stall")
+	print("\n\nA dark, warm stall")
 
 def loft():
-	print("A loft")
+	print("\n\nA loft")
 
 def intro():
 	
@@ -136,11 +147,18 @@ def intro():
 
 print("\n\nYou are lucky. You don't use punctuation, since you are a goat.\nYou know 'q' quits and 'p' pees. Mind your q's and p's!")
 
+####################################################################################
+#Some sound effects
+beep_slow = lambda x: os.system("echo -n '\a';sleep .4;" * x)
+beep_medium = lambda x: os.system("echo -n '\a';sleep .2;" * x)
+beep_fast = lambda x: os.system("echo -n '\a';sleep .05;" * x)
+
 
 def main():
 	
 	intro()
 	function_next = barn_floor()
 	function_next()
+	print("\n\n\n\n")
 
 main()

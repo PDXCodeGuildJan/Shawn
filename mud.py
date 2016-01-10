@@ -17,7 +17,11 @@ from random import randint
 import os
 
 
-
+####################################################################################
+#Some sound effects
+beep_slow = lambda x: os.system("echo -n '\a';sleep .4;" * x)
+beep_medium = lambda x: os.system("echo -n '\a';sleep .2;" * x)
+beep_fast = lambda x: os.system("echo -n '\a';sleep .05;" * x)
 
 
 #Global variable for how the character feels
@@ -32,7 +36,7 @@ def barn_floor():
 	leap_direction = "right"
 	location = "barn"
 
-	print("\n\nThe musty dirt under your goat hooves smells familiar,\nbut that's all you recognize in this old barn.\nYou feel {}.".format(Feel))
+	print("\n\nThe musty dirt under your goat hooves smells familiar,\nbut nothing else in this old barn do you remember.\nYou feel {}.".format(Feel))
 	
 	#Lets offer some options and get input
 	while lol == "":
@@ -65,7 +69,7 @@ def barn_floor():
 				print(exit_message)
 				exit()
 			elif direction.lower() == "p":
-				print("\nAhhh. This is my {}".format(location))
+				print("\nAhhh. This is my {} now.".format(location))
 				beep_slow(1)
 				return barn_floor
 			else:
@@ -85,31 +89,120 @@ def barn_floor():
 		#QUIT#######################
 		elif lol.lower() == "q":
 			print(exit_message)
-			exit()	
+			exit()
+		
+		#PEE#######################
+		elif lol.lower() == "p":
+			print(exit_message)
+			print("\nAhhh. This is my {} now.".format(location))
+			beep_slow(1)
+			return barn_floor		
 		
 		#GIBBERISH HANDLING#########
 		else:
 			lol = ""
 			print("What?")
-	
+#################################End of barn function###################################################
 
 def pigs():
+	
+	lol = "" #l.ook o.r l.eap variable initialed
+	direction ="" #Direction of travel variable.
+	leap_direction = "right"
+	location = "barn"
+
 	print("\n\nPigs! They are biting your legs. Ga-a-a-a-a-a-a!!! What do we do?")
+	
+	#Lets offer some options and get input
+	while lol == "":
+		
+		lol = input("\n\t>Look or leap? ")
+
+		#LOOK#########################
+		if lol.lower() == "look":
+				
+			print("\n\nWhile you were looking around with your pea brain the pigs drag you down to your death.\n")
+			return death
+					
+		#LEAP########################
+		elif lol.lower() == "leap":
+			beep_fast(5)
+			print("\n\nYou leap bodly!!!")
+			return barn_floor
+
+		#QUIT#######################
+		elif lol.lower() == "q":
+			print(exit_message)
+			exit()
+		
+		#PEE#######################
+		elif lol.lower() == "p":
+			print(exit_message)
+			print("\nWhile you pee the pigs drag you down to your death.".format(location))
+			beep_slow(1)
+			return death		
+		
+		#GIBBERISH HANDLING#########
+		else:
+			lol = ""
+			print("What?")
+
+	
+
+#####################################END OF PIGS FUNCTION#############################################
 
 def ravine():
 	print("\n\nRavine!")
+	return death
 
 def play_hill():
 	print("\n\nplay_hill")
+	return win
 
 def pasture():
 	print("\n\nPasture")
+	return barn_floor
 
 def warm_stall():
 	print("\n\nA dark, warm stall")
+	return barn_floor
 
 def loft():
 	print("\n\nA loft")
+	return death
+
+def death():
+	print("""
+	
+
+                 uuuuuuu
+             uu$$$$$$$$$$$uu
+          uu$$$$$$$$$$$$$$$$$uu
+         u$$$$$$$$$$$$$$$$$$$$$u
+        u$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$^   ^$$$^   ^$$$$$$u
+       ^$$$$^      u$u       $$$$^
+        $$$u       u$u       u$$$
+        $$$u      u$$$u      u$$$
+         ^$$$$uu$$$   $$$uu$$$$^
+          ^$$$$$$$^   ^$$$$$$$^
+            u$$$$$$$u$$$$$$$u
+             u$^$^$^$^$^$^$u
+  uuu        $$u$ $ $ $ $u$$       uuu
+ u$$$$        $$$$$u$u$u$$$       u$$$$
+  $$$$$uu      ^$$$$$$$$$^     uu$$$$$$
+u$$$$$$$$$$$uu    ^^^^^    uuuu$$$$$$$$$$
+$$$$^^^$$$$$$$$$$uuu   uu$$$$$$$$$^^^$$$^
+ ^^^      ^^$$$$$$$$$$$uu ^^$^^^
+           uuuu ^^$$$$$$$$$$uuu
+  u$$$uuu$$$$$$$$$uu ^^$$$$$$$$$$$uuu$$$
+  $$$$$$$$$$^^^^           ^^$$$$$$$$$$$^
+   ^$$$$$^                      ^^$$$$^^
+     $$$^                         $$$$^"""+"\n\n\n")
+	beep_slow(5)
+	exit()
 
 def intro():
 	
@@ -147,18 +240,15 @@ def intro():
 
 print("\n\nYou are lucky. You don't use punctuation, since you are a goat.\nYou know 'q' quits and 'p' pees. Mind your q's and p's!")
 
-####################################################################################
-#Some sound effects
-beep_slow = lambda x: os.system("echo -n '\a';sleep .4;" * x)
-beep_medium = lambda x: os.system("echo -n '\a';sleep .2;" * x)
-beep_fast = lambda x: os.system("echo -n '\a';sleep .05;" * x)
 
+#def recurse_through_rooms(go_on):
 
 def main():
 	
 	intro()
 	function_next = barn_floor()
-	function_next()
-	print("\n\n\n\n")
+
+	while 1 == 1:
+		function_next = function_next()
 
 main()

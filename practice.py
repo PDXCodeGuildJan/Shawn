@@ -35,6 +35,8 @@ def main(a_string):
 	middle_chars(a_string)
 	a_string = input("OK give me a sequence> ")
 	loop_sequence(a_string)
+	my_list = ["this", "is", "a", 1, "list"]
+	loop_sequence(my_list)
 
 main(a_string)
 	

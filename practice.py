@@ -21,13 +21,18 @@ def middle_chars(a_string):
 	####SLICE
 	print("Middle 3 by integer math:" + str(a_string[start_of_middle_triple:end_of_middle_triple]))
 
+def loop_sequence(a_string):
+	a_string = input("OK give me a sequence> ")
+	print(a_string)
+	for x in a_string:
+		print(a_string[x])
 
 def main(a_string):
 	first(a_string)
 	middle_chars(a_string)
 	a_string = input("Give me another string> ")
 	middle_chars(a_string)
-
+	loop_sequence(a_string)
 
 main(a_string)
 	

@@ -670,7 +670,7 @@ def main():
 	intro()
 	function_next = barn_floor()
 
-	while 1 == 1:
+	while 1 == 1:			###########MODIFY THIS INFINITE LOOP by moving the win and death functions out here as exit condition!!!
 		function_next = function_next()
 
 

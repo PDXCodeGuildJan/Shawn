@@ -69,10 +69,15 @@ beep_medium = lambda x: os.system("echo -n '\a';sleep .2;" * x)
 beep_fast = lambda x: os.system("echo -n '\a';sleep .05;" * x)
 
 
-#Global variable for how the character feels
+#Global strings to simplify passing and changing dialogue
 Feel = "capricious and impatient"
 exit_message = "\nLater lazy goat!"
-
+look_or_leap = "\n\t>Look or leap? "
+leap_boldly_message = "\n\nYou leap bodly "
+which_way = "\n\t>Which way to move: forwards, backwards, left, or right? "
+come_again = "\nThat makes no sense. One to many headbutts maybe, eh?"
+what_lol = "What? Remember you have two choices:"
+pee = "\nAhhh. This is my {} now."
 
 	
 ####################################################################################
@@ -91,14 +96,14 @@ def barn_floor():
 	#Lets offer some options and get input
 	while lol == "":
 		
-		lol = input("\n\t>Look or leap? ")
+		lol = input(look_or_leap)
 		
 		
 		#LOOK#########################
 		if lol.lower() == "look":
 			
 			print("\n\nBehind you is a staircase to an empty loft.\nRight is a pen filled with restless pigs.\nforwards is an open door.\nLeft is a dark stall.")
-			direction = input("\n\t>Which way to move? forwards, backwards, left, or right? ")
+			direction = input(which_way)
 				
 			if direction.lower() == "forwards":
 				print("\nYou leap {}.".format(direction))
@@ -120,11 +125,11 @@ def barn_floor():
 				print(exit_message)
 				exit()
 			elif direction.lower() == "p":
-				print("\nAhhh. This is my {} now.".format(location))
+				print(pee.format(location))
 				beep_slow(1)
 				return barn_floor
 			else:
-				print("\nThat makes no sense. One to many headbutts maybe, eh?")
+				print(come_again)
 				beep_slow(1)
 				return barn_floor
 				
@@ -132,7 +137,7 @@ def barn_floor():
 		#LEAP########################
 		elif lol.lower() == "leap":
 			beep_fast(5)
-			print("\n\nYou leap bodly!!!")
+			print(leap_boldly_message + "{}.".format(leap_direction))
 			return pigs
 
 		#QUIT#######################
@@ -142,15 +147,14 @@ def barn_floor():
 		
 		#PEE#######################
 		elif lol.lower() == "p":
-			print(exit_message)
-			print("\nAhhh. This is my {} now.".format(location))
+			print(pee.format(location))
 			beep_slow(1)
 			return barn_floor		
 		
 		#GIBBERISH HANDLING#########
 		else:
 			lol = ""
-			print("What? Remember you have two choices:")
+			print(what_lol)
 			#End of barn function#
 
 
@@ -171,7 +175,7 @@ def pigs():
 	#Lets offer some options and get input
 	while lol == "":
 		
-		lol = input("\n\t>Look or leap? ")
+		lol = input(look_or_leap)
 
 		#LOOK#########################
 		if lol.lower() == "look":
@@ -182,7 +186,7 @@ def pigs():
 		#LEAP########################
 		elif lol.lower() == "leap":
 			beep_fast(5)
-			print("\n\nYou leap bodly!!!")
+			print(leap_boldly_message + "{}.".format(leap_direction))
 			return barn_floor
 
 		#QUIT#######################
@@ -200,7 +204,7 @@ def pigs():
 		#GIBBERISH HANDLING#########
 		else:
 			lol = ""
-			print("What? Remember you have two choices:")
+			print(what_lol)
 			#End of Pigs#
 
 
@@ -254,14 +258,14 @@ def warm_stall():
 	#Lets offer some options and get input
 	while lol == "":
 		
-		lol = input("\n\t>Look or leap? ")
+		lol = input(look_or_leap)
 		
 		
 		#LOOK#########################
 		if lol.lower() == "look":
 			
 			print("\n\nThere's not much here except the door back behind you. \nIt looks like a good place to sleep.")
-			direction = input("\n\t>Which way to move? forwards, backwards, left, or right? ")
+			direction = input(which_way)
 				
 			if direction.lower() == "forwards":
 				print("\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
@@ -283,14 +287,14 @@ def warm_stall():
 				print(exit_message)
 				exit()
 			elif direction.lower() == "p":
-				print("\nAhhh. This is my {} now.".format(location))
+				print(pee.format(location))
 				beep_slow(1)
 				return warm_stall
 			elif direction.lower() == "sleep":
 				print("\n...zzzzzzzzzzz...".format(location))
 				return warm_stall
 			else:
-				print("\nThat makes no sense. One to many headbutts maybe, eh?")
+				print(come_again)
 				beep_slow(1)
 				return warm_stall
 				
@@ -298,7 +302,7 @@ def warm_stall():
 		#LEAP########################
 		elif lol.lower() == "leap":
 			beep_fast(5)
-			print("\n\nYou leap bodly!!!")
+			print(leap_boldly_message + "{}.".format(leap_direction))
 			return barn_floor
 
 		#QUIT#######################
@@ -308,15 +312,14 @@ def warm_stall():
 		
 		#PEE#######################
 		elif lol.lower() == "p":
-			print(exit_message)
-			print("\nAhhh. This is my {} now.".format(location))
+			print(pee.format(location))
 			beep_slow(1)
 			return warm_stall		
 		
 		#GIBBERISH HANDLING#########
 		else:
 			lol = ""
-			print("What? Remember you have two choices:")
+			print(what_lol)
 			
 	#End of Warm Stall#
 
@@ -337,13 +340,13 @@ def loft():
 	#Lets offer some options and get input
 	while lol == "":
 		
-		lol = input("\n\t>Look or leap? ")
+		lol = input(look_or_leap)
 
 		#LOOK#########################
 		if lol.lower() == "look":
 			
 			print("\n\nLeft there is a dangerous drop to the barn floor far below.\nBackwards is the staircase back down.\nOn the right is a wall.\nForwards: another wall.")
-			direction = input("\n\t>Which way to move? forwards, backwards, left, or right? ")
+			direction = input(which_way)
 				
 			if direction.lower() == "forwards":
 				print("\n\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
@@ -365,11 +368,11 @@ def loft():
 				print(exit_message)
 				exit()
 			elif direction.lower() == "p":
-				print("\nAhhh. This is my {} now.".format(location))
+				print(pee.format(location))
 				beep_slow(1)
 				return loft
 			else:
-				print("\nThat makes no sense. One to many headbutts maybe, eh?")
+				print(come_again)
 				return loft
 			
 		#LEAP########################
@@ -385,14 +388,14 @@ def loft():
 		
 		#PEE#######################
 		elif lol.lower() == "p":
-			print("\nAhhh. This is my {} now.".format(location))
+			print(pee.format(location))
 			beep_slow(1)
 			return loft		
 		
 		#GIBBERISH HANDLING#########
 		else:
 			lol = ""
-			print("What? Remember you have two choices:")
+			print(what_lol)
 	#End of Loft#
 
 

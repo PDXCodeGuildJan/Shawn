@@ -24,7 +24,6 @@ def middle_chars(a_string):
 
 
 def loop_sequence(a_string):
-	a_string = input("OK give me a sequence> ")
 	print(a_string)										
 	for x in a_string:
 		print(x)										###SO SiMPLE SO DIFFERENT FROM C!!!!!!!!!!!!
@@ -34,6 +33,7 @@ def main(a_string):
 	middle_chars(a_string)
 	a_string = input("Give me another string> ")
 	middle_chars(a_string)
+	a_string = input("OK give me a sequence> ")
 	loop_sequence(a_string)
 
 main(a_string)

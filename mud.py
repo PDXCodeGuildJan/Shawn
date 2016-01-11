@@ -237,8 +237,87 @@ def play_hill():
 #Pasture
 ####################################################################################
 def pasture():
-	print("\n\nPasture")
-	return barn_floor
+	lol = "" #l.ook o.r l.eap variable intialized
+	direction =""#Direction of travel variable.
+	leap_direction = "right"
+	location = "pasture"
+
+	print("\n\nA beautiful green glowing pasture. It's a little foggy.")
+
+	#Lets offer some options and get input
+	while lol == "":
+
+		lol = input(look_or_leap)
+
+		print("\n\nNum-num-num. Not now. Eating.")  #The goat gets stubborn
+
+		lol = input(look_or_leap)
+
+		print("\n\nNum-num-num. Not now. Eating.")	#The goat gets stubborn
+
+		lol = input(look_or_leap)
+
+
+		#LOOK######################
+		if lol.lower() == "look":
+
+			print("\n\nSweet succulent grass all around.\n Left is a damn tough looking fence.\nAhead is a dark ravine.\nThat barn's behind,\nand to the right is a little rocky hill!")
+			direction = input(which_way)
+
+			if direction.lower() == "forwards":
+				print("\nYou leap {} into the dark ravine.".format(direction))
+				beep_medium(3)
+				return ravine
+			elif direction.lower() == "backwards":
+				print("You leap {}".format(direction) + " to the barn. How adventerous.")
+				beep_slow(3)
+				return barn_floor
+				###.###
+			elif direction.lower() == "right":
+				print("Okay! \nYou leap {}".format(direction) + " to the lil' hill.")
+				beep_medium(3)
+				beep_fast(3)
+				return play_hill
+			elif direction.lower() == "left":
+				print("\nYou leap {}".format(direction) + " into the fence.")
+				print("ZZZZZZAAAAAAAAAAAA-P!!! ")
+				beep_fast(1)
+				return pasture
+			elif direction.lower() == "q":
+				print(exit_message)
+				exit()
+			elif direction.lower() == "p":
+				print(pee.format(location))
+				beep_slow(1)
+				return pasture
+			elif direction.lower() == "eat":
+				print("\nNum, num, num.")
+				return  pasture
+			else:
+				print(come_again)
+				return pasture
+
+		#LEAP#########################
+		elif lol.lower() == "leap":
+			beep_fast(5)
+			print(leap_boldly_message + "{}.".format(leap_direction))
+			return play_hill
+
+		#QUIT########################
+		elif lol.lower() == "q":
+			print(exit_message)
+			exit()
+
+		#PEE#########################
+		elif lol.lower() == "p":
+			print(pee.format(location))
+			beep_slow(1)
+
+		#GIBBERISH HANDLING##########
+		else:
+			lol = ""
+			print(what_lol)
+
 	#End of Pasture#
 
 
@@ -272,7 +351,7 @@ def warm_stall():
 				beep_medium(1)
 				return warm_stall
 			elif direction.lower() == "backwards":
-				print("\nYou leap {}".format(direction))
+				print("\nYou leap {}".format(direction) + " to the barn floor.")
 				beep_medium(3)
 				return barn_floor
 			elif direction.lower() == "right":
@@ -398,7 +477,10 @@ def loft():
 			print(what_lol)
 	#End of Loft#
 
-
+def win():
+	print("\n\n!!!!!!!!!!!!!!!!!You win!!!!!!!!!!!!!!!!!!!!!!!\n\n")
+	print(exit_message)
+	exit()
 
 ####################################################################################
 #DEATH

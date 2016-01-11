@@ -102,7 +102,7 @@ def barn_floor():
 		#LOOK#########################
 		if lol.lower() == "look":
 			
-			print("\n\nBehind you is a staircase to an empty loft.\nRight is a pen filled with restless pigs.\nforwards is an open door.\nLeft is a dark stall.")
+			print("\n\nBehind you is a staircase to an empty loft.\nRight is a pen filled with restless pigs.\nForwards is an open door.\nLeft is a dark stall.")
 			direction = input(which_way)
 				
 			if direction.lower() == "forwards":
@@ -215,7 +215,7 @@ def pigs():
 ####################################################################################
 
 def ravine():
-	print("\n\nRavine!")
+	print("\n\nYou are attacked by a pack of coyotes!\n For now your only option is death.\n\n")
 	return death
 	#End of Ravine#
 
@@ -226,8 +226,47 @@ def ravine():
 #Play Hill
 ####################################################################################
 def play_hill():
-	print("\n\nplay_hill")
-	return win
+	print("\n\nWhat a nice pile of rocks and dirt!\nUp! Up! Up!\nScamper, caper, scamper.")
+	lol = "" #l.ook o.r l.eap variable intialized
+	direction =""#Direction of travel variable.
+	leap_direction = "right"
+	location = "lil' hill"
+
+	#Lets offer some options and get input
+	while lol == "":
+
+		lol = input(look_or_leap)
+
+		#LOOK######################
+		if lol.lower() == "look":
+
+			print("\n\nDown the hill left is that nice pature.\nLook the sun's setting over there.\nNorth forwards is a ravine.\nSouth is the barn.\nWhat a nice farm house on the right!\n\n")
+			direction = input(which_way)
+			print("\n\nNaw, to hell with going {} now.\nThis hill's fine.\nIt's great to be a goat.\n\n".format(leap_direction))
+			return win
+
+		#LEAP#########################
+		elif lol.lower() == "leap":
+			beep_fast(5)
+			print("\n\nYippee! It's great to be a goat.\nGood hill. Good farm.\n\n")
+			return win
+
+		#QUIT########################
+		elif lol.lower() == "q":
+			print(exit_message)
+			exit()
+
+		#PEE#########################
+		elif lol.lower() == "p":
+			print(pee.format(location))
+			beep_slow(1)
+			return play_hill
+
+		#GIBBERISH HANDLING##########
+		else:
+			lol = ""
+			print(what_lol)
+
 	#End of Play Hill#
 
 
@@ -261,7 +300,7 @@ def pasture():
 		#LOOK######################
 		if lol.lower() == "look":
 
-			print("\n\nSweet succulent grass all around.\n Left is a damn tough looking fence.\nAhead is a dark ravine.\nThat barn's behind,\nand to the right is a little rocky hill!")
+			print("\n\nSweet succulent grass all around.\nLeft is a damn tough looking fence.\nAhead is a dark ravine.\nThat barn's behind,\nand to the right is a little rocky hill!")
 			direction = input(which_way)
 
 			if direction.lower() == "forwards":
@@ -414,7 +453,7 @@ def loft():
 	leap_direction = "backwards"
 	location = "loft"
 
-	print("\n\nUp! Up! Up!\nClimbing stairs is good goat fun,\n but up here this loft looks scary and there's no hay?\n")
+	print("\n\nUp! Up! Up!\nClimbing stairs is good goat fun,\nbut up here this loft looks scary and there's no hay?\n")
 	
 	#Lets offer some options and get input
 	while lol == "":

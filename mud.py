@@ -215,9 +215,76 @@ def pigs():
 ####################################################################################
 
 def ravine():
-	print("\n\nYou are attacked by a pack of coyotes!\n For now your only option is death.\n\n")
-	return death
-	#End of Ravine#
+	###
+	lol = "" #l.ook o.r l.eap variable initialed
+	direction ="" #Direction of travel variable.
+	leap_direction = "backwards"
+	location = "ravine"
+	coyotes = "\n\nYou get stuck in ouchy thorns.\nYou hear yipping.\nStruggling to get free.\nOuch my neck! My ass! Coyotes are attacking me!\n\n"
+
+	print("\n\nNo Sun. No wind,\nbut still you smell meat eaters.\nNot many leaves out on all this brush now.\n")
+
+	#Lets offer some options and get input
+	while lol == "":
+		
+		lol = input(look_or_leap)
+
+		#LOOK#########################
+		if lol.lower() == "look":
+			
+			print("\n\nLeft, right,and forwards is a maze of tunnels through the thick, thorny brush.\nYou would have to knell and crawl they are a little smaller than you.\nDelicious in summer probably.\nYou hear water.\nBackwards is that good graze grass.\n")
+			direction = input(which_way)
+				
+			if direction.lower() == "forwards":
+				print(coyotes)
+				beep_fast(5)
+				return death
+			elif direction.lower() == "backwards":
+				print("\nYou leap {}.".format(direction))
+				beep_medium(3)
+				return pasture
+			elif direction.lower() == "right":
+				print(coyotes)
+				beep_fast(5)
+				return death
+			elif direction.lower() == "left":
+				print(coyotes)
+				beep_fast(5)
+				return death
+			elif direction.lower() == "q":
+				print(exit_message)
+				exit()
+			elif direction.lower() == "p":
+				print(pee.format(location))
+				beep_slow(1)
+				return ravine
+			else:
+				print(come_again)
+				return ravine
+			
+		#LEAP########################
+		elif lol.lower() == "leap":
+			beep_fast(5)
+			print("\n\nYou leap bodly {}".format(location))
+			return death
+
+		#QUIT#######################
+		elif lol.lower() == "q":
+			print(exit_message)
+			exit()
+		
+		#PEE#######################
+		elif lol.lower() == "p":
+			print(pee.format(location))
+			beep_slow(1)
+			return ravine		
+		
+		#GIBBERISH HANDLING#########
+		else:
+			lol = ""
+			print(what_lol)
+
+	##End of Ravine#
 
 
 

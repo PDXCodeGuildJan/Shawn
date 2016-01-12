@@ -3,7 +3,7 @@
 
 from random import randint
 
-words = ["oplopanax horridus", "club", "unctuous", "ragnorok", "piste", "sambucus", "amanita"]
+words = ["oplopanax", "club", "unctuous", "ragnorok", "piste", "sambucus", "amanita"]
 numWrong = 0
 listedWord = [None]
 
@@ -19,7 +19,7 @@ def hangperson():
 
    # Randomly select a word from the list of words
    random_word_index = randint(0, len(words)-1)
-   print (random_word_index)
+#   print (random_word_index)
    # Make the randomly selected word into a list object
    a_string = words[random_word_index]
    listedWord = list(a_string)
@@ -28,10 +28,10 @@ def hangperson():
    # Make another list the same length as the word, but with
    # '_' instead of letters. This will track the user's progress.
    # Use the variable name currentState
-   print(listedWord)
+   #print(listedWord)
    currentState = "_" * len_listedWord
    currentState = list(currentState)
-   print(currentState)
+   #print(currentState)
    len_currentState = len(currentState)
    # Print the initial state of the game
    printHangperson(currentState)
@@ -45,10 +45,10 @@ def hangperson():
 
 # Determine if the user won or lost, and then tell them accordingly
 
-      if currentState == listedWord:
-         print("win")
-      else:
-         print("You Lost")
+   if currentState == listedWord:
+      print("win")
+   else:
+      print("You Lost")
    
 
 
@@ -69,7 +69,7 @@ def updateState(guess, currentState):
    if numInWord == 0:
       print("\nThe rope tightens!\n")
       numWrong += 1
-      print(numWrong)
+    #  print(numWrong)
    # If it is, congratulate them and update the state of the game.
    elif numInWord > 0:
       print("Good guess!")
@@ -89,7 +89,7 @@ def updateState(guess, currentState):
    else:
       print("\nError in starting in updateState()\n")
       exit()
-   print(currentState)
+#   print(currentState)
    return currentState
 
 

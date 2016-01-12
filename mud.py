@@ -73,7 +73,7 @@ beep_fast = lambda x: os.system("echo -n '\a';sleep .05;" * x)
 Feel = "capricious and impatient"
 exit_message = "\nLater lazy goat!"
 look_or_leap = "\n\t>Look or leap? "
-leap_boldly_message = "\n\nYou leap bodly "
+leap_boldly_message = "\n\nYou leap boldly "
 which_way = "\n\t>Which way to move: forwards, backwards, left, or right? "
 come_again = "\nThat makes no sense. One to many headbutts maybe, eh?"
 what_lol = "What? Remember you have two choices:"
@@ -265,7 +265,7 @@ def ravine():
 		#LEAP########################
 		elif lol.lower() == "leap":
 			beep_fast(5)
-			print("\n\nYou leap bodly {}".format(location))
+			print("\n\nYou leap boldly {}".format(location))
 			return death
 
 		#QUIT#######################
@@ -307,7 +307,7 @@ def play_hill():
 		#LOOK######################
 		if lol.lower() == "look":
 
-			print("\n\nDown the hill left is that nice pature.\nLook the sun's setting over there.\nNorth forwards is a ravine.\nSouth is the barn.\nWhat a nice farm house on the right!\n\n")
+			print("\n\nDown the hill left is that nice pasture.\nLook the sun's setting over there.\nNorth forwards is a ravine.\nSouth is the barn.\nWhat a nice farm house on the right!\n\n")
 			direction = input(which_way)
 			print("\n\nNaw, to hell with going {} now.\nThis hill's fine.\nIt's great to be a goat.\n\n".format(leap_direction))
 			return win
@@ -563,7 +563,7 @@ def loft():
 		#LEAP########################
 		elif lol.lower() == "leap":
 			beep_fast(5)
-			print("\n\nYou leap bodly!!!\nTo your death?!?")
+			print("\n\nYou leap boldly!!!\nTo your death?!?")
 			return death
 
 		#QUIT#######################
@@ -584,7 +584,43 @@ def loft():
 	#End of Loft#
 
 def win():
-	print("\n\n!!!!!!!!!!!!!!!!!You win!!!!!!!!!!!!!!!!!!!!!!!\n\n")
+	print("""                                      =:                                                            
+                                    ~IZ::D$$$$$$$$$$$$$$7:                                          
+                               ~$$$$$$Z::::D$$$$$::$$$::$$$Z$$= ~                                   
+       YOU               7$$$$$$$$$ZZ::::::$:$:::::::$$$$$$:::$                                  
+       WIN!              $$$$$$$$$7?III?I:::::::::::::::::$$:::::$$$$                               
+                      Z$$$$$$$?IIIIIIIIII?7::::::::::::::::::::::$$$$Z$$                            
+                   ,$$$$$Z$?I?IIIIIII?==+++++:::::::::::::::::::II?Z$$$$7$       :::               
+                  $$$$$$$IIIIIII?=+=++++=+++:::::::::::::::::::IIIIIIIZ$$$$$    ,:::::              
+                I$$$$$II?IIII?=++==+++=++=?I::::::::::::::::::::ZIIIIIII$$$$Z7  ::::::             
+               $$$$$IIIIIII++=+++===$$$Z$$Z$Z::::::::::::::::::::::IIIII?7$$$$Z :::::::             
+             $Z$$$7IIIII?++=++++$$ZZ$$$$$$ZZZ::::::::::::::::::::::::I?IIIII$$$$:::::::             
+            $$$$$?IIII?++====I$Z$$$$$$$I77777:::::::::::::::::::::::::+?III??ZZ::::::::            
+          ,$$$$$IIIII==++++$$$Z$$Z$7777777777:::::::::::::::::::::::::::::::::::::::::::            
+         :$$$$7??I??==++=I$Z$$$$77777777777$Z:::::::::::::::::::::::::::::::::::::::::::            
+        ,$$$$?I?II==++++O$Z$$$77777777OOOOOOO::::::::::::::::::::::::::::::::::::::::::            
+       :$$$$?IIII+=+++Z$$$$7777777OOOOOOOOOOON:::::::::::::::::::::::::::::::::::::::::,            
+       $$$$?IIII=++==Z$$$$7777778OOOOOOO$$$$$$ZZN::::::::::::::::::::::::::::::::::::::             
+      Z$$$?IIII===+=$$$$$77777OOOOOOZ$$$$$$$$$Z$::::::::::::::::::::::::::::::::::::::::            
+     ?$$$$I?II==++=Z$Z$77777$OOO88$$$$$$$$Z7:   :::::::::::::::::::::::::::::::::::::::::           
+     $$$$I?I??++=+$Z$$77777ZOOOOZ$$$Z$$=       ::::::::::::::::::::::::::::::::::::::::::           
+    I$$$IIIII=+++Z$$Z77777OOOO8$$$$$Z          ::::::::::::::::::::::::::::::::::::::::::          
+    $$$$I?II=++=$$$$$7777OOOOZ$$Z$$             ::::::::::::::::::::::::::::::::::::::::::          
+   +$$$II?I++++=Z$$$7777ZOOOO$$$$,              :::::::::::::::::::::::::::::::::::::::::::         
+   $$$$IIII=+++$$$ZI777$OOOO$$Z$,               :::::::::::::::::::::::::::::::::::::::::::::       
+   $$$$III?++++Z$$$7777OOO8$$$$?                :::::::::::::::::::::::::::::::::::::::::::::      
+  ,$$$IIII++++=$$$77777OOOO$$$Z                 ::::::::::::::::::::::::::::::::::::::::::::::     
+  ?$$$?III==+=7$$$7777ZOOOZZ$$                 :::::  ::::::          ~::   :::::: :::::::::::::  
+                                               :::::::::::::                ::::::  :::::::::::::  
+                                               :::::::::::::                 :::::        ::::::::  
+                                                :::::::::::                ,,:::::        :::::::  
+                                                 :::   :::                  :::::          ::::::  
+                                                                           ::::::::         ::::::  
+                                                                            ::::::          :::::  
+                                                                            :::::::         ::::::  
+                                                                             :::::          :::::  
+                                                                              :::           ::::::  
+                                                                                             ::::  """)
 	print(exit_message)
 	exit()
 

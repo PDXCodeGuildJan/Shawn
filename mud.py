@@ -78,7 +78,7 @@ which_way = "\n\t>Which way to move: forwards, backwards, left, or right? "
 come_again = "\nThat makes no sense. One to many headbutts maybe, eh?"
 what_lol = "What? Remember you have two choices:"
 pee = "\nAhhh. This is my {} now."
-
+path_taken = []
 	
 ####################################################################################
 #ROOM
@@ -86,6 +86,7 @@ pee = "\nAhhh. This is my {} now."
 ####################################################################################
 def barn_floor():
 	
+	global path_taken
 	lol = "" #l.ook o.r l.eap variable initialed
 	direction ="" #Direction of travel variable.
 	leap_direction = "right"
@@ -108,17 +109,21 @@ def barn_floor():
 			if direction.lower() == "forwards":
 				print("\nYou leap {}.".format(direction))
 				beep_medium(3)
+				path_taken.extend(["look", "forwards", "pasture"])
 				return pasture
 			elif direction.lower() == "backwards":
 				print("\nYou leap {}.".format(direction))
+				path_taken.extend(["look", "backwards", "loft"])
 				beep_medium(3)
 				return loft
 			elif direction.lower() == "right":
 				print("\nYou leap {}.".format(direction))
+				path_taken.extend(["look", "right", "pigs"])
 				beep_medium(3)
 				return pigs
 			elif direction.lower() == "left":
 				print("\nYou leap {}.".format(direction))
+				path_taken.extend(["look", "left", "warm stall"])
 				beep_medium(3)
 				return warm_stall
 			elif direction.lower() == "q":
@@ -136,6 +141,7 @@ def barn_floor():
 
 		#LEAP########################
 		elif lol.lower() == "leap":
+			path_taken.extend(["leap boldly", "pigs"])
 			beep_fast(5)
 			print(leap_boldly_message + "{}.".format(leap_direction))
 			return pigs
@@ -309,7 +315,7 @@ def play_hill():
 
 			print("\n\nDown the hill left is that nice pasture.\nLook the sun's setting over there.\nNorth forwards is a ravine.\nSouth is the barn.\nWhat a nice farm house on the right!\n\n")
 			direction = input(which_way)
-			print("\n\nNaw, to hell with going {} now.\nThis hill's fine.\nIt's great to be a goat.\n\n".format(leap_direction))
+			print("\n\nNaw, to hell with going {} now.\nThis hill's fine.\nIt's great to be a goat.\n\n".format(direction))
 			return win
 
 		#LEAP#########################
@@ -584,10 +590,10 @@ def loft():
 	#End of Loft#
 
 def win():
-	print("""                                      =:                                                            
-                                    ~IZ::D$$$$$$$$$$$$$$7:                                          
-                               ~$$$$$$Z::::D$$$$$::$$$::$$$Z$$= ~                                   
-       YOU               7$$$$$$$$$ZZ::::::$:$:::::::$$$$$$:::$                                  
+	print("""                                 ........                                                            
+                                   ~:IZ::D$$$$$$$$$$$$$$7:~                                          
+                               ~$$$$$$Z::::D$$$$$::$$$::$$$Z$$=                                    
+       YOU                 7$$$$$$$$$ZZ::::::$:$:::::::$$$$$$:::$                                  
        WIN!              $$$$$$$$$7?III?I:::::::::::::::::$$:::::$$$$                               
                       Z$$$$$$$?IIIIIIIIII?7::::::::::::::::::::::$$$$Z$$                            
                    ,$$$$$Z$?I?IIIIIII?==+++++:::::::::::::::::::II?Z$$$$7$       :::               
@@ -601,27 +607,25 @@ def win():
         ,$$$$?I?II==++++O$Z$$$77777777OOOOOOO::::::::::::::::::::::::::::::::::::::::::            
        :$$$$?IIII+=+++Z$$$$7777777OOOOOOOOOOON:::::::::::::::::::::::::::::::::::::::::,            
        $$$$?IIII=++==Z$$$$7777778OOOOOOO$$$$$$ZZN::::::::::::::::::::::::::::::::::::::             
-      Z$$$?IIII===+=$$$$$77777OOOOOOZ$$$$$$$$$Z$::::::::::::::::::::::::::::::::::::::::            
-     ?$$$$I?II==++=Z$Z$77777$OOO88$$$$$$$$Z7:   :::::::::::::::::::::::::::::::::::::::::           
-     $$$$I?I??++=+$Z$$77777ZOOOOZ$$$Z$$=       ::::::::::::::::::::::::::::::::::::::::::           
-    I$$$IIIII=+++Z$$Z77777OOOO8$$$$$Z          ::::::::::::::::::::::::::::::::::::::::::          
-    $$$$I?II=++=$$$$$7777OOOOZ$$Z$$             ::::::::::::::::::::::::::::::::::::::::::          
-   +$$$II?I++++=Z$$$7777ZOOOO$$$$,              :::::::::::::::::::::::::::::::::::::::::::         
-   $$$$IIII=+++$$$ZI777$OOOO$$Z$,               :::::::::::::::::::::::::::::::::::::::::::::       
-   $$$$III?++++Z$$$7777OOO8$$$$?                :::::::::::::::::::::::::::::::::::::::::::::      
-  ,$$$IIII++++=$$$77777OOOO$$$Z                 ::::::::::::::::::::::::::::::::::::::::::::::     
-  ?$$$?III==+=7$$$7777ZOOOZZ$$                 :::::  ::::::          ~::   :::::: :::::::::::::  
-                                               :::::::::::::                ::::::  :::::::::::::  
-                                               :::::::::::::                 :::::        ::::::::  
-                                                :::::::::::                ,,:::::        :::::::  
+      Z$$$?IIII===+=$$$$$77777OOOOOOZ$$$$$$''     :::::::::::::::::::::::::::::::::::::::            
+     ?$$$$I?II==++=Z$Z$77777$OOO88$$$$$'          :::::::::::::::::::::::::::::::::::::::::           
+    $$$$I?II=++=$$$$$7777OOOOZ$$Z$$''           :::::::::::::::::::::::::::::::::::::::::::::       
+   +$$$II?I++++=Z$$$7777ZOOOO$$$$,              :::::::::::::::::::::::::::::::::::::::::::::      
+   $$$$IIII=+++$$$ZI777$OOOO$$Z$,               ::::::::::::::::::::::::::::::::::::::::::::::
+   $$$$III?++++Z$$$7777OOO8$$$$?               :::::  ::::::          ~::   :::::: :::::::::::::  
+  ,$$$IIII++++=$$$77777OOOO$$$Z                :::::::::::::                ::::::  :::::::::::::
+  ?$$$?III==+=7$$$7777ZOOOZZ$$                 :::::::::::::                 :::::        ::::::::  
+                                                :::::::::::                 ,:::::        :::::::  
                                                  :::   :::                  :::::          ::::::  
                                                                            ::::::::         ::::::  
                                                                             ::::::          :::::  
                                                                             :::::::         ::::::  
                                                                              :::::          :::::  
                                                                               :::           ::::::  
-                                                                                             ::::  """)
-	print(exit_message)
+                                                                                             ::::""")
+	#put in a pause
+	print(exit_message) #add a path print
+	print(path_taken) #add to death
 	exit()
 
 ####################################################################################

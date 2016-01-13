@@ -19,37 +19,43 @@ def hangperson():
 
    # Randomly select a word from the list of words
    random_word_index = randint(0, len(words)-1)
-#   print (random_word_index)
+
    # Make the randomly selected word into a list object
    a_string = words[random_word_index]
    listedWord = list(a_string)
    currentState = ""
    len_listedWord = len(listedWord)
+   
    # Make another list the same length as the word, but with
    # '_' instead of letters. This will track the user's progress.
    # Use the variable name currentState
-   #print(listedWord)
+   
    currentState = "_" * len_listedWord
    currentState = list(currentState)
-   #print(currentState)
+
+   #Initialize var to store incorrect guesses. 
+   incorrect = []
    len_currentState = len(currentState)
+   
    # Print the initial state of the game
-   printHangperson(currentState)
+   printHangperson(currentState, incorrect)
 
    # Start the game! Loop until the user either wins or loses
    while currentState != listedWord and numWrong < 6:
 
-      currentState = updateState(userGuess(), currentState)
+      bundled_list = updateState(userGuess(), currentState, incorrect)
+      currentState = bundled_list[0]
+      incorrect = bundled_list[1]
 
-      printHangperson(currentState)
+      printHangperson(currentState, incorrect)
 
-# Determine if the user won or lost, and then tell them accordingly
+   # Determine if the user won or lost, and then tell them accordingly
 
    if currentState == listedWord:
       print("win")
    else:
       print("You Lost")
-   
+      print(listedWord)
 
 
 
@@ -60,7 +66,7 @@ def hangperson():
 # currentState: the current state of the word/game
 #
 # return currentState
-def updateState(guess, currentState):
+def updateState(guess, currentState, incorrect):
    global numWrong
    # First, determine if the letter guessed is in the word.
    numInWord = listedWord.count(guess)
@@ -69,7 +75,8 @@ def updateState(guess, currentState):
    if numInWord == 0:
       print("\nThe rope tightens!\n")
       numWrong += 1
-    #  print(numWrong)
+      incorrect.append(guess)
+    
    # If it is, congratulate them and update the state of the game.
    elif numInWord > 0:
       print("Good guess!")
@@ -89,8 +96,8 @@ def updateState(guess, currentState):
    else:
       print("\nError in starting in updateState()\n")
       exit()
-#   print(currentState)
-   return currentState
+
+   return [currentState, incorrect]
 
 
 # This helpful function prompts the user for a guess,
@@ -114,7 +121,7 @@ def userGuess():
 # DO NOT CHANGE
 #
 # state: current state of the word
-def printHangperson(state):
+def printHangperson(state, incorrect):
    person = [" O "," | \n | ", "\| \n | ", "\|/\n | ", "\|/\n | \n/  ", "\|/\n | \n/ \\"]
    print()
 
@@ -131,5 +138,7 @@ def printHangperson(state):
 
    print("\n")
 
+   print("Incorrect guesses {}:".format(incorrect))
+   print("")
 # This line runs the program on import of the module
 hangperson()

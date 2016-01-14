@@ -187,12 +187,14 @@ def pigs():
 		if lol.lower() == "look":
 				
 			print("\n\nWhile you were looking around with your pea brain the pigs drag you down to your death.\n")
+			path_taken.extend(["look", "death by pig"])
 			return death
 					
 		#LEAP########################
 		elif lol.lower() == "leap":
 			beep_fast(5)
 			print(leap_boldly_message + "{}.".format(leap_direction))
+			path_taken.extend(["leap", "backwards", "barn floor"])
 			return barn_floor
 
 		#QUIT#######################
@@ -204,6 +206,7 @@ def pigs():
 		elif lol.lower() == "p":
 			print(exit_message)
 			print("\nWhile you pee the pigs drag you down to your death.".format(location))
+			path_taken.extend(["p","death by pig"])
 			beep_slow(1)
 			return death		
 		
@@ -228,7 +231,7 @@ def ravine():
 	location = "ravine"
 	coyotes = "\n\nYou get stuck in ouchy thorns.\nYou hear yipping.\nStruggling to get free.\nOuch my neck! My ass! Coyotes are attacking me!\n\n"
 
-	print("\n\nNo Sun. No wind,\nbut still you smell meat eaters.\nNot many leaves out on all this brush now.\n")
+	print("\n\nNo Sun. No wind,\nbut you smell meat eaters.\nNot many leaves out on all this brush now.\n")
 
 	#Lets offer some options and get input
 	while lol == "":
@@ -244,17 +247,21 @@ def ravine():
 			if direction.lower() == "forwards":
 				print(coyotes)
 				beep_fast(5)
+				path_taken.extend(["look", "forwards", "death by coyotes"])
 				return death
 			elif direction.lower() == "backwards":
 				print("\nYou leap {}.".format(direction))
 				beep_medium(3)
+				path_taken.extend(["look", "backwards", "pasture"])
 				return pasture
 			elif direction.lower() == "right":
 				print(coyotes)
+				path_taken.extend(["look", "right", "death by coyotes"])
 				beep_fast(5)
 				return death
 			elif direction.lower() == "left":
 				print(coyotes)
+				path_taken.extend(["look", "left", "death by coyotes"])
 				beep_fast(5)
 				return death
 			elif direction.lower() == "q":
@@ -263,6 +270,7 @@ def ravine():
 			elif direction.lower() == "p":
 				print(pee.format(location))
 				beep_slow(1)
+				path_taken.extend(["p", "ravine"])
 				return ravine
 			else:
 				print(come_again)
@@ -271,8 +279,9 @@ def ravine():
 		#LEAP########################
 		elif lol.lower() == "leap":
 			beep_fast(5)
-			print("\n\nYou leap boldly {}".format(location))
-			return death
+			print("\n\nYou leap boldly {}".format(leap_direction))
+			path_taken.extend(["leap", leap_direction, "pasture"])
+			return pasture
 
 		#QUIT#######################
 		elif lol.lower() == "q":
@@ -283,6 +292,7 @@ def ravine():
 		elif lol.lower() == "p":
 			print(pee.format(location))
 			beep_slow(1)
+			path_taken.extend(["p", "ravine"])
 			return ravine		
 		
 		#GIBBERISH HANDLING#########
@@ -316,12 +326,14 @@ def play_hill():
 			print("\n\nDown the hill left is that nice pasture.\nLook the sun's setting over there.\nNorth forwards is a ravine.\nSouth is the barn.\nWhat a nice farm house on the right!\n\n")
 			direction = input(which_way)
 			print("\n\nNaw, to hell with going {} now.\nThis hill's fine.\nIt's great to be a goat.\n\n".format(direction))
+			path_taken.extend(["look", "win"])
 			return win
 
 		#LEAP#########################
 		elif lol.lower() == "leap":
 			beep_fast(5)
 			print("\n\nYippee! It's great to be a goat.\nGood hill. Good farm.\n\n")
+			path_taken.extend(["leap", "win"])
 			return win
 
 		#QUIT########################
@@ -333,6 +345,7 @@ def play_hill():
 		elif lol.lower() == "p":
 			print(pee.format(location))
 			beep_slow(1)
+			path_taken.extend(["p", "play hill"])
 			return play_hill
 
 		#GIBBERISH HANDLING##########
@@ -378,10 +391,12 @@ def pasture():
 
 			if direction.lower() == "forwards":
 				print("\nYou leap {} into the dark ravine.".format(direction))
+				path_taken.extend(["look", "forwards", "ravine"])
 				beep_medium(3)
 				return ravine
 			elif direction.lower() == "backwards":
 				print("You leap {}".format(direction) + " to the barn. How adventerous.")
+				path_taken.extend(["look", "backwards", "barn floor"])
 				beep_slow(3)
 				return barn_floor
 				###.###
@@ -389,10 +404,12 @@ def pasture():
 				print("Okay! \nYou leap {}".format(direction) + " to the lil' hill.")
 				beep_medium(3)
 				beep_fast(3)
+				path_taken.extend(["look", "right", "play hill"])
 				return play_hill
 			elif direction.lower() == "left":
 				print("\nYou leap {}".format(direction) + " into the fence.")
 				print("ZZZZZZAAAAAAAAAAAA-P!!! ")
+				path_taken.extend(["look", "left", "pasture"])
 				beep_fast(1)
 				return pasture
 			elif direction.lower() == "q":
@@ -401,6 +418,7 @@ def pasture():
 			elif direction.lower() == "p":
 				print(pee.format(location))
 				beep_slow(1)
+				path_taken.extend(["p", "pasture"])				
 				return pasture
 			elif direction.lower() == "eat":
 				print("\nNum, num, num.")
@@ -413,6 +431,7 @@ def pasture():
 		elif lol.lower() == "leap":
 			beep_fast(5)
 			print(leap_boldly_message + "{}.".format(leap_direction))
+			path_taken.extend(["look", leap_direction, "play hill"])
 			return play_hill
 
 		#QUIT########################
@@ -423,6 +442,7 @@ def pasture():
 		#PEE#########################
 		elif lol.lower() == "p":
 			print(pee.format(location))
+			path_taken.extend(["p", "pasture"])
 			beep_slow(1)
 
 		#GIBBERISH HANDLING##########
@@ -441,7 +461,7 @@ def pasture():
 def warm_stall():
 	lol = "" #l.ook o.r l.eap variable initialed
 	direction ="" #Direction of travel variable.
-	leap_direction = "right"
+	leap_direction = "backwards"
 	location = "stall"
 
 	print("\n\nThe stall is pretty dark, but warm.")
@@ -461,17 +481,21 @@ def warm_stall():
 			if direction.lower() == "forwards":
 				print("\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
 				beep_medium(1)
+				path_taken.extend(["look", "forwards", "warm stall"])
 				return warm_stall
 			elif direction.lower() == "backwards":
 				print("\nYou leap {}".format(direction) + " to the barn floor.")
 				beep_medium(3)
+				path_taken.extend(["look", "backwards", "barn floor"])
 				return barn_floor
 			elif direction.lower() == "right":
 				print("\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
+				path_taken.extend(["look", "right", "warm stall"])
 				beep_medium(1)
 				return warm_stall
 			elif direction.lower() == "left":
 				print("\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
+				path_taken.extend(["look", "left", "warm stall"])
 				beep_medium(1)
 				return warm_stall
 			elif direction.lower() == "q":
@@ -480,6 +504,7 @@ def warm_stall():
 			elif direction.lower() == "p":
 				print(pee.format(location))
 				beep_slow(1)
+				path_taken.extend(["p", "warm stall"])
 				return warm_stall
 			elif direction.lower() == "sleep":
 				print("\n...zzzzzzzzzzz...".format(location))
@@ -494,6 +519,7 @@ def warm_stall():
 		elif lol.lower() == "leap":
 			beep_fast(5)
 			print(leap_boldly_message + "{}.".format(leap_direction))
+			path_taken.extend(["leap", leap_direction, "barn floor"])
 			return barn_floor
 
 		#QUIT#######################
@@ -505,6 +531,7 @@ def warm_stall():
 		elif lol.lower() == "p":
 			print(pee.format(location))
 			beep_slow(1)
+			path_taken.extend(["p", "warm stall"])
 			return warm_stall		
 		
 		#GIBBERISH HANDLING#########
@@ -542,17 +569,21 @@ def loft():
 			if direction.lower() == "forwards":
 				print("\n\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
 				beep_medium(1)
+				path_taken.extend(["look", "forwards", "loft"])
 				return loft
 			elif direction.lower() == "backwards":
 				print("\nYou go {}.".format(direction))
 				beep_medium(3)
+				path_taken.extend(["look", "backwards", "barn floor"])
 				return barn_floor
 			elif direction.lower() == "right":
 				print("\n\nYou leap {} and bash your head into the tin wall. That was silly.".format(direction))
+				path_taken.extend(["look", "right", "loft"])
 				beep_medium(1)
 				return loft
 			elif direction.lower() == "left":
 				print("\nYou leap {} to your death!?!".format(direction))
+				path_taken.extend(["look", "left", "Jump to your death"])
 				beep_fast(5)
 				return death
 			elif direction.lower() == "q":
@@ -561,6 +592,7 @@ def loft():
 			elif direction.lower() == "p":
 				print(pee.format(location))
 				beep_slow(1)
+				path_taken.extend(["p", "loft"])
 				return loft
 			else:
 				print(come_again)
@@ -570,6 +602,7 @@ def loft():
 		elif lol.lower() == "leap":
 			beep_fast(5)
 			print("\n\nYou leap boldly!!!\nTo your death?!?")
+			path_taken.extend(["leap", "left", "Jump to your death"])
 			return death
 
 		#QUIT#######################
@@ -581,6 +614,7 @@ def loft():
 		elif lol.lower() == "p":
 			print(pee.format(location))
 			beep_slow(1)
+			path_taken.extend(["p", "loft"])
 			return loft		
 		
 		#GIBBERISH HANDLING#########
@@ -663,6 +697,7 @@ $$$$^^^$$$$$$$$$$uuu   uu$$$$$$$$$^^^$$$^
    ^$$$$$^                      ^^$$$$^^
      $$$^                         $$$$^"""+"\n\n\n")
 	beep_slow(5)
+	print(path_taken)
 	exit()
 
 

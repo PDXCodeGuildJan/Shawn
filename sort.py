@@ -9,19 +9,19 @@ def swap_smallest(listIn, LastStartPosition): #takes a postion in a list and swa
 #	equals = True
 
 	PositionWhereSmallestFound = LastStartPosition
-	count = 0
+	count = 0############################################Something here is why we are failing to leave the sorted part of the list alone!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	x = listIn[count]
 
 #################Find Smallest in list
 	print (listIn)
-	for i, v in enumerate(listIn[LastStartPosition:]):
+	for i, v in enumerate(listIn):
 		if v < x:
 			x = v
 			print("index:")
 			PositionWhereSmallestFound = i
 	
 ################
-################SWAP
+################SWAP#######################################################PERHAPS BREAK SWAP OUT
 
 	temp = listIn[LastStartPosition+1]
 	listIn[LastStartPosition+1] = listIn[PositionWhereSmallestFound]

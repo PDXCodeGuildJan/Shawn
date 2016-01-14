@@ -1,58 +1,62 @@
+#############################################
+#SELECTION SORT
+#############################################
 
 
-def swap_smallest(listIn, LastStartPosition): #takes a postion in a list and swaps it with the smallest element beyond that position
+#####################Swap one value in a list with another
+def swapper(aList, zeroPoint, smallest):
 	
+	temp = aList[zeroPoint]
+	aList[zeroPoint] = aList[smallest]
+	aList[smallest] = temp
+	return aList
 
 
 
-#	listOut =[]
-#	equals = True
+def selection_sort(aList):
 
-	PositionWhereSmallestFound = LastStartPosition
-	count = 0############################################Something here is why we are failing to leave the sorted part of the list alone!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	x = listIn[count]
+	#############################	
+	#FIND the start of the list
 
-#################Find Smallest in list
-	print (listIn)
-	for i, v in enumerate(listIn):
-		if v < x:
-			x = v
-			print("index:")
-			PositionWhereSmallestFound = i
+	zeroPoint = 0
+	print (zeroPoint)
+	end = len(aList)-1
+	smallest = 0
 	
-################
-################SWAP#######################################################PERHAPS BREAK SWAP OUT
+	while zeroPoint < end:
+		##############################
+		#FIND SMALLEST in list from zeropoint to end
+		smallestSoFar = int(aList[zeroPoint])
+		for i, v in enumerate(aList[zeroPoint:]):
+				if v < smallestSoFar:
+					smallest = i + zeroPoint
+					smallestSoFar = int(v)
 
-	temp = listIn[LastStartPosition+1]
-	listIn[LastStartPosition+1] = listIn[PositionWhereSmallestFound]
-	listIn[PositionWhereSmallestFound] = temp
+		##############################
+		#SWAP the smallest with the zeropoint
+		swapper(aList, zeroPoint, smallest)
+		print(aList)
+		#############################
+		#INCREMENT zeropoint
+		zeroPoint += 1
+		print(zeroPoint)
+
+	##############
+	#REPEAT until unsorted list is empty
+	return aList
 
 
-
-	print("Smallest:")
-	print(x)
-	
-	#print(count)
-	return listIn
-
-def selection_sort(listIn):
-
-	listLen = len(listIn)
-	LastStartPosition = 0
-	#################LOOP THROUGH THE WHOLE LIST WITH SWAP SMALLEST
-	while LastStartPosition < listLen -1:
-		listIn = swap_smallest(listIn, LastStartPosition-1)
-		LastStartPosition += 1
-	return listIn
 
 def main():
-	list1 = [488, 22, 9, 10, 78, 9, 4, 55, 33, 66, 3, 5]
-	print(list1)
-	#list1 = selection_sort(list1)
-	#print(swap_smallest(list1, -1))
-	print(selection_sort(list1))
-	print(swap_smallest(list1, -1))
+	
+	aList= [5,5,73,4,0,2,1,3,8,73,4,6,3,9,3]
+	bList = aList
+	print(aList)
+	aList = selection_sort(aList)
+	print("Error check with builtin sort:")
+	print(bList)
+
+
+
 
 main()
-
-

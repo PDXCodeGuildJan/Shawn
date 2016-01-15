@@ -1,18 +1,23 @@
-#############################################
-#SELECTION SORT
-#############################################
+########################################################
+# WRITTING SORTING ALGORITHMS TO PRACTICE LOOPS N LISTS
+########################################################
 
 
-#####################Swap one value in a list with another
-def swapper(aList, zeroPoint, smallest):
+#############################################
+# SWAPPER
+#############################################
+
+def swapper(aList, x, y):
 	
-	temp = aList[zeroPoint]
-	aList[zeroPoint] = aList[smallest]
-	aList[smallest] = temp
+	temp = aList[x]
+	aList[x] = aList[y]
+	aList[y] = temp
 	return aList
 
 
-
+#############################################
+#SELECTION SORT
+#############################################
 def selection_sort(aList):
 
 	#############################	
@@ -39,72 +44,74 @@ def selection_sort(aList):
 		#INCREMENT zeropoint
 		zeroPoint += 1
 
-	##############
-	#REPEAT until unsorted list is empty
+	############################
+	# REPEAT until unsorted list is empty
+	
 	return aList
+
+
+
+###########################################
+# BUBBLE SORT
+###########################################
+
+def bubble_sort(aList):
+
+	"""
+	START AT THE BEGINING of aList
+	INTIALIZED CURRENT END OF UNSORTED (begins as the end of the full list)
+	
+	LOOP UNTIL CURRENT END == BEGINING
+
+		COMPARE EVERY ADJACENT PAIR to the right LOOP TO CURRENT END OF UNSORTED
+
+			SWAP LARGER TO RIGHT
+
+		DECREMENT CURRENT END OF UNSORTED
+	"""
+
+	start = 0
+	end = len(aList) - 1
+
+	for i, v in enumerate(aList):
+		if  v > aList[i+1]:
+			swapper(aList, i, i+1)
+			print(i)
+			print(v)
+			print(aList[i+1])
+		elif i < end:
+			print(i)
+			print(v)
+			print(aList[i+1])
+
+		print(aList)
+
+	return aList
+
+
 
 
 
 def main():
 	
-	aList= [5,5,73,4,0,2,1,3,8,73,4,6,3,9,3]
-	bList = aList
+	aList= [5,1,73,4,0,2,1,3,8,73,4,6,3,9,3]
+	bList = aList[:]
 	print(aList)
+	print(bList)
 	aList = selection_sort(aList)
 	print(aList)
 	print("Error check with builtin sort:")
-	print(bList)
+	bList.sort()
 	if aList == bList:
 		print("Match!")
-
-
-	aList= [0]
-	bList = aList
-	print(aList)
-	aList = selection_sort(aList)
-	print(aList)
-	print("Error check with builtin sort:")
 	print(bList)
-	if aList == bList:
-		print("Match!")
 
-
-
-
-	aList= [0,0,0,0,0,0,0,0,0,0,0,0]
-	bList = aList
+	print("Before Bubble:")
+	aList = [5,1,8,4,0,2,1,3,8,73,4,6,3,0,3]
 	print(aList)
-	aList = selection_sort(aList)
+
+	print("During bubble")
+	aList = bubble_sort(aList)
+	print("After bubble:")
 	print(aList)
-	print("Error check with builtin sort:")
-	print(bList)
-	if aList == bList:
-		print("Match!")
-
-
-
-	aList= [10,9,8,7,6,5,4,3,2,1]
-	bList = aList
-	print(aList)
-	aList = selection_sort(aList)
-	print(aList)
-	print("Error check with builtin sort:")
-	print(bList)
-	if aList == bList:
-		print("Match!")
-
-
-
-	aList= [33,6666,3,64,66767,65,4664364,54,23,43]
-	bList = aList
-	print(aList)
-	aList = selection_sort(aList)
-	print(aList)
-	print("Error check with builtin sort:")
-	print(bList)
-	if aList == bList:
-		print("Match!")
-
-
-
 main()

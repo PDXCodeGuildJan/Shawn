@@ -73,33 +73,26 @@ def bubble_sort(aList):
 	start = 0
 	end = len(aList) - 1
 
-	"""for i, v in enumerate(aList):
-		if  v > aList[i+1]:
-			swapper(aList, i, i+1)
-			print(i)
-			print(v)
-			print(aList[i+1])
-		elif i < end:
-			print(i)
-			print(v)
-			print(aList[i+1])
+	
+	while end != start:
+		i = 0
+		while i != end:
 
-		print(aList)"""
+			if int(aList[i]) > int(aList[i+1]):
+				swapper(aList, i, i+1)
+				i += 1
+				print(i)
+				print(aList)
 
-	i = 0
-	while i != end:
+	
+			else:
+				i += 1
+				print(i)
+				print(aList)
 
-		if int(aList[i]) > int(aList[i+1]):
-			swapper(aList, i, i+1)
-			i += 1
-			print(i)
-			print(aList)
+		end -= 1
 
-		else:
-			i += 1
-			print(i)
-			print(aList)
-
+	
 	return aList
 
 

@@ -70,26 +70,29 @@ def bubble_sort(aList):
 		DECREMENT CURRENT END OF UNSORTED
 	"""
 
-	start = 0
+	#START AT THE BEGINING of aList
+	start = 0	
+	
+	#INTIALIZED CURRENT END OF UNSORTED (begins as the end of the full list)
 	end = len(aList) - 1
 
-	
+	#LOOP UNTIL CURRENT END == BEGINING	
 	while end != start:
+		
+		#COMPARE EVERY ADJACENT PAIR to the right LOOP TO CURRENT END OF UNSORTED
 		i = 0
 		while i != end:
 
 			if int(aList[i]) > int(aList[i+1]):
+				#SWAP LARGER TO RIGHT
 				swapper(aList, i, i+1)
 				i += 1
-				print(i)
-				print(aList)
 
 	
 			else:
 				i += 1
-				print(i)
-				print(aList)
 
+		#DECREMENT CURRENT END OF UNSORTED
 		end -= 1
 
 	

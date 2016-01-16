@@ -100,28 +100,81 @@ def bubble_sort(aList):
 
 
 
+###########################################
+# INSERTION SORT
+###########################################
 
+def insertion_sort(aList):
+
+	"""
+	CONSIDER THE FIRST ELEMENT IN A LIST AS A CONCEPTUALLY SEPARATE LIST WHICH IS SORTED
+		
+		LOOP UNTIL THE LIST SORTED LENGTH IS AS LONG AS THE WHOLE LIST
+
+			LOOK AT THE NEXT VALUE UP FROM THIS 'sorted' LIST AND THEN THERE ARE TWO CASES:
+			IF IT IS LARGER THAN THE NEXT SORTED ELEMENT THEN INCREMENT THE 'size'
+			OF THE SORTED LIST. EXIT THE LOOP
+
+			OTHERWISE KEEP LOOPING COMPARE DOWN THE SORTED LIST UNITL WE WE FIND ONE SMALLER 
+			THEN pop AND insert to the left
+
+		INCREMENT THE LIST SORTED LENGTH
+
+	"""
+################OR DO WE???#############################################
+	"""
+	CONSIDER THE FIRST ELEMENT IN A LIST AS A CONCEPTUALLY SEPARATE LIST WHICH IS SORTED
+		
+		LOOP UNTIL THE LIST SORTED LENGTH IS AS LONG AS THE WHOLE LIST
+
+			LOOK AT THE 'NEXT VALUE UP' FROM THIS 'sorted' LIST.
+
+				IF 'THE NEXT VALUE UP' IS BIGGER THAN 'THE NEXT VALUE DOWN' THE SORTED LIST THEN EXIT THIS LOOPP
+
+				ELSE SWAP 'NEXT VALUE UP' WITH 'THE NEXT VALUE DOWN' THE SORTED LIST
+
+		INCREMENT THE LIST SORTED LENGTH
+
+	"""
+	unsorted = 1
+	end = len(aList)-1
+
+	while unsorted != end:
+
+		next_value_down = unsorted - 1
+
+		while next_value_down != -1:
+		
+			if aList[unsorted] > aList[next_value_down]:
+				
+				next_value_down = -1
+
+			elif aList[unsorted] < aList[next_value_down]:
+				temp = aList.pop(unsorted)
+				aList.insert(next_value_down-1, temp)
+				next_value_down = -1
+				
+
+			else:
+				next_value_down -= 1
+
+		unsorted += 1
+
+	return aList
+
+	
+#################################3
+# SHELL SORT
 
 def main():
 	
-	aList= [5,1,73,4,0,2,1,3,8,73,4,6,3,9,3]
-	bList = aList[:]
-	print(aList)
-	print(bList)
-	aList = selection_sort(aList)
-	print(aList)
-	print("Error check with builtin sort:")
-	bList.sort()
-	if aList == bList:
-		print("Match!")
-	print(bList)
-
-	print("Before Bubble:")
-	aList = [5,1,8,4,0,2,1,3,8,73,4,6,3,0,3]
+	aList = [5,1]
+	
 	print(aList)
 
-	print("During bubble")
-	aList = bubble_sort(aList)
-	print("After bubble:")
+	print("During insert")
+	aList = insertion_sort(aList)
+	print("After insert:")
 	print(aList)
+
 main()

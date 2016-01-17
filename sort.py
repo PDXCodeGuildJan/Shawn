@@ -137,38 +137,72 @@ def insertion_sort(aList):
 
 	"""
 	unsorted = 1
-	end = len(aList)-1
+	end = len(aList)
 
-	while unsorted != end:
+	while unsorted < end:
 
 		next_value_down = unsorted - 1
+		print("unsorted outter loop:", unsorted)
+		print("NVD outter loop", next_value_down)
 
-		while next_value_down != -1:
-		
-			if aList[unsorted] > aList[next_value_down]:
+
+		if aList[unsorted] >= aList[next_value_down]:
 				
-				next_value_down = -1
+			next_value_down = -1
+			print("NVD set to -1, unsorted > next_value_down")
 
-			elif aList[unsorted] < aList[next_value_down]:
+		while next_value_down >= 0:
+
+			print("NVD b4 conditions", next_value_down)
+
+			if aList[unsorted] < aList[next_value_down]:
+				
+				if next_value_down == 0:
+
+					print("base case")
+					print("unsorted:", unsorted, " NVD:", next_value_down)
+					temp = aList.pop(unsorted)
+					print("temp:",temp)
+					aList.insert(next_value_down, temp)
+					print("unsorted < next_value_down, now set NVD = -1")
+					next_value_down = -1
+					print(aList)
+
+				
+				print("sure enough")
+
+			elif aList[unsorted] > aList[next_value_down]:
+
+				print("unsorted:", unsorted, " NVD:", next_value_down)
 				temp = aList.pop(unsorted)
-				aList.insert(next_value_down-1, temp)
+				print("temp:",temp)
+				aList.insert(next_value_down, temp)
+				print("unsorted < next_value_down, now set NVD = -1")
 				next_value_down = -1
-				
+				print(aList)
 
 			else:
-				next_value_down -= 1
+
+				print ("Error")
+
+
+			next_value_down -= 1
 
 		unsorted += 1
+		print("unsorted incremented to ",unsorted)
 
 	return aList
 
 	
 #################################3
 # SHELL SORT
+def shell_sort():
+	pass
+
 
 def main():
 	
-	aList = [5,1]
+	aList = [9,8,7,6,5,4,3,2,1]
 	
 	print(aList)
 

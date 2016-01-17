@@ -171,7 +171,7 @@ def insertion_sort(aList):
 				
 				print("sure enough")
 
-			elif aList[unsorted] > aList[next_value_down]:
+			elif aList[unsorted] >= aList[next_value_down]:
 
 				print("unsorted:", unsorted, " NVD:", next_value_down)
 				temp = aList.pop(unsorted)
@@ -202,7 +202,7 @@ def shell_sort():
 
 def main():
 	
-	aList = [9,8,7,6,5,4,3,2,1]
+	aList = [9,8,7,6,5,45,4,66,7,4,1,4,3,2,1]
 	
 	print(aList)
 

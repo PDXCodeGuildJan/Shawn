@@ -146,7 +146,7 @@ def insertion_sort(aList):
 		print("NVD outter loop", next_value_down)
 
 
-		if aList[unsorted] >= aList[next_value_down]:
+		if int(aList[unsorted]) >= int(aList[next_value_down]):
 				
 			next_value_down = -1
 			print("NVD set to -1, unsorted > next_value_down")
@@ -155,7 +155,7 @@ def insertion_sort(aList):
 
 			print("NVD b4 conditions", next_value_down)
 
-			if aList[unsorted] < aList[next_value_down]:
+			if int(aList[unsorted]) < int(aList[next_value_down]):
 				
 				if next_value_down == 0:
 
@@ -169,14 +169,14 @@ def insertion_sort(aList):
 					print(aList)
 
 				
-				print("sure enough")
+				#print("sure enough")
 
-			elif aList[unsorted] >= aList[next_value_down]:
+			elif int(aList[unsorted]) >= int(aList[next_value_down]):
 
 				print("unsorted:", unsorted, " NVD:", next_value_down)
 				temp = aList.pop(unsorted)
 				print("temp:",temp)
-				aList.insert(next_value_down, temp)
+				aList.insert(next_value_down + 1, temp)
 				print("unsorted < next_value_down, now set NVD = -1")
 				next_value_down = -1
 				print(aList)
@@ -202,8 +202,8 @@ def shell_sort():
 
 def main():
 	
-	aList = [9,8,7,6,5,45,4,66,7,4,1,4,3,2,1]
-	
+	aList = [9,8,7,6,5,45,4,66,7,4,1,4,3,2,1] 
+
 	print(aList)
 
 	print("During insert")

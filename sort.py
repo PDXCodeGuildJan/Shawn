@@ -83,7 +83,7 @@ def bubble_sort(aList):
 		i = 0
 		while i != end:
 
-			if int(aList[i]) > int(aList[i+1]):
+			if aList[i] > aList[i+1]:
 				#SWAP LARGER TO RIGHT
 				swapper(aList, i, i+1)
 				i += 1
@@ -142,44 +142,28 @@ def insertion_sort(aList):
 	while unsorted < end:
 
 		next_value_down = unsorted - 1
-		print("unsorted outter loop:", unsorted)
-		print("NVD outter loop", next_value_down)
-
 
 		if int(aList[unsorted]) >= int(aList[next_value_down]):
 				
 			next_value_down = -1
-			print("NVD set to -1, unsorted > next_value_down")
 
 		while next_value_down >= 0:
 
-			print("NVD b4 conditions", next_value_down)
 
 			if int(aList[unsorted]) < int(aList[next_value_down]):
 				
 				if next_value_down == 0:
 
-					print("base case")
-					print("unsorted:", unsorted, " NVD:", next_value_down)
 					temp = aList.pop(unsorted)
-					print("temp:",temp)
 					aList.insert(next_value_down, temp)
-					print("unsorted < next_value_down, now set NVD = -1")
 					next_value_down = -1
-					print(aList)
 
-				
-				#print("sure enough")
 
 			elif int(aList[unsorted]) >= int(aList[next_value_down]):
 
-				print("unsorted:", unsorted, " NVD:", next_value_down)
 				temp = aList.pop(unsorted)
-				print("temp:",temp)
 				aList.insert(next_value_down + 1, temp)
-				print("unsorted < next_value_down, now set NVD = -1")
 				next_value_down = -1
-				print(aList)
 
 			else:
 
@@ -189,7 +173,6 @@ def insertion_sort(aList):
 			next_value_down -= 1
 
 		unsorted += 1
-		print("unsorted incremented to ",unsorted)
 
 	return aList
 
@@ -201,14 +184,90 @@ def shell_sort():
 
 
 def main():
+	pass	
+	# random_with_repeats = [9,8,7,6,5,45,4,66,7,4,1,4,3,2,1] 
+	# python_sorted = random_with_repeats[:]
+
+	# print("Before: ", random_with_repeats)
+
+	# random_with_repeats = insertion_sort(random_with_repeats)
 	
-	aList = [9,8,7,6,5,45,4,66,7,4,1,4,3,2,1] 
+	# print("After insert: ", random_with_repeats)
 
-	print(aList)
+	# print("Before: ", python_sorted)
 
-	print("During insert")
-	aList = insertion_sort(aList)
-	print("After insert:")
-	print(aList)
+	# python_sorted.sort()
+	
+	# print("After insert: ", python_sorted)
 
-main()
+	# print("insert sorted == python sorted? ", python_sorted == random_with_repeats)
+
+
+
+
+	# random_with_repeats = [2,2,3,1,2,1,2,2,2,2,3,1,1,1,1,2] 
+	# python_sorted = random_with_repeats[:]
+
+	# print("Before: ", random_with_repeats)
+
+	# random_with_repeats = insertion_sort(random_with_repeats)
+	
+	# print("After insert: ", random_with_repeats)
+
+	# print("Before: ", python_sorted)
+
+	# python_sorted.sort()
+	
+	# print("After insert: ", python_sorted)
+
+	# print("insert sorted == python sorted? ", python_sorted == random_with_repeats)
+
+
+
+
+	# random_with_repeats = [10,11,12,13,14,15,16,17,18,19,20] 
+	# python_sorted = random_with_repeats[:]
+
+	# print("Before: ", random_with_repeats)
+
+	# random_with_repeats = insertion_sort(random_with_repeats)
+	
+	# print("After insert: ", random_with_repeats)
+
+	# print("Before: ", python_sorted)
+
+	# python_sorted.sort()
+	
+	# print("After insert: ", python_sorted)
+
+	# print("insert sorted == python sorted? ", python_sorted == random_with_repeats)
+
+
+
+
+	# random_with_repeats = [99,98,97,96,95,94,93,92,91,90,89,88,87] 
+	# python_sorted = random_with_repeats[:]
+
+	# print("Before: ", random_with_repeats)
+
+	# random_with_repeats = insertion_sort(random_with_repeats)
+	
+	# print("After insert: ", random_with_repeats)
+
+	# print("Before: ", python_sorted)
+
+	# python_sorted.sort()
+	
+	# print("After insert: ", python_sorted)
+
+	# print("insert sorted == python sorted? ", python_sorted == random_with_repeats)
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+	main()

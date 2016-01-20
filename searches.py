@@ -34,10 +34,9 @@ def binary_search(the_list, target_value):
 
 
 	# If len >= 1, look for target
-	while length >=1:
+	while length >= 1:
 
 		#Find mid point of the segment 
-		length = len(sorted_list[start:end])
 		mid = start + (length // 2)
 
 		# Determine if the middle value is greater or less than, or equal,

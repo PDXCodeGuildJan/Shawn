@@ -1,7 +1,10 @@
-########################################################
-# WRITTING SORTING ALGORITHMS TO PRACTICE LOOPS N LISTS
-########################################################
+__author__ = "Shawn Waldow"
 
+"""
+##################################################################
+# WRITTING SORTING ALGORITHMS TO PRACTICE LOOPS, LISTS, RECURSION
+##################################################################
+"""
 
 #############################################
 # SWAPPER
@@ -182,18 +185,63 @@ def insertion_sort(aList):
 def shell_sort():
 	pass
 
+
 ##################################
 # Merge Sort
-def merge_sort():
-	""" Split the list up into individual elements. As you merge them back together,
-	compare the starts and merge the starts... tbc """
+##################################
+def merge_sort(a_list):
+	""" Split the list up into two halfs. Recurse merge_sort on the resulting two lists until each list is length 1. 
+	Merge the returning values into order. """
+	length = len(a_list)
+	mid = length // 2
+	print("List, length, mid", a_list, length, mid)
+	if length > 1:
+		left = merge_sort(a_list[:mid])
+		right =  merge_sort(a_list[mid:])
+		print(left,right)
+		return merge(left, right)
+	
+	else:
+		
+		return a_list
 
+#################################
+# Merge
+#################################
+def merge(left_list, right_list):
+	"""Merges two sorted lists of arbitary length by comparing start values."""
+	
+	returning_into_list = []
+	start_left, start_right, start_into = 0,0,0
+	end_left, end_right = len(left_list), len(right_list)
 
+	while start_left < end_left and start_right < end_right:
 
+		if left_list[start_left] < right_list[start_right]:
+			returning_into_list.append(left_list[start_left])
+			start_left += 1
 
+		else:
+			returning_into_list.append(right_list[start_right])
+			start_right += 1
+
+	while start_left < end_left:
+		returning_into_list.append(left_list[start_left])
+		start_left += 1
+
+	while start_right < end_right:
+		returning_into_list.append(right_list[start_right])
+		start_right += 1
+
+	return returning_into_list
 
 def main():
-	pass	
+	
+	alist = [1,4,9]
+	blist = [2,6,8,10]
+
+	print(merge_sort([2,4,1,2,6,4,7,8,9,4,3]))
+
 	# random_with_repeats = [9,8,7,6,5,45,4,66,7,4,1,4,3,2,1] 
 	# python_sorted = random_with_repeats[:]
 

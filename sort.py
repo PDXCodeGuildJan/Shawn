@@ -188,136 +188,80 @@ def shell_sort():
 
 ##################################
 # Merge Sort
+# Takes a single list of comparable values.
+# Returns an ordered list.
 ##################################
+
 def merge_sort(a_list):
 	""" Split the list up into two halfs. Recurse merge_sort on the resulting two lists until each list is length 1. 
 	Merge the returning values into order. """
+	
 	length = len(a_list)
-	mid = length // 2
-	print("List, length, mid", a_list, length, mid)
-	if length > 1:
-		left = merge_sort(a_list[:mid])
-		right =  merge_sort(a_list[mid:])
-		print(left,right)
-		return merge(left, right)
+	mid = length // 2	#Midpoint
+
+	if length > 1:		#Keep splitting the list, unless it is down to one element lists.
+
+		left = merge_sort(a_list[:mid])		#Recurse the left half.
+		right =  merge_sort(a_list[mid:])	#Recurse the right half.
+
+		return merge(left, right)	#Catched the sorted lists on their way back up.
 	
 	else:
 		
-		return a_list
+		return a_list	#Return the one element list when we get down there. No need to sort since a 1 element list is already in order.
 
 #################################
 # Merge
+# Takes two lists of arbitrary lengths comprised of ordered, comparable values as agruments.
+# Returns a single merged list in order
 #################################
+
 def merge(left_list, right_list):
 	"""Merges two sorted lists of arbitary length by comparing start values."""
 	
-	returning_into_list = []
-	start_left, start_right, start_into = 0,0,0
+	returning_into_list = [] #Init a list to merge into
+	start_left, start_right, start_into = 0,0,0 #Init indexes to track the parts of the lists which are merged
 	end_left, end_right = len(left_list), len(right_list)
 
-	while start_left < end_left and start_right < end_right:
+	while start_left < end_left and start_right < end_right:	#Both lists still have values to compare
 
-		if left_list[start_left] < right_list[start_right]:
-			returning_into_list.append(left_list[start_left])
-			start_left += 1
+		if left_list[start_left] < right_list[start_right]:		#Left list has next smallest value to merge
+	
+			returning_into_list.append(left_list[start_left])	
+			start_left += 1			
 
 		else:
-			returning_into_list.append(right_list[start_right])
+	
+			returning_into_list.append(right_list[start_right])	#Right list has next smallest value to merge
 			start_right += 1
 
-	while start_left < end_left:
+	
+
+	#One of the two lists has been exhasted of values to merge
+
+	while start_left < end_left:	#The left half has a value to merge
+	
 		returning_into_list.append(left_list[start_left])
 		start_left += 1
 
-	while start_right < end_right:
+	while start_right < end_right:	#The right half has a value to merge
+	
 		returning_into_list.append(right_list[start_right])
 		start_right += 1
 
-	return returning_into_list
+	return returning_into_list	#Return the merged list ordered back out!
+
 
 def main():
 	
-	alist = [1,4,9]
-	blist = [2,6,8,10]
 
-	print(merge_sort([2,4,1,2,6,4,7,8,9,4,3]))
+	alist = [2,4,1,2,6,33,244,500,500,4,7,8,9,4,3]
+	blist = [2,4,1,2,6,33,244,500,500,4,7,8,9,4,3]	#To test
 
-	# random_with_repeats = [9,8,7,6,5,45,4,66,7,4,1,4,3,2,1] 
-	# python_sorted = random_with_repeats[:]
+	blist.sort() #To test
+	print(merge_sort(alist))
+	print(blist)
 
-	# print("Before: ", random_with_repeats)
-
-	# random_with_repeats = insertion_sort(random_with_repeats)
-	
-	# print("After insert: ", random_with_repeats)
-
-	# print("Before: ", python_sorted)
-
-	# python_sorted.sort()
-	
-	# print("After insert: ", python_sorted)
-
-	# print("insert sorted == python sorted? ", python_sorted == random_with_repeats)
-
-
-
-
-	# random_with_repeats = [2,2,3,1,2,1,2,2,2,2,3,1,1,1,1,2] 
-	# python_sorted = random_with_repeats[:]
-
-	# print("Before: ", random_with_repeats)
-
-	# random_with_repeats = insertion_sort(random_with_repeats)
-	
-	# print("After insert: ", random_with_repeats)
-
-	# print("Before: ", python_sorted)
-
-	# python_sorted.sort()
-	
-	# print("After insert: ", python_sorted)
-
-	# print("insert sorted == python sorted? ", python_sorted == random_with_repeats)
-
-
-
-
-	# random_with_repeats = [10,11,12,13,14,15,16,17,18,19,20] 
-	# python_sorted = random_with_repeats[:]
-
-	# print("Before: ", random_with_repeats)
-
-	# random_with_repeats = insertion_sort(random_with_repeats)
-	
-	# print("After insert: ", random_with_repeats)
-
-	# print("Before: ", python_sorted)
-
-	# python_sorted.sort()
-	
-	# print("After insert: ", python_sorted)
-
-	# print("insert sorted == python sorted? ", python_sorted == random_with_repeats)
-
-
-
-
-	# random_with_repeats = [99,98,97,96,95,94,93,92,91,90,89,88,87] 
-	# python_sorted = random_with_repeats[:]
-
-	# print("Before: ", random_with_repeats)
-
-	# random_with_repeats = insertion_sort(random_with_repeats)
-	
-	# print("After insert: ", random_with_repeats)
-
-	# print("Before: ", python_sorted)
-
-	# python_sorted.sort()
-	
-	# print("After insert: ", python_sorted)
-
-	# print("insert sorted == python sorted? ", python_sorted == random_with_repeats)
 
 
 

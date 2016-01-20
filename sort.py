@@ -177,10 +177,19 @@ def insertion_sort(aList):
 	return aList
 
 	
-#################################3
+##################################
 # SHELL SORT
 def shell_sort():
 	pass
+
+##################################
+# Merge Sort
+def merge_sort():
+	""" Split the list up into individual elements. As you merge them back together,
+	compare the starts and merge the starts... tbc """
+
+
+
 
 
 def main():

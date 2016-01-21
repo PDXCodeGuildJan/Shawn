@@ -51,36 +51,41 @@ def main():
 	tower2 = []
 	tower3 = []
 
-#Hard coded solution to a 3 disk tower
-	display_towers(tower1,tower2,tower3)
-	
-	tower_to_tower(tower1, tower2)
-	
+#Hard coded solution to a 3 disk tower moving from tower1 to end destination tower2.
 	display_towers(tower1,tower2,tower3)
 	
 	tower_to_tower(tower1, tower3)
 	
 	display_towers(tower1,tower2,tower3)
 	
-	tower_to_tower(tower2, tower3)
-	
-	display_towers(tower1,tower2,tower3)
-
 	tower_to_tower(tower1, tower2)
-
+	
 	display_towers(tower1,tower2,tower3)
 	
-	tower_to_tower(tower3, tower1)
-
-	display_towers(tower1,tower2,tower3)
-
 	tower_to_tower(tower3, tower2)
+	
+	display_towers(tower1,tower2,tower3)
+
+	tower_to_tower(tower1, tower3)
+
+	display_towers(tower1,tower2,tower3)
+	
+	tower_to_tower(tower2, tower1)
 
 	display_towers(tower1,tower2,tower3)
 
-	tower_to_tower(tower1, tower2)
+	tower_to_tower(tower2, tower3)
 
 	display_towers(tower1,tower2,tower3)
+
+	tower_to_tower(tower1, tower3)
+
+	display_towers(tower1,tower2,tower3)
+
+	tower1 = [3,2,1]
+	tower2 = []
+	tower3 = []
+
 
 main()
 

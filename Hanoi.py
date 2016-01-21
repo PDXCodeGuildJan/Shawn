@@ -18,30 +18,67 @@ Track number of moves and compare it to the begining number of disks.
 
 """
 
+def pop_top(list1):
+	length = len(list1)
+	val = list1.pop(length-1)
+	return val
+
+def push_top(list1, val):
+	length = len(list1)
+	list1.insert(length,  val)
+
 def main():
-	tower1 = [1,2,3]
+	tower1 = [3,2,1]
 	tower2 = []
 	tower3 = []
 
-	top = len(tower1)
-
+#Hard coded solution to a 3 disk tower
 	print(tower1)
 	print(tower2)
 	print(tower3, "\n\n")
 
-	tower2.insert(top,tower1.pop(top))
+	push_top(tower2, pop_top(tower1))
 	
 	print(tower1)
 	print(tower2)
 	print(tower3, "\n\n")
 
 
-	tower2.insert(top,tower1.pop(top))
+	push_top(tower3, pop_top(tower1))
 
 	print(tower1)
 	print(tower2)
 	print(tower3, "\n\n")
 
+	push_top(tower3, pop_top(tower2))
+
+	print(tower1)
+	print(tower2)
+	print(tower3, "\n\n")
+
+	push_top(tower2, pop_top(tower1))
+
+	print(tower1)
+	print(tower2)
+	print(tower3, "\n\n")
+
+	push_top(tower1, pop_top(tower3))
+
+	print(tower1)
+	print(tower2)
+	print(tower3, "\n\n")
+
+	push_top(tower2, pop_top(tower3))
+
+	print(tower1)
+	print(tower2)
+	print(tower3, "\n\n")
+
+	push_top(tower2, pop_top(tower1))
+
+	print(tower1)
+	print(tower2)
+	print(tower3, "\n\n")
 
 main()
 

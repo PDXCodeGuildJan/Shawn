@@ -27,58 +27,60 @@ def push_top(list1, val):
 	length = len(list1)
 	list1.insert(length,  val)
 
+def tower_to_tower(source_tower, destination_tower):
+	
+	temp = pop_top(source_tower)
+	
+	if len(destination_tower) < 1:
+		push_top(destination_tower, temp)
+	elif temp < destination_tower[-1]:
+		push_top(destination_tower, temp)
+	else:
+		print("Can't stack a big plate atop a smaller plate.")
+		exit()
+
+def display_towers(tower1,tower2,tower3):
+	print(tower1)
+	print(tower2)
+	print(tower3, "\n\n")
+
+
+
 def main():
 	tower1 = [3,2,1]
 	tower2 = []
 	tower3 = []
 
 #Hard coded solution to a 3 disk tower
-	print(tower1)
-	print(tower2)
-	print(tower3, "\n\n")
-
-	push_top(tower2, pop_top(tower1))
+	display_towers(tower1,tower2,tower3)
 	
-	print(tower1)
-	print(tower2)
-	print(tower3, "\n\n")
+	tower_to_tower(tower1, tower2)
+	
+	display_towers(tower1,tower2,tower3)
+	
+	tower_to_tower(tower1, tower3)
+	
+	display_towers(tower1,tower2,tower3)
+	
+	tower_to_tower(tower2, tower3)
+	
+	display_towers(tower1,tower2,tower3)
 
+	tower_to_tower(tower1, tower2)
 
-	push_top(tower3, pop_top(tower1))
+	display_towers(tower1,tower2,tower3)
+	
+	tower_to_tower(tower3, tower1)
 
-	print(tower1)
-	print(tower2)
-	print(tower3, "\n\n")
+	display_towers(tower1,tower2,tower3)
 
-	push_top(tower3, pop_top(tower2))
+	tower_to_tower(tower3, tower2)
 
-	print(tower1)
-	print(tower2)
-	print(tower3, "\n\n")
+	display_towers(tower1,tower2,tower3)
 
-	push_top(tower2, pop_top(tower1))
+	tower_to_tower(tower1, tower2)
 
-	print(tower1)
-	print(tower2)
-	print(tower3, "\n\n")
-
-	push_top(tower1, pop_top(tower3))
-
-	print(tower1)
-	print(tower2)
-	print(tower3, "\n\n")
-
-	push_top(tower2, pop_top(tower3))
-
-	print(tower1)
-	print(tower2)
-	print(tower3, "\n\n")
-
-	push_top(tower2, pop_top(tower1))
-
-	print(tower1)
-	print(tower2)
-	print(tower3, "\n\n")
+	display_towers(tower1,tower2,tower3)
 
 main()
 

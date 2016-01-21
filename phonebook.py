@@ -47,6 +47,8 @@ def search(name):
 
 def search_by_number(search_number):
 	"""Given the value number what is the key name?"""
+	
+	result = ""
 	for name, number in phonebook.items():
 		if search_number == number:
 			print(name, "'s number is ", name, "\n")

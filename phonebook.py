@@ -2,6 +2,8 @@
 
 __author__= "Shawn Waldow"
 
+import re
+
 #Init our dictionary, which will store phone numbers.
 phonebook ={}
 
@@ -60,8 +62,31 @@ def search_by_number(search_number):
 
 def add_contact(name, phonenumber):
 	"""Does an addition to the phonebook with the given contact info."""
-	phonebook[name] = phonenumber
-	print(name, " was added with number ", phonenumber, "\n")
+	
+	#Remove lingering whitespace.
+	regex = "\s+\Z"
+	replace_with = ""
+	scrubbed_name = re.sub(regex, replace_with, name)
+	print(scrubbed_name)
+	#Above incomplete
+
+	#SCrub and reformat the phone number for (xxx) xxx-xxxx pattern
+	#Remove all but numbers
+
+	regex = "[0-9]+"
+	nums = re.findall(regex, phonenumber)
+	new_nums = ""
+	for every_num in nums:
+		new_nums += every_num
+
+	# Introduce correct formatting
+
+	formatted_num = "(" + new_nums[0:3] + ") " + new_nums[3:6] + "-" + new_nums[6:]
+	print(formatted_num)
+
+
+	phonebook[scrubbed_name] = formatted_num
+	print(name, " was added with number ", formatted_num, "\n")
 
 def delete_contact(name):
 	"""Removes the given contact from the Phonebook."""

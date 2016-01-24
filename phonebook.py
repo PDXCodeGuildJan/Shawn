@@ -5,11 +5,14 @@ __author__= "Shawn Waldow"
 import re
 
 #Init our dictionary, which will store phone numbers.
-phonebook ={}
+phonebook ={} 
 
 def main():
 	"""The main driver function of our phonebook."""
 	
+	# Load any existing data into phonebook
+	load_phonebook()
+
 	print("Welcome to the phonebook")
 
 	option = ""
@@ -53,7 +56,7 @@ def search_by_number(search_number):
 	result = ""
 	for name, number in phonebook.items():
 		if search_number == number:
-			print(name, "'s number is ", name, "\n")
+			print(number, " calls ", name, "\n")
 			result = name
 			break
 
@@ -88,20 +91,54 @@ def add_contact(name, phonenumber):
 	phonebook[scrubbed_name] = formatted_num
 	print(name, " was added with number ", formatted_num, "\n")
 
+	#Save to hardisk
+	save_phonebook()
+
+
 def delete_contact(name):
 	"""Removes the given contact from the Phonebook."""
 	if name in phonebook:
 		del phonebook[name]
+		#Save to hardisk
+		save_phonebook()
+
 	else:
 		print("That contact already does not exist.")
+
+
 
 def print_phonebook():
 	"""Prints every item in the phonebook dictionary. Pretty  pretty my pretty."""
 	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!JA JA, DAS PHONEBOOK IST GUT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
-
 	for name in phonebook:
 		print(name, "'s number is: ", phonebook[name])
+
+
+
+def save_phonebook():
+	"""Save the contents of the phonebook to a file."""
+	
+	# Open for reading
+	open_file = open("phonebook.txt", "r")
+	open_file.write(str(phonebook))
+	open_file.close()
+
+
+
+def load_phonebook():
+	"""Load the phonebook data from  the save file."""
+
+	global phonebook
+
+	load_file = open("phonebook.txt", "a")
+	phonebook_data = load_file.read()
+	load_file.close()
+
+	if phonebook_data: #Shorthand for is it empty, because eval doesn't like empty.
+		# Convert from string back to dictonary.
+		phonebook = eval(phonebook_data)
+
 
 
 if __name__ == '__main__':

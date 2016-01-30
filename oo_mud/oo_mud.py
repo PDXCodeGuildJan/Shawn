@@ -88,6 +88,47 @@ class Goat(Character):
 		super().__init__(hp_int, describe_string, feel_dict, human_player_bool)
 
 
+class Place:
+
+	def __init__(	a, leap_direction="right", bold_leap_messg_str, 
+					location_str, opening_desc_str, direction_action_dict, 
+					look_messg_str, 
+					what_lol_str = "What? Remember you have two choices:",
+					wordy1_str="", wordy2_str =""):
+	"""	Using the letter z instead of the usual convention self for object self-
+		reference. Some of these argument names are self explanitory, yes? 
+		Direction_action_dict is a dictionary that has direction as a key gving
+		the value of a function name to be called when going to direction."""
+
+		z.leap_direction = leap_direction 
+		z.bold_leap_messg = bold_leap_messg_str 
+		z.location = location_str 
+		z.opening_desc = opening_desc_str 
+		z.direction_action = direction_action_dict 
+		z.look_messg = look_messg_str
+		z.what_lol = what_lol_str
+		z.wordy1 = wordy1_str 
+		z.wordy2 = wordy2_str
+
+	def leap(z):
+	"""Leap boldly specialized for this place."""
+
+	def entry(z):
+	"""Enter the place."""
+
+	def look(z):
+	"""Look around the place."""
+
+	def pee(z):
+	"""Pee on this place."""
+
+	def get(z, character_input):
+	"""Takes from character prompt for direction to go/action to take."""
+
+	def go(z):
+	"""Go in user specified direction."""
+
+
 
 #Global strings to simplify passing and changing dialogue
 Feel = "capricious and impatient"

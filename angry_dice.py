@@ -30,6 +30,8 @@ class Game:
 		self.stage = 1
 		self.die1 = Die()
 		self.die2 = Die()
+		#In each tuple in stage_goals we must enter the values in order. 
+		#Improve this later by having the init function order them for us. 
 		self.stage_goals = {1:(1,2), 2:(3,4), 3:(5,6)}
 		self.player ="John Doe"
 		self.turns = 0
@@ -43,15 +45,12 @@ class Game:
 			self.eval_double_grump()
 			self.prompt_for_lock()
 			self.validate_lock()
-			
+
 			#Both die locked
 			if self.die1.locked and self.die2.locked:
-				if self.stage == 1:
-					self.update_stage(2)
-					print("Whohoo you matched {} {}! Go on to stage {} and match {}".format(self.die1, self.die2, str(self.stage), self.stage_goals[self.stage]))
-					self.turns += 1
-				elif self.stage == 2:
-					self.update_stage(3)
+
+				if self.stage == 1 or self.stage == 2:
+					self.update_stage(self.stage + 1)
 					print("Whohoo you matched {} {}! Go on to stage {} and match {}".format(self.die1, self.die2, str(self.stage), self.stage_goals[self.stage]))
 					self.turns += 1
 				elif self.stage == 3:
@@ -61,12 +60,7 @@ class Game:
 					print("ERROR 2")
 					exit()
 
-			elif self.die2.locked:
-				pass
-
-			elif self.die1.locked:
-				pass
-
+			#One or none die locked
 			else:
 				pass
 
@@ -109,7 +103,19 @@ class Game:
 	def validate_lock(self):
 		"""	Unlock the dice lock if it makes no sense for this round or if it violates the rules. Alert user.
 			Move to one of three possible states: One valid lock. Two vaild locks. No valid locks."""
-		print("No Validation YET?!!?")
+		
+		#Mae a sorted temporary tuple of the dice current values to compare to matching dict.
+		temp_tuple = tuple(sorted((self.die1.current_roll, self.die2.current_roll)))
+		print("Stage: ",self.stage, "Temp tuple :", temp_tuple, "Current stage goals: ", self.stage_goals[self.stage] )
+		if self.die1.locked and self.die2.locked:
+			if temp_tuple != self.stage_goals[self.stage]:
+				print("You can't lock that die this stage!")
+				self.die1.locked = False
+				self.die2.locked = False
+
+
+
+		print("No enough validation YET?!!?")
 
 
 

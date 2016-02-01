@@ -79,7 +79,9 @@ class Game:
 
 	def start_game(self):
 		"""Welcome our player."""
-		print("Welcome to an authorized implementation of Angry Dice!\n")
+		print(	"\n\n\nWelcome to an authorized implementation of Angry Dice!",
+				"You advance through 3 stages but rolling", self.die1.faces[3], self.die2.faces[3], 
+				"\nThat's the anger that resets you to stage 1.\nYour goal for stage 1 is to roll a 1 and a 2. Let's roll!")
 		
 		while True:
 			self.roll_dice()
@@ -92,7 +94,7 @@ class Game:
 
 				if self.stage == 1 or self.stage == 2:
 					self.update_stage(self.stage + 1)
-					print("Whohoo you matched {} {}! Go on to stage {}".format(self.die1, self.die2, str(self.stage)))
+					print("Whohoo you matched {} {} \nGo on to stage {}".format(self.die1, self.die2, str(self.stage)))
 					advanceing_tuple = self.stage_goals[self.stage]
 					print("Now match: ", self.die1.faces[advanceing_tuple[0]], self.die2.faces[advanceing_tuple[1]])
 				elif self.stage == 3:
@@ -120,16 +122,30 @@ class Game:
 		self.die2.locked = False
 
 	def eval_double_grump(self):
-		"""Catch the user rolling double angry faces and reset stage to 0"""
+		"""Catch the user rolling double angry faces and reset stage to 0."""
 		if self.die1.current_roll == self.die2.current_roll and self.die1.current_roll == 3:
 			print("Die 1 {0} , Die 2 {1}  ! ANGRY DICE !\n".format(self.die1, self.die2))
 			self.update_stage(1)
 
 	def prompt_for_lock(self):
 		"""Prompt the user to lock one or both die."""
-		print("Die 1 {0}, Die 2 {1} \n".format(self.die1, self.die2))
-		choice = int(input("Hit (0) to reroll without locking in any dice.\nHit (1) to proceed with die 1 locked and reroll die 2.\nHit (2) to proceed with die 2 locked and reroll die 1.\nHit (3) to lock in both die. You have a match right?"))
+		print("\nRolling... die 1: {0}, \nRolling... die 2: {1} \n".format(self.die1, self.die2))
 		
+		while True:
+			try:
+				choice = int(input("Current stage: {}  Match: {}\nHit (0) to reroll without locking in any dice.\nHit (1) to proceed with die 1 locked and reroll die 2.\nHit (2) to proceed with die 2 locked and reroll die 1.\nHit (3) to lock in both die.(9) quits\n >>> ".format(self.stage, self.stage_goals[self.stage])))
+				if choice == 1 or choice == 2 or choice == 3 or choice == 0 or choice == 9:
+					break
+				else:
+					print("BAD INPUT. TRY AGAIN.")
+			except:
+				print("BAD INPUT. TRY AGAIN.")		
+		
+		#dial 9 to quit
+		if choice == 9:
+			print("GOODBYE QUITTER!")
+			exit()
+
 		#Lock no die
 		if choice == 0:
 			print("Nothing locked")
@@ -193,7 +209,9 @@ class Game:
 		#We just locked die1? Check it for this stage
 		elif self.die1.most_recently_locked == self.turns:
 			if self.die1.current_roll in self.stage_goals[self.stage]:
-				pass
+				if self.stage == 3 and self.die1.current_roll == 6:
+					self.die1.locked = False
+					print("You can't lock a 6 first in this stage!")
 			else:
 				self.die1.locked = False
 				print("You cant lock a {} in stage {}".format(die1, str(self.stage)))
@@ -201,20 +219,32 @@ class Game:
 		#We just locked die2? Check it for this stage
 		elif self.die2.most_recently_locked == self.turns:
 			if self.die2.current_roll in self.stage_goals[self.stage]:
-				pass
+				if self.stage == 3 and self.die2.current_roll == 6:
+					self.die2.locked = False
+					print("You can't lock a 6 first in this stage!")
+
 			else:
 				self.die2.locked = False
 				print("You cant lock a {} in stage {}".format(die2, str(self.stage)))
 
 
 
-		print("Not enough validation YET?!!?")
+		
 
 
 
 	def win(self):
 		"""Display a pretty message and exits the program."""
-		print("You Win")
+		print("""
+         ƇHƐƐƦS !!
+         °           °
+         o °       ° o
+        ╔║░░║      ║░░║╗
+        ╚║░░║      ║░░║╝
+         ▔▔▔▔      ▔▔▔▔
+          You Win!
+
+         """)
 		exit()
 
 def main():

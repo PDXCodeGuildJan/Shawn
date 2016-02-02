@@ -2,6 +2,19 @@ __author__="Shawn Waldow"
 
 from random import randint
 
+
+
+################################
+#For sound effects
+################################
+import os
+"""To make these terminal sounds eg: beep_slow(5) would beep 5x with long pauses."""
+beep_slow = lambda x: os.system("echo -n '\a';sleep .4;" * x)
+beep_medium = lambda x: os.system("echo -n '\a';sleep .2;" * x)
+beep_fast = lambda x: os.system("echo -n '\a';sleep .05;" * x)
+
+
+
 class Die:
 	"""Define a single die's data and methods."""
 
@@ -9,8 +22,6 @@ class Die:
 		
 		self.locked = False
 		self.current_roll = 1
-		#self.faces = ["ERROR 1", ".", ":", ":<",": :",":.:",":::"]
-		
 		self.faces = ["Error", """
 			+-------+
 			|       |
@@ -51,6 +62,7 @@ class Die:
 
 
 		self.most_recently_locked = -1
+		self.locked_or_rolling = "Rolling..."
 
 
 	def __str__(self):
@@ -63,6 +75,18 @@ class Die:
 			self.current_roll = self.current_roll
 		else:
 			self.current_roll = randint(1,6)
+			beep_fast(5)
+
+	def lock(self, what_turn_is_it_int):
+		"""Lock the die. Keep track which turn we locked the die. Prepare a statement of lockedness."""
+		self.locked = True
+		self.most_recently_locked = what_turn_is_it_int
+		self.locked_or_rolling = "Locked..."
+
+	def unlock(self):
+		"""Unlock the die. Prepare a statement of unlockedness."""
+		self.locked = False
+		self.locked_or_rolling = "Rolling..."
 
 class Game:
 	"""OO'd game logic to allow us to run several particular instances of our game."""
@@ -118,55 +142,60 @@ class Game:
 	def update_stage(self, stage_to_advance_to):
 		"""Change the stage and unlock the dice."""
 		self.stage = stage_to_advance_to
-		self.die1.locked = False 
-		self.die2.locked = False
+		self.die1.unlock()
+		self.die2.unlock()
 
 	def eval_double_grump(self):
 		"""Catch the user rolling double angry faces and reset stage to 0."""
 		if self.die1.current_roll == self.die2.current_roll and self.die1.current_roll == 3:
 			print("Die 1 {0} , Die 2 {1}  ! ANGRY DICE !\n".format(self.die1, self.die2))
+			beep_slow(5)
 			self.update_stage(1)
 
 	def prompt_for_lock(self):
 		"""Prompt the user to lock one or both die."""
-		print("\nRolling... die 1: {0}, \nRolling... die 2: {1} \n".format(self.die1, self.die2))
+
+		print("\n{} die 1: {}, \n{} die 2: {} \n".format(self.die1.locked_or_rolling, self.die1, self.die2.locked_or_rolling, self.die2))
 		
-		while True:
+		#Loop to get valid user input
+		temp_input_valid = False
+		while not temp_input_valid:
 			try:
-				choice = int(input("Current stage: {}  Match: {}\nHit (0) to reroll without locking in any dice.\nHit (1) to proceed with die 1 locked and reroll die 2.\nHit (2) to proceed with die 2 locked and reroll die 1.\nHit (3) to lock in both die.(9) quits\n >>> ".format(self.stage, self.stage_goals[self.stage])))
+				choice = int(input("Current stage: {}  Match: {}\nNow enter a number to do one of the following: \n(9) quits.\n(0) rerolls without toggling lock on any dice."\
+					"\n(1) toggles lock on die 1. \n(2) toggles lock on die 2 "\
+					".\n(3) locks in both die (You have a match?).\n>>> ".format(self.stage,
+					 self.stage_goals[self.stage])))
 				if choice == 1 or choice == 2 or choice == 3 or choice == 0 or choice == 9:
-					break
+					temp_input_valid = True
 				else:
 					print("BAD INPUT. TRY AGAIN.")
+					beep_slow(1)
 			except:
-				print("BAD INPUT. TRY AGAIN.")		
+				print("BAD INPUT. TRY AGAIN.")
+				beep_slow(1)		
 		
 		#dial 9 to quit
 		if choice == 9:
 			print("GOODBYE QUITTER!")
 			exit()
 
-		#Lock no die
+		#Toggle no die
 		if choice == 0:
-			print("Nothing locked")
+			pass
 		
-		#Lock die 1
+		#Toggle lock die 1
 		elif choice == 1:
-			self.die1.locked = True
-			self.die1.most_recently_locked = self.turns
+			self.die1.unlock() if self.die1.locked else self.die1.lock(self.turns)
 		
 		#Lock die 2
 		elif choice == 2:
-			self.die2.locked = True
-			self.die2.most_recently_locked = self.turns
+			self.die2.unlock() if self.die2.locked else self.die2.lock(self.turns)
 
 		#Allow user to lock both die. Improve by refining most_recently_locked.
 		elif choice == 3:
-			self.die1.locked = True
-			self.die2.locked = True
-			self.die1.most_recently_locked = self.turns
-			self.die2.most_recently_locked = self.turns
-
+			self.die1.lock(self.turns)
+			self.die2.lock(self.turns)
+			
 		else:
 			print("Error 3")
 			exit()
@@ -182,11 +211,12 @@ class Game:
 		#User has a double lock so they think they have a stage match...
 		if self.die1.locked and self.die2.locked:
 			if temp_tuple != self.stage_goals[self.stage]:
-				print("You can't lock those die this stage!")
+				print("You can't lock both those die this stage!")
 				if self.die1.most_recently_locked == self.turns:
-					self.die1.locked = False
+					self.die1.unlock()
+
 				if self.die2.most_recently_locked == self.turns:
-					self.die2.locked = False
+					self.die2.unlock()
 
 			#Now we know there was an incorrect lock of some kind.	
 			#See if die1 had the incorrect lock
@@ -194,8 +224,8 @@ class Game:
 				if self.die1.current_roll in self.stage_goals[self.stage]:
 					pass
 				else:
-					self.die1.locked = False
-					print("You cant lock a {} in stage {}".format(die1, str(self.stage)))
+					self.die1.unlock()
+					print("You cant lock a {} in stage {}".format(self.die1, str(self.stage)))
 
 			#Remember we know there was an incorrect lock of some kind.	
 			#See if die2 had the incorrect lock
@@ -203,36 +233,33 @@ class Game:
 				if self.die2.current_roll in self.stage_goals[self.stage]:
 					pass
 				else:
-					self.die2.locked = False
-					print("You cant lock a {} in stage {}".format(die2, str(self.stage)))
+					self.die2.unlock()
+					print("You cant lock a {} in stage {}".format(self.die2, str(self.stage)))
 
 		#We just locked die1? Check it for this stage
 		elif self.die1.most_recently_locked == self.turns:
 			if self.die1.current_roll in self.stage_goals[self.stage]:
 				if self.stage == 3 and self.die1.current_roll == 6:
-					self.die1.locked = False
+					self.die1.unlock()
 					print("You can't lock a 6 first in this stage!")
 			else:
-				self.die1.locked = False
-				print("You cant lock a {} in stage {}".format(die1, str(self.stage)))
+				self.die1.unlock()
+				print("You cant lock a {} in stage {}".format(self.die1, str(self.stage)))
 
 		#We just locked die2? Check it for this stage
 		elif self.die2.most_recently_locked == self.turns:
 			if self.die2.current_roll in self.stage_goals[self.stage]:
 				if self.stage == 3 and self.die2.current_roll == 6:
-					self.die2.locked = False
+					self.die2.unlock()
 					print("You can't lock a 6 first in this stage!")
 
 			else:
-				self.die2.locked = False
-				print("You cant lock a {} in stage {}".format(die2, str(self.stage)))
+				self.die2.unlock()
+				print("You can't lock a {} in stage {}".format(self.die2, str(self.stage)))
 
 
 
 		
-
-
-
 	def win(self):
 		"""Display a pretty message and exits the program."""
 		print("""

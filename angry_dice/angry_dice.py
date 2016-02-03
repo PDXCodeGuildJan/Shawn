@@ -100,11 +100,14 @@ class Game:
 		self.stage = 1
 		self.die1 = Die()
 		self.die2 = Die()
+		
 		#In each tuple in stage_goals we must enter the values in order. 
 		#Improve this later by having the init function order them for us. 
 		self.stage_goals = {1:(1,2), 2:(3,4), 3:(5,6)}
+		
 		#Orphaned. Later we can prompt user for their name...
 		self.player ="John Doe" 
+		
 		#...and track a high score based on number of turns to win.
 		# For now we still use this turn counter to back out invalid locks
 		# where 1 of 2 values locked are valid.
@@ -140,8 +143,9 @@ class Game:
 							.format(self.die1, self.die2, str(self.stage)))
 					
 					# Some extra formating to show pretty ASCII die faces for
-					#  the matching goal instead of the ints in the tuple.
+					# the matching goal instead of the ints in the tuple.
 					advanceing_tuple = self.stage_goals[self.stage]
+
 					print(	"Now match: ", self.die1.faces[advanceing_tuple[0]], 
 							self.die2.faces[advanceing_tuple[1]])
 				
@@ -211,12 +215,19 @@ class Game:
 		temp_input_valid = False
 		while not temp_input_valid:
 			try:
+				
+				#temp_for_menu_display_matches = self.stage_goals[:]
+				#temp_for_menu_display_matches[2] = (':<', '4') 
+
 				choice = int(input("Current stage: {}  Match: {}\nNow enter a"\
 					"number to do one of the following: \n(9) quits.\n(0)"\
 					" rerolls without toggling lock on any dice."\
 					"\n(1) toggles lock on die 1. \n(2) toggles lock on die 2 "\
 					".\n(3) locks in both die (You have a match?)."\
-					"\n>>> ".format(self.stage, self.stage_goals[self.stage])))
+					"\n>>> ".format(self.stage, self.stage_goals[self.stage]	 
+					if self.stage != 2 else (':<',4)))) 
+					#^^^THIS WEIRD BIT AT THE END WOULD REALLY TRIP US UP IF 
+					#WE CHANGED THE STAGE GOALS BEWARE!!!!
 				
 				# If valid input
 				if -1 < choice < 4 or choice == 9:
@@ -274,7 +285,7 @@ class Game:
 		
 
 		# Make a sorted temporary tuple of the dice current values 
-		# to compare to matching dict.
+		# to compare to the tuple in the matching dict.
 		temp_tuple = tuple(
 			sorted((self.die1.current_roll, self.die2.current_roll)))
 
@@ -315,7 +326,7 @@ class Game:
 				if self.stage == 3 and self.die1.current_roll == 6:
 					self.die1.unlock()
 					print("You can't lock a\n{}\nfirst in this stage!"\
-						.format(die1.faces[6]))
+						.format(self.die1.faces[6]))
 			
 			#If die1 wasn't found in current goals it should be unlocked. 
 			else:
@@ -333,7 +344,7 @@ class Game:
 				if self.stage == 3 and self.die2.current_roll == 6:
 					self.die2.unlock()
 					print("You can't lock a\n{}\nfirst in this stage!"\
-						.format(die2.faces[6]))
+						.format(self.die2.faces[6]))
 
 			#If die2 wasn't found in current goals it should be unlocked. 
 			else:

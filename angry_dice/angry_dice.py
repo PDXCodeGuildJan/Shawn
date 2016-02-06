@@ -62,7 +62,7 @@ class Die:
 			| o   o |
 			+-------+"""]	
 
-
+		self.face_small = ["Error","[.]","[:]","[:<]","[::]","[:-:]","[:::]"]
 		self.most_recently_locked = -1
 		self.locked_or_rolling = "Rolling..."
 
@@ -112,6 +112,14 @@ class Game:
 		# For now we still use this turn counter to back out invalid locks
 		# where 1 of 2 values locked are valid.
 		self.turns = 0
+
+	def display_compact_stage_goals(self):
+		"""Display the goal for each stage compactly but also symbolically."""
+
+		temp_tuple = self.stage_goals[self.stage]
+		
+		return (str(self.die1.face_small[temp_tuple[0]]) + 
+			str(self.die1.face_small[temp_tuple[1]]))
 
 	def start_game(self):
 		"""Welcome our player."""
@@ -214,20 +222,18 @@ class Game:
 		# Loop to get valid user input
 		temp_input_valid = False
 		while not temp_input_valid:
-			try:
-				
-				#temp_for_menu_display_matches = self.stage_goals[:]
-				#temp_for_menu_display_matches[2] = (':<', '4') 
+			try: 
 
-				choice = int(input("Current stage: {}  Match: {}\nNow enter a"\
+				print("Current stage: {}  Match: {}\nNow enter a "\
 					"number to do one of the following: \n(9) quits.\n(0)"\
 					" rerolls without toggling lock on any dice."\
 					"\n(1) toggles lock on die 1. \n(2) toggles lock on die 2 "\
 					".\n(3) locks in both die (You have a match?)."\
-					"\n>>> ".format(self.stage, self.stage_goals[self.stage]	 
-					if self.stage != 2 else (':<',4)))) 
-					#^^^THIS WEIRD BIT AT THE END WOULD REALLY TRIP US UP IF 
-					#WE CHANGED THE STAGE GOALS BEWARE!!!!
+					.format(self.stage, self.display_compact_stage_goals() ) 
+					)
+
+				choice = int(input("\n>>> "))
+					
 				
 				# If valid input
 				if -1 < choice < 4 or choice == 9:

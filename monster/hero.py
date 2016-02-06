@@ -22,7 +22,7 @@ class MonsterHero(Hero, Monster):
 
 		self.where = "on shoulders"
 
-
+"""
 def main():
 
 	mae=Hero()
@@ -31,4 +31,4 @@ def main():
 	print(two_heads.health)
 	print(two_heads.where)
 
-main()
+main()"""

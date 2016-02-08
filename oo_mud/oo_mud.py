@@ -90,7 +90,7 @@ class Goat(Character):
 
 class Place:
 
-	def __init__(	a, leap_direction="right", bold_leap_messg_str, 
+	def __init__(	a, name_str, leap_direction="right", bold_leap_messg_str, 
 					location_str, opening_desc_str, direction_action_dict, 
 					look_messg_str, 
 					what_lol_str = "What? Remember you have two choices:",
@@ -109,6 +109,7 @@ class Place:
 		z.what_lol = what_lol_str
 		z.wordy1 = wordy1_str 
 		z.wordy2 = wordy2_str
+		z.name = name_str
 
 	def leap(z):
 	"""Leap boldly specialized for this place."""
@@ -127,6 +128,25 @@ class Place:
 
 	def go(z):
 	"""Go in user specified direction."""
+
+	def barrier_return(z):
+
+class Game:
+
+	def __init__(self, start_place):
+
+		z.current_place = start_place
+		z.path_taken = []
+		z.turn = 0
+
+
+	def game_housekeeping(self):
+
+		pass
+
+	def update_path_taken(self):
+
+		pass
 
 
 

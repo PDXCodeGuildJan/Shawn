@@ -38,3 +38,10 @@ The first player to race through all Stages to reach Stage 3 and announces
 ## Execution
 in shell enter:
 python3 angry_dice.py
+
+##Instructions
+(9) quits.
+(0) rerolls without toggling lock on any dice.
+(1) Toggles lock on die 1. 
+(2) Toggles lock on die 2.
+(3) Locks in both die. You are claming a match.

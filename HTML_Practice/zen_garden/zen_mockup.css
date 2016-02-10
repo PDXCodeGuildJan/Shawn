@@ -52,22 +52,40 @@ abbr {
 
 	}
 
+footer {
+	text-align:right;
+	margin: 3.5em 0px;
+}
+
 footer a {
 	background-color: #908673;
 	color: #fff6e0;
 	box-shadow:10px 10px #d8cfbc;
 	}
 
+.page-wrapper {
+	max-width: 55em;
+	min-width: 38em;
+	margin: auto;
+	}
+
+.intro{
+	margin-bottom:4em;
+}
+
+.supporting {
+
+	max-width: 38em;
+
+	}
+
 .supporting article {
 
 	border: 1px solid;
 	border-radius: 2px;
-	margin: 10px;
+	margin: 5px 0px;
 	}
 
-.page-wrapper {
-	max-width: 720;
-	}
 
 .preamble
 	{
@@ -79,13 +97,18 @@ footer a {
 
 	}
 
-.resources{
-	display: none;
-	}
+.sidebar {
+	display: inline;
+	position: relative;
+	text-align:center;
+	max-width: 19em;
+	font-weight: bold;
+}
 
 .sidebar ul{
 
 	list-style-type: none;
+	
 	}
 
 .sidebar li{
@@ -93,10 +116,13 @@ footer a {
 	box-shadow: 6px 6px #f59581;
 	margin: 5px;
 	color: #fff6e0;
-	font-weight: bold;
 	}
 
 .sidebar a{
 	color: #fff6e0;
 
+	}
+
+.resources{
+	display: none;
 	}

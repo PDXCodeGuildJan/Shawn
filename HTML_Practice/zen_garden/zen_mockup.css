@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Nova+Square);
+@import url(https://fonts.googleapis.com/css?family=Arimo);
+
+
+@font-face {
+    font-family: 'Nova Square';
+    src: url(https://fonts.googleapis.com/css?family=Nova+Square);
+    font-family: 'Arimo', sans-serif;
+    src: url(https://fonts.googleapis.com/css?family=Arimo);
+	}
+
+body {
+	background-color: #eeeeee;
+	font-family: 'Arimo', sans-serif;
+	}
+
+h1 {
+	font-family:'Nova Square', cursive;	
+	color: #e23045;
+	font-size: 3.2em;
+	}
+
+h2 {
+	font-family:'Nova Square', cursive;
+	color: #fff6e0;
+	background-color: #e23045;
+	border-radius: 2px;
+	}
+
+h3 {
+	font-family:'Nova Square', cursive;
+	}
+
+
+article {
+	background-color: #fff6e0;
+	box-shadow: 30px 40px #7ab3b0;
+
+	}
+
+a {
+	text-decoration: none;	
+	}
+
+article a {
+	color: #e23045;
+	}
+
+
+abbr {
+	text-decoration: none;	
+
+	}
+
+footer a {
+	background-color: #908673;
+	color: #fff6e0;
+	box-shadow:10px 10px #d8cfbc;
+	}
+
+.supporting article {
+
+	border: 1px solid;
+	border-radius: 2px;
+	margin: 10px;
+	}
+
+.page-wrapper {
+	max-width: 720;
+	}
+
+.preamble
+	{
+	background-color: #1b4549;
+	color: #fff6e0;
+	font-weight: bold;
+	box-shadow: 30px 40px #7ab3b0;
+	border-radius: 2px;
+
+	}
+
+.resources{
+	display: none;
+	}
+
+.sidebar ul{
+
+	list-style-type: none;
+	}
+
+.sidebar li{
+	background-color: #e23045;
+	box-shadow: 6px 6px #f59581;
+	margin: 5px;
+	color: #fff6e0;
+	font-weight: bold;
+	}
+
+.sidebar a{
+	color: #fff6e0;
+
+	}

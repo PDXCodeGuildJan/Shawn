@@ -5,20 +5,21 @@
 @font-face {
     font-family: 'Nova Square';
     src: url(https://fonts.googleapis.com/css?family=Nova+Square);
-    font-family: 'Arimo', sans-serif;
-    src: url(https://fonts.googleapis.com/css?family=Arimo);
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	}
 
 body {
 	background-color: #eeeeee;
-	font-family: 'Arimo', sans-serif;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-size:1rem;
+	font-weight: 500;
 	}
 
 h1 {
 	font-family:'Nova Square', cursive;	
 	color: #e23045;
 	font-size: 3.2rem;
-	margin: .5em 0em;
+	margin: .3em 0em;
 	}
 
 h2 {
@@ -26,7 +27,7 @@ h2 {
 	color: #fff6e0;
 	background-color: #e23045;
 	border-radius: 2px;
-	padding: .5rem .3rem;
+	padding: .3rem;
 	}
 
 h3 {
@@ -56,13 +57,14 @@ abbr {
 
 footer {
 	text-align:right;
-	margin: 3.5rem 0px 0px 0px;
+	margin: 3.8rem 0px 0px 0px;
 }
 
 footer a {
 	background-color: #908673;
 	color: #fff6e0;
-	box-shadow:10px 10px #d8cfbc;
+	box-shadow:10px 15px #d8cfbc;
+	padding: .3em;
 	}
 
 .page-wrapper {
@@ -86,7 +88,7 @@ footer a {
 
 	border: 1px solid;
 	border-radius: 2px;
-	margin: 5px 0px;
+	margin: 7px 0px;
 	padding: .5rem 2rem;
 
 	}
@@ -94,9 +96,9 @@ footer a {
 
 .preamble
 	{
+	font-weight: 600;
 	background-color: #1b4549;
 	color: #fff6e0;
-	font-weight: bold;
 	box-shadow: 30px 40px #7ab3b0;
 	border-radius: 2px;
 	padding: 1rem .8rem;

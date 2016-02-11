@@ -17,7 +17,8 @@ body {
 h1 {
 	font-family:'Nova Square', cursive;	
 	color: #e23045;
-	font-size: 3.2em;
+	font-size: 3.2rem;
+	margin: .5em 0em;
 	}
 
 h2 {
@@ -25,6 +26,7 @@ h2 {
 	color: #fff6e0;
 	background-color: #e23045;
 	border-radius: 2px;
+	padding: .5rem .3rem;
 	}
 
 h3 {
@@ -54,7 +56,7 @@ abbr {
 
 footer {
 	text-align:right;
-	margin: 3.5em 0px;
+	margin: 3.5rem 0px 0px 0px;
 }
 
 footer a {
@@ -64,18 +66,19 @@ footer a {
 	}
 
 .page-wrapper {
-	max-width: 55em;
-	min-width: 38em;
-	margin: auto;
+	max-width: 54rem;
+	min-width: 33rem;
+	margin: 4em auto;
 	}
 
 .intro{
-	margin-bottom:4em;
+	margin-bottom:4rem;
 }
 
 .supporting {
 
-	max-width: 38em;
+	display: inline-block;
+	max-width: 33rem;
 
 	}
 
@@ -84,6 +87,8 @@ footer a {
 	border: 1px solid;
 	border-radius: 2px;
 	margin: 5px 0px;
+	padding: .5rem 2rem;
+
 	}
 
 
@@ -94,15 +99,16 @@ footer a {
 	font-weight: bold;
 	box-shadow: 30px 40px #7ab3b0;
 	border-radius: 2px;
-
+	padding: 1rem .8rem;
 	}
 
 .sidebar {
-	display: inline;
-	position: relative;
-	text-align:center;
-	max-width: 19em;
+	vertical-align: top;
+	display: inline-block;
+	text-align: center;
+	width: 270px;
 	font-weight: bold;
+	margin: 0px 10px
 }
 
 .sidebar ul{
@@ -113,9 +119,10 @@ footer a {
 
 .sidebar li{
 	background-color: #e23045;
-	box-shadow: 6px 6px #f59581;
+	box-shadow: 7px 9px #f59581;
 	margin: 5px;
 	color: #fff6e0;
+	padding:5px 15px;
 	}
 
 .sidebar a{

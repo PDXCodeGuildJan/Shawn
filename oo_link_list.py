@@ -19,7 +19,7 @@ class LinkedList:
 		current_node = self.head.next_node
 		while current_node:
 
-			a_string = a_string + str(current_node.value)
+			a_string = a_string + " " + str(current_node.value)
 			#Move the pointer ahead
 			current_node = current_node.next_node
 
@@ -78,22 +78,89 @@ class LinkedList:
 				examined_node.next_node.value = a_value
 		else:
 			# The head didn't have a value yet so it gets the value.
-			self.head.value = a_value	
+			self.head.value = a_value
+
+	def remove(self, a_value):
+
+		nodes_to_trim = self.remove_helper(a_value)
+
+		if nodes_to_trim == "Value not found.":
+			return nodes_to_trim
+
+			
+		# in  the case where the value was found in the head of a non-empty list
+		if not nodes_to_trim[0] and nodes_to_trim[1].next_node:
+		
+			self.head = nodes_to_trim[1].next_node
+
+		else:
+			nodes_to_trim[0].next_node = nodes_to_trim[1].next_node	
 			 
 
 
-def remove(self, a_value):
-		pass
+	def remove_helper(self, a_value):
+
+	      #Base case is the value in the head?
+	      if self.head.value == a_value:
+	         return (None, self.head)
+
+	      #Get ready to traverse the list & return the first node with the value.
+	      last_examined_node = None
+	      examined_node = self.head.next_node
+	      while examined_node:
+
+	         if examined_node.value == a_value:
+	            
+	            return (last_examined_node, examined_node)
+
+	         else: 
+	            #We didn't find the value so move on to next pointer
+	            last_examined_node = examined_node
+	            examined_node = examined_node.next_node
+
+	      #We didn't find the value anywhere. So return none.
+	      return "Value not found."
+
 
 
 def main():
 
-	y = LinkedList()
+	"""y = LinkedList()
 	y.add('a')
 	y.add('b')
 	y.add('c')
 	print(y.head.value)
-	print(y)
+	print(y)"""
+
+	link = LinkedList()
+	link.add(4)
+	link.add(2)
+	link.add(86)
+	link.add(4)
+	link.add(7)
+	print("Current list:", link)
+	link.remove(4)
+	print("List after first 4 is removed:", link)
+	link.remove(4)
+	print("List after second 4 is removed:", link)
+	print("Success! Attempt to remove a third 4 yielded no crashes!")
+	link.remove(4)
+	print(link)
+
+   
+
+   # Output of above code:
+
+   # -------------------------
+
+   # Current list: 4 2 86 4 7 
+
+   # List after first 4 is removed: 2 86 4 7 
+
+   # List after second 4 is removed: 2 86 7 
+
+   # Attempt to remove a third 4 yielded no crashes
+
 
 
 main()

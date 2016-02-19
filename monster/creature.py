@@ -15,14 +15,17 @@ class Creature:
 		self.state = Creature.NORMAL
 		self.health = 20
 		self.max_health = 20
-		self.attack = 2
+		self.attack_points = 2
 		self.weapon = None
 		self.special_abil = {}
 		self.stats = {}
 
 	def attack(self):
-
-		pass
+		"""Returns attack value given creature's base, weapon, and state."""
+		atk_value = self.attack_points
+		if self.weapon:
+			atk_value = self.attack_points + self.weapon.base_damage
+		return atk_value
 
 	def heal(self, amount):
 
@@ -45,3 +48,8 @@ class Creature:
 		pass
 
 
+class Weapon:
+	"""weapon creatures can eqip"""
+
+	def __init__(self, atk_value):
+		self.base_damage = atk_value

@@ -1,0 +1,569 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"remove",
+				"removeStock"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"a",
+				"alist_of_balls"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"locked",
+				"locked"
+			],
+			[
+				"A",
+				"A"
+			],
+			[
+				"dest_tower",
+				"destination_tower"
+			],
+			[
+				"phonebook",
+				"phonebook"
+			],
+			[
+				"left",
+				"left"
+			],
+			[
+				"unsorted",
+				"unsorted"
+			],
+			[
+				"LOOP",
+				"LOOP"
+			],
+			[
+				"end",
+				"end"
+			],
+			[
+				"pig",
+				"pig"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"listIn",
+				"listIn"
+			],
+			[
+				"n",
+				"nSweet"
+			],
+			[
+				"pasture",
+				"pasture"
+			],
+			[
+				"loft",
+				"loft"
+			],
+			[
+				"leap",
+				"leap"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "EVENT LISTENERS\n\nMake sure to remove event listeners after you use them or with big progs they pile up\n\nEVENT FLOW\n\n****************READ CHAPTER 6 OF Duckett \"Javascript & JQUERY\"****************\n\n",
+			"settings":
+			{
+				"buffer_size": 197,
+				"line_ending": "Unix",
+				"name": "EVENT LISTENERS"
+			}
+		},
+		{
+			"file": "js/pricing.js",
+			"settings":
+			{
+				"buffer_size": 2156,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/red_test.css",
+			"settings":
+			{
+				"buffer_size": 304,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pricing.html",
+			"settings":
+			{
+				"buffer_size": 1113,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 109.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/shawnwaldow/Documents/CodeSchool/AndreaCGPDX/mastermind/view.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/javapic/javapic/index.html",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/javapic/javapic/css/style.css",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/casino/casino.js",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/price_list/pricing/js/pricing.js",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/price_list/pricing/pricing.html",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/price_list/pricing/pricing_raw.html",
+		"/home/shawnwaldow/Desktop/mastermind/board",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/screen_printer.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/HTML_Practice/zen_garden/zen_mockup.css",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/HTML_Practice/zen_garden/zen_mockup.html",
+		"/home/shawnwaldow/Documents/CodeSchool/AndreaCGPDX/mastermind/Docs/style.css",
+		"/home/shawnwaldow/Documents/CodeSchool/AndreaCGPDX/mastermind/Docs/model.html",
+		"/home/shawnwaldow/Documents/CodeSchool/AndreaCGPDX/mastermind/Docs/view.html",
+		"/home/shawnwaldow/Documents/CodeSchool/AndreaCGPDX/mastermind/Docs/control.html",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/casino/casino.html",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/oo_mud/oo_mud.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/oop_phonebook.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/monster/tests/test_creature_attack.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/monster/hero.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/monster/hero_monster.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/monster/creature.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/monster/monster.py",
+		"/home/shawnwaldow/Documents/CodeSchool/AndreaCGPDX/mastermind/control.py",
+		"/home/shawnwaldow/Documents/CodeSchool/AndreaCGPDX/mastermind/model.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/phonebook.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/oo_link_list.py",
+		"/home/shawnwaldow/oo_link_list.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/angry_dice/angry_dice.py",
+		"/home/shawnwaldow/Documents/CodeSchool/git_practice/CourseAssignments/merge_conflicts/conflicts.html",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/HTML_Practice/profile/mystyle.css",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/HTML_Practice/profile/profile.html",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/HTML_Practice/profile/reality.html",
+		"/home/shawnwaldow/Desktop/temp.css",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/angry_dice/README.md",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/Pi - 10 Million Digits pi.Karmona.com.html",
+		"/home/shawnwaldow/Desktop/introduction to data mining by a viet minh",
+		"/home/shawnwaldow/Desktop/temp_slate.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/HTML Practice/corgi_website/corgi_text.txt",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/dice_changeable.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/die.py",
+		"/home/shawnwaldow/Desktop/cheatsheet.py",
+		"/home/shawnwaldow/Desktop/data books to read.html",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/HTML_Practice/uplift/uplift.html",
+		"/home/shawnwaldow/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/shawnwaldow/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/HTML_Practice/corgi_website/corgi.html",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/HTML Practice/corgi_website/corgi.html",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/angry_dice.py",
+		"/home/shawnwaldow/Desktop/working.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/Hanoi.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/mud.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/aranya_game/settings.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/aranya_game/aranya.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/sort.py",
+		"/home/shawnwaldow/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/fib-schorcher.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/herbs.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/phonebok.txt",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/try.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/recursive_search.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/hangperson_with_herb_dictionary.py",
+		"/home/shawnwaldow/Desktop/terash.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/tiffanys_insertion_sort.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/sortededed.py",
+		"/home/shawnwaldow/Desktop/goatrainbow.txt",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/practice.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/hangperson.py",
+		"/home/shawnwaldow/Desktop/goatquestexampleplays.txt",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/mud3.py",
+		"/home/shawnwaldow/Desktop/goatquestmap ascii.txt",
+		"/home/shawnwaldow/go.sh",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/beat.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/tobeornottobe.py",
+		"/home/shawnwaldow/Desktop/goatquest ascii.txt",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/animate.py",
+		"/home/shawnwaldow/Documents/CodeSchool/Week1/mud2.py",
+		"/home/shawnwaldow/Desktop/extra notes",
+		"/media/shawnwaldow/UUI/firstdaydaump1.txt",
+		"/home/shawnwaldow/Documents/home encrypt PRINTME"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"9-",
+			"8-",
+			"7-",
+			"6-",
+			"5-",
+			"4-",
+			"3-",
+			"2-",
+			"1-",
+			"0-",
+			"0-1",
+			"}",
+			"|",
+			".",
+			"{",
+			"os",
+			"`",
+			"7",
+			"M",
+			".",
+			"bodly",
+			"\"\\nAhhh. This is my {} now.\"",
+			"\"What? Remember you have two choices:\"",
+			"\"\\nThat makes no sense. One to many headbutts maybe, eh?\"",
+			"\"\\n\\t>Which way to move? forwards, backwards, left, or right? \"",
+			"leap_boldly_message + \" To the {}.\".format(leap_direction)",
+			"\"\\n\\nYou leap bodly!!!\"",
+			"\"\\n\\t>Look or leap? \"",
+			"\"\\n\\t>Look_or_leap? \"",
+			"\"\\n\\tLook or leap? \"",
+			"\"\\n\\tLook or leap?\"",
+			"\"Look or leap?\"",
+			"\n#################################E",
+			"7",
+			"+",
+			"0",
+			"I",
+			"\"",
+			"ahead",
+			"behind"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"jx",
+			"ix",
+			"hx",
+			"gx",
+			"fx",
+			"ex",
+			"dx",
+			"cx",
+			"bx",
+			"ax",
+			" ax1",
+			" ",
+			"self",
+			"",
+			":",
+			" ",
+			"boldly",
+			"pee",
+			"what_lol",
+			"come_again",
+			"which_way",
+			"leap_boldly_message + \"{}.\".format(leap_direction)",
+			"leap_boldly_message",
+			"look_or_leap",
+			"#E",
+			".",
+			"Z",
+			"Z ",
+			" ",
+			".",
+			"^",
+			"forwards",
+			"backwards"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 197,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								197,
+								197
+							]
+						],
+						"settings":
+						{
+							"auto_name": "EVENT LISTENERS",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/pricing.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								778,
+								778
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 317.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "css/red_test.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 304,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "pricing.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1105,
+								1105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 534.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				0,
+				2,
+				1,
+				3
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.33,
+			0.66,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 2,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

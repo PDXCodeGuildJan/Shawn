@@ -37,10 +37,13 @@ submitButton.addEventListener("click", submitForm, false);
 
 function submitForm(){
 
-	console.log(theName.value);
+	event.preventDefault();
 	console.log(theName.value);
 	var nextPagePath = "file:///home/shawnwaldow/Documents/CodeSchool/Week1/javapic/javapic/gallery.html?" + theName.value;
+	console.log(nextPagePath)
+	//setTimeout(window.location.assign, 0, nextPagePath)
 	window.location.assign(nextPagePath);
+	console.log(nextPagePath);
 	//window.open(nextPagePath);
 }
 

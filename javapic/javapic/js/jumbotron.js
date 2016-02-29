@@ -6,40 +6,43 @@
 //Build up list of .jpg file names. Right now we have
 //60 images pdxcg_01.jpg thru pdxcg_60.jpg
 
+// Numer of pics must be less than 100 pics to work as is:
+var numPics = 60;
 
 var picnames = [null];
 
-function setupStuff(picnames){
+function setupStuff(picnames, numPics){
 
-	for (var i = 1; i <= 60; i++) {
+	for (var i = 1; i < numPics; i++) {
+		
 		if (i <10){
-			picnames[i-1] = "../images/pdxcg_0" + i + ".jpg";	
+			picnames[i-1] = "./images/pdxcg_0" + i + ".jpg";	
 		}
+
 		else {
-		picnames[i-1] = "../images/pdxcg_" + i + ".jpg";
+		picnames[i-1] = "./images/pdxcg_" + i + ".jpg";
 		}
 	}
 
 	return picnames;
 }
 
+//Start the setup function to constuct a list of images
+//CIRCLE BACK: Do some file i.o. to save the file list so gallery can access it.
+picnames = setupStuff(picnames, numPics);
+i = 0;
+function callback(i){
 
-//picnames
-//window.addEventListener('load', setupStuff, false);
+	//Reset counter each time we iterate through all pics.
+	if (i > picnames.length){i=0;}
 
-//setInterval(setupStuff, 1000)
-picnames = setupStuff(picnames);
-i = 0
-
-function hello(){console.log("HEllo");};
-
-while (true){
-	document.getElementById("jumbotron").style.backgroundImage = "url('"+ picnames[0] +"')";
-
-	
-
+	//Change the filename as it resides in the CSS
+	document.getElementById("jumbotron").style.backgroundImage = "url('"+ picnames[i] +"')";
 	i++;
-
-	window.setTimeout(hello, 10000);
-
+	// Interesting the way you pass the function name, and as the third parameter,
+	// the argument for the counter passed into callback
+	setTimeout(callback, 1000, i);
 }
+
+//Start our *perhaps* psuedo-recursion in motion:
+callback(i);

@@ -28,7 +28,7 @@ function checkName(){
 		console.log("else")
 	}
 }
-
+//
 
 
 //Get a handle on the submit button
@@ -37,14 +37,12 @@ submitButton.addEventListener("click", submitForm, false);
 
 function submitForm(){
 
+	//Mysterious bit necesarry for custom form submission not covered very well by 
+	//Google results or the text book. Thanks Patrick!
 	event.preventDefault();
-	console.log(theName.value);
+	//Build up a URL to pass user name on to browser.
 	var nextPagePath = "file:///home/shawnwaldow/Documents/CodeSchool/Week1/javapic/javapic/gallery.html?" + theName.value;
-	console.log(nextPagePath)
-	//setTimeout(window.location.assign, 0, nextPagePath)
 	window.location.assign(nextPagePath);
-	console.log(nextPagePath);
-	//window.open(nextPagePath);
 }
 
 //console.log(theName.value);

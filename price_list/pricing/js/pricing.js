@@ -10,6 +10,8 @@ addStockButton.onclick = addStock;
 var removeStockButton = document.getElementById("remove-stock");
 removeStockButton.onclick = removeStock;
 
+window.onload = loadData;
+
 var products = [];
 
 /*	Add the item in the text fields to the inventory
@@ -42,6 +44,7 @@ function addStock() {
 		//now make a similar change to removestock
 
 
+		saveData();
 
 
     };
@@ -61,8 +64,8 @@ function removeStock() {
 
 		}
 
-	console.log(allTRsInTarnation);
-
+	//console.log(allTRsInTarnation);
+	saveData();
 };
 
 function addItem() {
@@ -74,7 +77,7 @@ function addItem() {
 	products.push(newProd);
 	displayInventory();
  		//HAS A HUGE BUG THAT RESETS ALL INSOTCKS TO YES
-
+ 	saveData();
 }
 
 /* Delete selected rows from the inventory.
@@ -90,7 +93,7 @@ function deleteItem(){
 	};
 	//Rerender the HTML list, using displyInventory
 	displayInventory();
-
+	saveData();
 }
 
 //hrlper funct to get all the selected boxes in HTMLs inventory return array of selected checkboxes
@@ -140,6 +143,7 @@ function displayInventory(){
 		inventory.appendChild(newRow);
 
 	};
+	saveData();
 }
 
 
@@ -156,3 +160,22 @@ function Product(name, price, inStock) {
 }
 
 
+// Save data current products array.
+function saveData(){
+	//transform products array into a JSON string.
+	var productJSON = JSON.stringify(products);
+
+	//save data to local storage using built in javascript
+	localStorage.setItem("variablenameprice", productJSON);
+}
+
+
+// Load data to products array.
+function loadData(){
+	var productJSON = localStorage.getItem("variablenameprice");
+	console.log("Loaded:", productJSON);
+	products = JSON.parse(productJSON);
+	console.log(products);
+	if (!products){ products = [];}
+
+}

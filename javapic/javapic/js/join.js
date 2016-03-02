@@ -7,8 +7,6 @@ var grabFormKillDefaultScrub = document.getElementById('signup');
 var noValidate = document.createAttribute("novalidate");
 grabFormKillDefaultScrub.setAttributeNode(noValidate);
 
-//Get a handle on the form in the DOM
-var theForm = document.getElementById("signup");
 
 //Select a single element for name
 var theName = document.getElementsByName("name")[0];
@@ -28,7 +26,43 @@ function checkName(){
 		console.log("else")
 	}
 }
-//
+
+//Select a single element for username
+var theUserName = document.getElementsByName("username")[0];
+theUserName.addEventListener('blur', checkUserName, false);
+
+function checkUserName(){
+
+	//See if we are getting everthing we expect. Later scrub.
+	//Now write scrubbing
+	//[A-Z][a-z]{1,15} [A-Z][a-z]{1,15} should be title case two part
+	//names with fewer than 32 characters.
+
+	if (this.value.length < 2){
+		console.log("not long enough")
+	}
+	else{
+		console.log("else")
+	}
+}
+
+//Select a single element for name
+var theEmail = document.getElementsByName("email")[0];
+theEmail.addEventListener('blur', checkEmail, false);
+
+function checkEmail(){
+
+	//See if we are getting everthing we expect. scrubbing not checking past @
+
+	var patt = new RegExp("[^\s]+@.+\.+")
+	if (!(patt.test(this.value))){
+		console.log("not long enough")
+	}
+	else{
+		console.log("else")
+	}
+}
+
 
 
 //Get a handle on the submit button

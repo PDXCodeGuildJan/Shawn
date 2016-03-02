@@ -10,35 +10,40 @@ addStockButton.onclick = addStock;
 var removeStockButton = document.getElementById("remove-stock");
 removeStockButton.onclick = removeStock;
 
+var products = [];
+
 /*	Add the item in the text fields to the inventory
 *	list which is in the table body (id="inventory")
 */
+
+//add delete button
+var deleteItemButton = document.getElementById("del-item");
+deleteItemButton.onclick = deleteItem;
 
 function addStock() {
 	console.log("good");
 	//NOT ALLOWED TO USE QuerySelectorAll()
 	//Get all the input tags
 
-	var input = document.getElementsByTagName("input");
-
-	var checkedboxes = [];
+	var input = getSelectedRowBoxes()
 
     //loop through for the number of input tags grabbed.
     for (var i=0; i<input.length; i++){
-       
-        // Grab only the checked boxes
-        if (input[i].checked === true){
-
-            checkedboxes.push(input[i]);
 
         //traverse the DOM
         var status = input[i].parentNode.nextSibling.nextSibling.nextSibling;
         status.textContent = "yes";
         status.className = "true";
 
-            console.log("This should be checked boxes", checkedboxes)
+        // Update the prodyctin the products array that correspond s to the checkbox we are updating
+        var prodId = input[i].parentNode.parentNode.id;
+        products[prodId].inStock = true;
 
-            };
+		//now make a similar change to removestock
+
+
+
+
     };
 };
 
@@ -46,7 +51,7 @@ function addStock() {
 
 function removeStock() {
 	// USE querySelectorAll()
-	var allTRsInTarnation = document.querySelectorAll('tbody>tr>td>input:checked');
+	var allTRsInTarnation = getSelectedRowBoxes();
 	
 	//loop through the array we made.
 	for (var i=0; allTRsInTarnation.length > i; i++){
@@ -63,22 +68,91 @@ function removeStock() {
 function addItem() {
 	var materialName = document.getElementById("name").value;
 	var price = document.getElementById("price").value;
-	var checked = document.getElementById("in-stock").checked;
+	var inStock = document.getElementById("in-stock").checked;
 
-	var inventory = document.getElementById("inventory");
-	var yesno = "no"
-	if (checked) 
-		{yesno = "yes"; 
-		truefalse = "true";
-		} 
-	else 
-		{yesno = "no"; 
-		truefalse = "false";
+	var newProd = new Product(materialName, price, inStock);
+	products.push(newProd);
+	displayInventory();
+ 		//HAS A HUGE BUG THAT RESETS ALL INSOTCKS TO YES
+
+}
+
+/* Delete selected rows from the inventory.
+*/
+function deleteItem(){
+	// First, determine all the selected rows
+	var selected = getSelectedRowBoxes();
+	// Delete the products objects that correspond to those rows from the products array
+	for (var i = selected.length-1; i > -1; i--) 
+		{var prodId = selected[i].parentNode.parentNode.id;
+		delete products[prodId];
+		products.splice(prodId, 1);
 	};
-	var newRow = "<tr><td><input type='checkbox' id='this-item' /></td><td>" + materialName + "</td><td>"+ price +"</td><td class='"+truefalse+"'>" + yesno + "</td></tr>";
-	inventory.innerHTML += newRow
+	//Rerender the HTML list, using displyInventory
+	displayInventory();
 
-};
+}
 
+//hrlper funct to get all the selected boxes in HTMLs inventory return array of selected checkboxes
+function getSelectedRowBoxes(){
+	var allTRsInTarnation = document.querySelectorAll('tbody>tr>td>input:checked');
+	return allTRsInTarnation;
+}
+
+function displayInventory(){
+
+	// Loop through the products array, addin each product
+	//to the inventory table in the html.
+	var inventory = document.getElementById("inventory");
+	// Destroy all previous children.
+	inventory.innerHTML = '';
+
+
+	for (var i =0; i< products.length; i++){
+		var newRow = document.createElement("TR");
+		newRow.id = i;
+
+		var checkbox = document.createElement("TD");
+		var innerCheckbox = document.createElement("INPUT");
+	// !!!!make sure any changes you made to the check bx get put in here too
+		innerCheckbox.type = "checkbox";
+		checkbox.appendChild(innerCheckbox);
+
+
+		var materialName = document.createElement("TD");
+		materialName.textContent = products[i].prodName;
+
+		var price = document.createElement("TD");
+		price.textContent = products[i].price;
+
+		var inStock = document.createElement("TD");
+		inStock.textContent = (function(inStock) {
+			if (inStock) {return "Yes";} return "No";
+		}(products[i].inStock));
+		inStock.setAttribute = ("class", products[i].inStock);
+
+
+		newRow.appendChild(checkbox);
+		newRow.appendChild(materialName);
+		newRow.appendChild(price);
+		newRow.appendChild(inStock);
+
+		inventory.appendChild(newRow);
+
+	};
+}
+
+
+/*Object constructor for our products*/
+function Product(name, price, inStock) {
+	this.prodName = name;
+	this.price = price;
+	this.inStock = inStock;
+
+	this.toggleStock = function(stock) {
+		this.inStock;
+	}
+
+}
 
 

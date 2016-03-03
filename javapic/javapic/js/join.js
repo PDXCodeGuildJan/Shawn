@@ -12,6 +12,10 @@ grabFormKillDefaultScrub.setAttributeNode(noValidate);
 var theName = document.getElementsByName("name")[0];
 theName.addEventListener('blur', checkName, false);
 
+//add a style for the class error
+document.styleSheets[0].insertRule(".error {font-size: .6em; color: red; padding: 0; border: 0; margin: 0;}", 0);
+
+
 function checkName(){
 
 	//See if we are getting everthing we expect. Later scrub.
@@ -33,16 +37,32 @@ theUserName.addEventListener('blur', checkUserName, false);
 
 function checkUserName(){
 
-	//See if we are getting everthing we expect. Later scrub.
-	//Now write scrubbing
-	//Username less than
+	//Remove the error message if there is one
+	if (this.nextSibling.className === "error") {
+		console.log("preexisting error");
+		this.remove();
+	}
 
+	// Make a regex to detect username less than 15 more than 4
 	patt = /[A-Za-z\d]{4,15}/;
+	//Handle a username that's too long, too short, or has weird characters.
 	if (!(patt.test(this.value))){
-		console.log("User name invalid. Must be a combination of letters or numbers 4 to 15 long.")
+		
+		//Make a div for the error message
+		var errorSpan = document.createElement("span");
+		errorSpan.classList.add("error");
+		errorSpan.textContent = "Error";
+		//Insert it to the dom
+		this.parentNode.insertBefore(errorSpan, this);
+
+
+
+		console.log("User name invalid. Must be a combination of letters or numbers 4 to 15 long.");
+		//Reset value from invalid user input to empty
+		this.value ="";
 	}
 	else{
-		console.log("else")
+		console.log("Username good.");
 	}
 }
 

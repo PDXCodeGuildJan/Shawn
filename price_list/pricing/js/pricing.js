@@ -10,7 +10,7 @@ addStockButton.onclick = addStock;
 var removeStockButton = document.getElementById("remove-stock");
 removeStockButton.onclick = removeStock;
 
-window.onload = loadData;
+window.onload = loadDataWithAJAX;
 
 var products = [];
 
@@ -186,6 +186,20 @@ function loadData(){
 /**
 * Load the data from the json file on the server with AJAX.
 **/
-function loadDataWithAjax(){
+function loadDataWithAJAX(){
+
+	//Create a new XMLHTTPRequest object
+	var request = new XMLHttpRequest();
+	//Add Call Info
+	request.open('GET', 'data.json', true);
+	// setup the onload function
+	request.onload = function (){
+		if (request.status === 200){
+			console.log(request.responseText);
+		}
+	};
+
+	// Actually send out the request!
+	request.send();
 
 }

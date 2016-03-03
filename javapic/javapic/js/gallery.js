@@ -2,16 +2,21 @@
 // Author Shawn Waldow
 // Image Gallery
 
-var theWholeUrl = document.URL;
-var nameArray = theWholeUrl.split('?')[1];
-var nameArray = nameArray.split('%20');
 
-var tagline = document.getElementsByClassName("tagline")[0].firstChild.textContent;
+function nameIntro(){
+	var theWholeUrl = document.URL;
+	var nameArray = theWholeUrl.split('?')[1];
+	var nameArray = nameArray.split('%20');
 
-console.log(tagline, nameArray[0]);
+	var tagline = document.getElementsByClassName("tagline")[0].firstChild.textContent;
 
-tagline = tagline + ", " + nameArray[0] + ".";
+	console.log(tagline, nameArray[0]);
 
-console.log(tagline);
+	tagline = tagline + ", " + nameArray[0] + ".";
 
-document.getElementsByClassName("tagline")[0].firstChild.textContent = tagline;
+	console.log(tagline);
+
+	document.getElementsByClassName("tagline")[0].firstChild.textContent = tagline;
+}
+
+nameIntro();

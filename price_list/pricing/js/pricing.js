@@ -172,8 +172,8 @@ function saveData(){
 
 // Load data to products array.
 function loadData(){
-	var productJSON = localStorage.getItem("variablenameprice");
-	console.log("Loaded:", productJSON);
+	//var productJSON = localStorage.getItem("variablenameprice");
+	//console.log("Loaded:", productJSON);
 	products = JSON.parse(productJSON);
 	console.log(products);
 	if (!products){ products = [];}

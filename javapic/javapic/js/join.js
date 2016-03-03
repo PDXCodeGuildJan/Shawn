@@ -35,11 +35,11 @@ function checkUserName(){
 
 	//See if we are getting everthing we expect. Later scrub.
 	//Now write scrubbing
-	//[A-Z][a-z]{1,15} [A-Z][a-z]{1,15} should be title case two part
-	//names with fewer than 32 characters.
+	//Username less than
 
-	if (this.value.length < 2){
-		console.log("not long enough")
+	patt = /[A-Za-z\d]{4,15}/;
+	if (!(patt.test(this.value))){
+		console.log("User name invalid. Must be a combination of letters or numbers 4 to 15 long.")
 	}
 	else{
 		console.log("else")
@@ -53,10 +53,12 @@ theEmail.addEventListener('blur', checkEmail, false);
 function checkEmail(){
 
 	//See if we are getting everthing we expect. scrubbing not checking past @
-
-	var patt = new RegExp("[^\s]+@.+\.+")
+	//Note the carrot before the expression that requires the eval starts at the begining of the string.
+	//The $ sign says the string has to end with the specified expression.
+	
+	var patt = new RegExp("^[^\s]+@[^\s]+\.[^\s]+$")
 	if (!(patt.test(this.value))){
-		console.log("not long enough")
+		console.log("Email address not valid.")
 	}
 	else{
 		console.log("else")

@@ -27,7 +27,7 @@ function addStock() {
 	//NOT ALLOWED TO USE QuerySelectorAll()
 	//Get all the input tags
 
-	var input = getSelectedRowBoxes()
+	var input = getSelectedRowBoxes();
 
     //loop through for the number of input tags grabbed.
     for (var i=0; i<input.length; i++){
@@ -177,5 +177,6 @@ function loadData(){
 	products = JSON.parse(productJSON);
 	console.log(products);
 	if (!products){ products = [];}
+	displayInventory();
 
 }

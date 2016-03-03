@@ -13,7 +13,7 @@ var theName = document.getElementsByName("name")[0];
 theName.addEventListener('blur', checkName, false);
 
 //add a style for the class error
-document.styleSheets[0].insertRule(".error {font-size: .6em; color: red; padding: 0; border: 0; margin: 0;}", 0);
+document.styleSheets[0].insertRule(".error {font-size: .6em; color: red; padding: 0; border: 0; margin: 0; display: inline;}", 0);
 
 
 function checkName(){

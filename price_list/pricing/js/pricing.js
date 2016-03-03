@@ -172,11 +172,20 @@ function saveData(){
 
 // Load data to products array.
 function loadData(){
-	//var productJSON = localStorage.getItem("variablenameprice");
+	//Load local data from storage
+	var productJSON = localStorage.getItem("variablenameprice");
 	//console.log("Loaded:", productJSON);
 	products = JSON.parse(productJSON);
 	console.log(products);
 	if (!products){ products = [];}
 	displayInventory();
+
+}
+
+
+/**
+* Load the data from the json file on the server with AJAX.
+**/
+function loadDataWithAjax(){
 
 }

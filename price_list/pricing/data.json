@@ -1,0 +1,37 @@
+[
+  {
+    "prodName": "sdh",
+    "price": "346",
+    "inStock": true
+  },
+  {
+    "prodName": "sdh",
+    "price": "346",
+    "inStock": true
+  },
+  {
+    "prodName": "sdhearg",
+    "price": "346",
+    "inStock": false
+  },
+  {
+    "prodName": "sdheargearh",
+    "price": "346456",
+    "inStock": false
+  },
+  {
+    "prodName": "sdheargearhsrth",
+    "price": "346456",
+    "inStock": false
+  },
+  {
+    "prodName": "sdheargearhsrth",
+    "price": "346456",
+    "inStock": false
+  },
+  {
+    "prodName": "r",
+    "price": "98",
+    "inStock": false
+  }
+]

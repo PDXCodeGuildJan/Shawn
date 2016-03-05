@@ -64,24 +64,22 @@ function addErrorSpan(aThis, mssgStr){
 
 function checkName(){
 
-	//See if we are getting everthing we expect. Later scrub.
-	//Now write scrubbing
-	//[A-Z][a-z]{1,15} [A-Z][a-z]{1,15} should be title case two part
-	//names with fewer than 32 characters.
+	//See if we are getting everthing we expect.
 
 	//Remove any pre-existing error messages
 	removeErrorSpan(this);
-	// Make a regex to detect a name with first and last 
-	// each less than 20 more than 1
-	patt = /[A-Za-z]{1,20}[A-Za-z]{1,20}/;
-
+	// Make a regex to detect a name with first and last
+	// Modified from a stack overflow  post. I made sure to exclude
+	// names that start with a space.
+	patt = /^[^\s][a-z ,.'-]+$/;
+	//Let user names have spaces in last name and apostrophes and hyphens.
 	if (!(patt.test(this.value))){
 
 		addErrorSpan(this, "-->Req'd: Firstname Lastname");
 	}
 
 	else{
-		console.log("Username good.");
+		console.log("Name good.");
 	}
 }
 

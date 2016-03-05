@@ -68,5 +68,13 @@ nameIntro();
 //Load up the file names
 picnames = setupStuff(picnames, numPics);
 
-var test = createOneLiImg("images/pdxcg_01.jpg");
-//Now insert this result into the DOM
+//Get a handle on the gallery section
+gallerySection = document.getElementById("gallery");
+
+//Loop through and put all images into gallery
+for (var i = picnames.length - 1; i >= 0; i--) {
+	var liImg = createOneLiImg (picnames[i]);
+	//Now insert this result into the DOM
+	gallerySection.appendChild(liImg);
+}
+

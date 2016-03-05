@@ -27,7 +27,7 @@ function checkName(){
 		console.log("not long enough")
 	}
 	else{
-		console.log("else")
+		console.log("Name Good");
 	}
 }
 
@@ -35,14 +35,25 @@ function checkName(){
 var theUserName = document.getElementsByName("username")[0];
 theUserName.addEventListener('blur', checkUserName, false);
 
+
+//I THINK THIS TYPE OF THIS USE IS CORNY. IMPROVE LATER.
+// Remove input error messages we might have placed as 
+// child of a field's label.
+function removeErrorSpan(athis){
+//Check to see if we've added an error span here. Stop if null.
+	if (athis.previousSibling.previousSibling.lastChild) {
+		//There looks to be an error span. Make sure and then remove it.
+		if  (athis.previousSibling.previousSibling.lastChild.className === "error"){
+			console.log("preexisting error");
+			athis.previousSibling.previousSibling.lastChild.remove();
+		}
+	}
+}
+
 function checkUserName(){
 
-	//Remove the error message if there is one
-	if (this.nextSibling.className === "error") {
-		console.log("preexisting error");
-		this.remove();
-	}
-
+	//Remove any pre-existing error messages
+	removeErrorSpan(athis);
 	// Make a regex to detect username less than 15 more than 4
 	patt = /[A-Za-z\d]{4,15}/;
 	//Handle a username that's too long, too short, or has weird characters.
@@ -51,9 +62,11 @@ function checkUserName(){
 		//Make a div for the error message
 		var errorSpan = document.createElement("span");
 		errorSpan.classList.add("error");
-		errorSpan.textContent = "Error";
+		//OKAY make a placeholder eventually.
+		errorSpan.textContent = "-->Req'd: 4-15 characters";
 		//Insert it to the dom
-		this.parentNode.insertBefore(errorSpan, this);
+		console.log(this.previousSibling.previousSibling)
+		this.previousSibling.previousSibling.appendChild(errorSpan);
 
 
 
@@ -76,12 +89,12 @@ function checkEmail(){
 	//Note the carrot before the expression that requires the eval starts at the begining of the string.
 	//The $ sign says the string has to end with the specified expression.
 	
-	var patt = new RegExp("^[^\s]+@[^\s]+\.[^\s]+$")
+	var patt = /^[^\s]+@[^\s]+\.[^\s]+$/
 	if (!(patt.test(this.value))){
-		console.log("Email address not valid.")
+		console.log("Email address not valid.");
 	}
 	else{
-		console.log("else")
+		console.log("Email ok");
 	}
 }
 

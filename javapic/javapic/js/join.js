@@ -16,29 +16,19 @@ theName.addEventListener('blur', checkName, false);
 document.styleSheets[0].insertRule(".error {font-size: .6em; color: red; padding: 0; border: 0; margin: 0; display: inline;}", 0);
 
 
-function checkName(){
-
-	//See if we are getting everthing we expect. Later scrub.
-	//Now write scrubbing
-	//[A-Z][a-z]{1,15} [A-Z][a-z]{1,15} should be title case two part
-	//names with fewer than 32 characters.
-
-	if (this.value.length < 2){
-		console.log("not long enough")
-	}
-	else{
-		console.log("Name Good");
-	}
-}
-
 //Select a single element for username
 var theUserName = document.getElementsByName("username")[0];
 theUserName.addEventListener('blur', checkUserName, false);
 
+//Select a single element for email
+var theEmail = document.getElementsByName("email")[0];
+theEmail.addEventListener('blur', checkEmail, false);
+
+
 
 //I THINK THIS TYPE OF THIS USE IS CORNY. IMPROVE LATER.
 // Remove input error messages we might have placed as 
-// child of a field's label.
+// as currently designed which child of a label thats an older sibling.
 function removeErrorSpan(athis){
 //Check to see if we've added an error span here. Stop if null.
 	if (athis.previousSibling.previousSibling.lastChild) {
@@ -50,38 +40,68 @@ function removeErrorSpan(athis){
 	}
 }
 
-function checkUserName(){
+//I THINK THIS TYPE OF THIS USE IS CORNY. IMPROVE LATER.
+//Add a span with a error message, mssgStr, to an input elements label
+//which as currently designed is a label thats an older sibling
+function addErrorSpan(aThis, mssgStr){
 
-	//Remove any pre-existing error messages
-	removeErrorSpan(athis);
-	// Make a regex to detect username less than 15 more than 4
-	patt = /[A-Za-z\d]{4,15}/;
-	//Handle a username that's too long, too short, or has weird characters.
-	if (!(patt.test(this.value))){
-		
 		//Make a div for the error message
 		var errorSpan = document.createElement("span");
 		errorSpan.classList.add("error");
 		//OKAY make a placeholder eventually.
-		errorSpan.textContent = "-->Req'd: 4-15 characters";
+		errorSpan.textContent = mssgStr;
 		//Insert it to the dom
-		console.log(this.previousSibling.previousSibling)
-		this.previousSibling.previousSibling.appendChild(errorSpan);
+		console.log(aThis.previousSibling.previousSibling)
+		aThis.previousSibling.previousSibling.appendChild(errorSpan);
 
 
 
 		console.log("User name invalid. Must be a combination of letters or numbers 4 to 15 long.");
 		//Reset value from invalid user input to empty
-		this.value ="";
+		aThis.value ="";
+}
+
+
+function checkName(){
+
+	//See if we are getting everthing we expect. Later scrub.
+	//Now write scrubbing
+	//[A-Z][a-z]{1,15} [A-Z][a-z]{1,15} should be title case two part
+	//names with fewer than 32 characters.
+
+	//Remove any pre-existing error messages
+	removeErrorSpan(this);
+	// Make a regex to detect a name with first and last 
+	// each less than 20 more than 1
+	patt = /[A-Za-z]{1,20}[A-Za-z]{1,20}/;
+
+	if (!(patt.test(this.value))){
+
+		addErrorSpan(this, "-->Req'd: Firstname Lastname");
 	}
+
 	else{
 		console.log("Username good.");
 	}
 }
 
-//Select a single element for name
-var theEmail = document.getElementsByName("email")[0];
-theEmail.addEventListener('blur', checkEmail, false);
+function checkUserName(){
+
+	//Remove any pre-existing error messages
+	removeErrorSpan(this);
+	// Make a regex to detect username less than 15 more than 4
+	patt = /[A-Za-z\d]{4,15}/;
+	//Handle a username that's too long, too short, or has weird characters.
+	if (!(patt.test(this.value))){
+
+		addErrorSpan(this, "-->Req'd: 4-15 characters");
+	}
+
+	else{
+		console.log("Username good.");
+	}
+}
+
 
 function checkEmail(){
 
@@ -89,9 +109,16 @@ function checkEmail(){
 	//Note the carrot before the expression that requires the eval starts at the begining of the string.
 	//The $ sign says the string has to end with the specified expression.
 	
+	//Remove any pre-existing error messages
+	removeErrorSpan(this);
+
+	//Look for an email address that has no spaces and at least 1 char
+	//followed by an @ followed by at least 1 char followed by a . 
+	//ending with at least 1 non space char.
 	var patt = /^[^\s]+@[^\s]+\.[^\s]+$/
 	if (!(patt.test(this.value))){
-		console.log("Email address not valid.");
+		//Add an error alert
+		addErrorSpan(this, "Email address not valid.");
 	}
 	else{
 		console.log("Email ok");

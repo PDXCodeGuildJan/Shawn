@@ -1,6 +1,7 @@
 // Javapic Inc.
 // Author Shawn Waldow
 // Join (Let's scrub a basic form.)
+// Housekeeping post MVP: Do we need to delete event listners after use?
 
 // DONT FORGET TO DISABLE BROWSER SCRUBBING
 var grabFormKillDefaultScrub = document.getElementById('signup');
@@ -13,7 +14,8 @@ var theName = document.getElementsByName("name")[0];
 theName.addEventListener('blur', checkName, false);
 
 //add a style for the class error
-document.styleSheets[0].insertRule(".error {font-size: .6em; color: red; padding: 0; border: 0; margin: 0; display: inline;}", 0);
+errorCSS = ".error {font-size: .6em; color: red; padding: 0; border: 0;}"
+document.styleSheets[0].insertRule(errorCSS, 0);
 
 
 //Select a single element for username
@@ -33,7 +35,8 @@ function removeErrorSpan(athis){
 //Check to see if we've added an error span here. Stop if null.
 	if (athis.previousSibling.previousSibling.lastChild) {
 		//There looks to be an error span. Make sure and then remove it.
-		if  (athis.previousSibling.previousSibling.lastChild.className === "error"){
+		if  (athis.previousSibling.previousSibling.lastChild.className 
+				=== "error"){
 			console.log("preexisting error");
 			athis.previousSibling.previousSibling.lastChild.remove();
 		}
@@ -56,7 +59,7 @@ function addErrorSpan(aThis, mssgStr){
 
 
 
-		console.log("User name invalid. Must be a combination of letters or numbers 4 to 15 long.");
+		console.log("User name invalid. Letters or numbers 4 to 15 long.");
 		//Reset value from invalid user input to empty
 		aThis.value ="";
 }
@@ -103,9 +106,6 @@ function checkUserName(){
 
 function checkEmail(){
 
-	//See if we are getting everthing we expect. scrubbing not checking past @
-	//Note the carrot before the expression that requires the eval starts at the begining of the string.
-	//The $ sign says the string has to end with the specified expression.
 	
 	//Remove any pre-existing error messages
 	removeErrorSpan(this);
@@ -113,10 +113,14 @@ function checkEmail(){
 	//Look for an email address that has no spaces and at least 1 char
 	//followed by an @ followed by at least 1 char followed by a . 
 	//ending with at least 1 non space char.
+	//Note the carrot before the expression that requires the eval starts at the
+	//begining of the string. The $ sign says the string has to end with the
+	//specified expression.
+	
 	var patt = /^[^\s]+@[^\s]+\.[^\s]+$/
 	if (!(patt.test(this.value))){
 		//Add an error alert
-		addErrorSpan(this, "Email address not valid.");
+		addErrorSpan(this, "<--Email address not valid.");
 	}
 	else{
 		console.log("Email ok");
@@ -131,12 +135,25 @@ submitButton.addEventListener("click", submitForm, false);
 
 function submitForm(){
 
-	//Mysterious bit necesarry for custom form submission not covered very well by 
-	//Google results or the text book. Thanks Patrick!
+	//Mysterious bit necesarry for custom form submission not covered very well 
+	//by Google results or the text book.
 	event.preventDefault();
-	//Build up a URL to pass user name on to browser.
-	var nextPagePath = "file:///home/shawnwaldow/Documents/CodeSchool/Week1/javapic/javapic/gallery.html?" + theName.value;
-	window.location.assign(nextPagePath);
+
+	//Remove any previous error messages.
+	removeErrorSpan(grabFormKillDefaultScrub);
+
+	//If each field has valid input...
+	if(theName.value && theUserName.value && theEmail.value){
+
+		//Build up a URL to pass user name on to browser.
+		var nextPagePath = ("file:///home/shawnwaldow/Documents/CodeSchool/"+
+			"Week1/javapic/javapic/gallery.html?" + theName.value);
+		window.location.assign(nextPagePath);
+	}
+	else{
+		var fillEmAll ="  ...but first please fill out all fields as required.";
+		addErrorSpan(grabFormKillDefaultScrub, fillEmAll);
+	}
 }
 
 //console.log(theName.value);

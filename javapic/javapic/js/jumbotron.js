@@ -3,6 +3,8 @@
 //
 //javascript to make a title page's image cycle every 10 seconds.
 
+// Housekeeping post MVP: Do we need to delete event listners after use?
+
 
 //Build up list of .jpg file names. Right now we have
 //60 images pdxcg_01.jpg thru pdxcg_60.jpg
@@ -16,7 +18,7 @@ var picnames = [null];
 function setupStuff(picnames, numPics){
 
 //Make a file name for numPics total files.
-	for (var i = 1; i < numPics; i++) {
+	for (var i = 1; i <= numPics; i++) {
 		
 		if (i <10){
 			picnames[i-1] = "./images/pdxcg_0" + i + ".jpg";	
@@ -42,11 +44,12 @@ function callback(i){
 	if (i > picnames.length){i=0;}
 
 	//Change the filename as it resides in the CSS
-	document.getElementById("jumbotron").style.backgroundImage = "url('"+ picnames[i] +"')";
+	document.getElementById("jumbotron").style.backgroundImage = ( "url('"
+		+ picnames[i] +"')");
 	i++;
-	// Interesting the way you pass the function name, and as the third parameter,
-	// the argument for the counter passed into callback
-	setTimeout(callback, 1000, i);
+	// Interesting the way you pass the function name, and as the third
+	// parameter, the argument for the counter passed into callback.
+	setTimeout(callback, 10000, i);
 }
 
 //Start our *perhaps* psuedo-recursion in motion:

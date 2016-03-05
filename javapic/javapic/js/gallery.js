@@ -1,11 +1,15 @@
 // Javapic Inc.
 // Author Shawn Waldow
 // Image Gallery
-
+//
+// Housekeeping post MVP: Do we need to delete event listners after use?
 var numPics = 60;
 // Array to hold the filepaths for each image
 var picnames = [null];
 
+//Grab the user name we passed from join.html in the URL asfter the "?"
+//Probably better to use var query = window.location.search.slice(1);
+//Circle back after MVP.
 function nameIntro(){
 	
 	//Grab the first name from the url
@@ -17,8 +21,8 @@ function nameIntro(){
 	//Now nameArray just has the first name at index 0
 
 	//Grab the website's tagline phrase.
-	var tagline = document.getElementsByClassName("tagline")[0].firstChild.textContent;
-
+	var tagline = document.getElementsByClassName("tagline")[0];
+	tagline = tagline.firstChild.textContent
 	console.log(tagline, nameArray[0]);
 
 	//Append the name and punctuation to the string copy  of the tagline
@@ -34,7 +38,7 @@ function nameIntro(){
 function setupStuff(picnames, numPics){
 
 //Make a file name for numPics total files.
-	for (var i = 1; i < numPics; i++) {
+	for (var i = 1; i <= numPics; i++) {
 		
 		if (i <10){
 			picnames[i-1] = "./images/pdxcg_0" + i + ".jpg";	
@@ -62,6 +66,40 @@ function createOneLiImg(fileNameString){
 }
 
 
+//Light up a big box with the whole Image!
+function lightBox(event) {
+
+//Look for the IMG attribute from the NameNodeMap from the event.	
+    if (event.target.nodeName === "IMG") {
+
+    	//Grab the handle on the image_show div.
+        var lightBox = document.getElementById("image_show");
+        //copy the src attribute from the img clicked and put it
+        //in the lightbox's src.
+        lightBox.firstChild.src = event.target.src;
+        //Turn on.
+        lightBox.className = "display_img";
+
+    }
+}
+
+
+function killLightBox(event){
+	
+	//If we click outside the event's IMG...
+	//I still don't really understand how this overpowers the img in gallery.
+	if (event.target.nodeName != "IMG") {
+	//Grab the handle on the image_show div.
+	var lightBox = document.getElementById("image_show");
+	//Turn it off.
+	lightBox.className = "display_none";
+	}
+}
+
+////////////////////////////////////////////////////////////
+//Begin the "main" operation now that all functions defined.
+////////////////////////////////////////////////////////////
+
 //Draw the greeting
 nameIntro();
 
@@ -78,3 +116,6 @@ for (var i = picnames.length - 1; i >= 0; i--) {
 	gallerySection.appendChild(liImg);
 }
 
+document.getElementById('gallery').addEventListener('click', lightBox);
+
+document.getElementById('image_show').addEventListener('click', killLightBox);

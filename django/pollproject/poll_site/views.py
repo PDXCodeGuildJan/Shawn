@@ -17,3 +17,6 @@ def hello_world_render(request):
 
 	return render(request, 'poll_site/index.html', context)
 
+def linked_page(request):
+	return render(request, 'poll_site/linked_page.html')
+

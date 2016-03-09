@@ -20,7 +20,7 @@
 	<h1>F-ing Around, {{ name }}.</h1>
 
 	<div class="huge">In space...<br/> there is {{ fav_color }}.</div>
-
+	<a href="{% url 'linked_page' %}">Links</a>
 	<ul>As well as
 	{% for item in toys %}
 		<li>{{item}}</li>

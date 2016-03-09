@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<link rel="stylesheet" type="text/css" href="static/poll_site/style.css">
+<head>
+
+	<title> F-ing around</title>
+
+	<style>
+
+	</style>
+
+
+
+</head>
+
+
+<body>
+
+	<h1>F-ing Around, {{ name }}.</h1>
+
+	<div class="huge">In space...<br/> there is {{ fav_color }}.</div>
+
+	<ul>As well as
+	{% for item in toys %}
+		<li>{{item}}</li>
+	{% endfor %}
+	</ul>
+
+</body>
+
+</html>

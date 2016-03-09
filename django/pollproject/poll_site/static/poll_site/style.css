@@ -1,0 +1,22 @@
+body {	font-family: 'Audiowide', cursive;
+		background: url(stars.jpg);
+		background-size: auto 100%;
+		color:white;
+	}
+
+h1 {
+		color: white;
+		font-style: italic;
+}
+
+.huge {
+
+		font-size: 5em;
+		position: 100px 200px;
+		color: purple;
+
+}
+ 
+li {
+		color: yellow;
+}

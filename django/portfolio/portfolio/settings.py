@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'zen_garden',
     'portfolio',
+    'javapic',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -14,6 +14,7 @@ Including another URLconf
     2. Import the include() function: from django.conf.urls import url, include
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+#THIS IS WHERE TO PICK BACK UP MARCH 9
 from django.conf.urls import url, include
 from django.contrib import admin
 
@@ -25,4 +26,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', zen_garden_render),
     url(r'^zen_garden/$', zen_garden_render),
+    url(r'^javapic/$', javapic_render),
 ]

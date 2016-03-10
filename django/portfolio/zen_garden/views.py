@@ -8,3 +8,6 @@ from django.http.response import HttpResponse
 
 def zen_garden_render(request):
 	return render(request, 'zen_garden/zen_mockup.html')
+
+def javapic_render(request):
+	return render(request, 'javapic/index.html')

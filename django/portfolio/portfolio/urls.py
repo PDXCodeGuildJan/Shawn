@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from javapic import urls as javapic_urls
 
 #This is actually in the templates folder but the framework
 #guesses that out of the file path.
@@ -23,6 +24,6 @@ from zen_garden.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', zen_garden_render),
+    url(r'^javapic/', include(javapic_urls)),
     url(r'^zen_garden/$', zen_garden_render),
 ]

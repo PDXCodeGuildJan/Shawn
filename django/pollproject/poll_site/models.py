@@ -11,7 +11,11 @@ class Question(models.Model):
 	
 	pub_date = models.DateTimeField('date published')
 
-class choice(models.Model):
+	def __str__(self):
+		"""Return a string"""
+		return self.question_text
+
+class Choice(models.Model):
 	"""Defines the choice class and model. Ids are automagic."""
 
 	choice_text = models.CharField(max_length=150)
@@ -22,5 +26,15 @@ class choice(models.Model):
 	# now after this we ran python3 manage.py makemigrations
 	#in the virtual environment. then we ran
 	#$python3 manage.py migrate
+
+	#Next we look into the db using the admin portfolio
+	#(poll_site) shawnwaldow@shawnwaldow-K53E:~/Documents/CodeSchool/Week1/django/pollproject$ python3 manage.py createsuperuser
+	#point browser to http://127.0.0.1:8000/admin/
+	def __str__(self):
+		"""Return a string"""
+		return self.choice_text
+
+
+
 
 

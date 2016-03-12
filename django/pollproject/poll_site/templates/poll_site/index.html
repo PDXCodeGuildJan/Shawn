@@ -27,6 +27,19 @@
 	{% endfor %}
 	</ul>
 
+
+	<div><h3>Questions!</h3>
+		<ul>
+		{% for q in questions %}
+			<li><a href="{% url 'question_details' q.id %}">{{ q.question_text }}</li>
+			<ul>
+			{% for choice in q.choice_set.all %}
+				<li>{{ choice.choice_text }}</li>
+			{% endfor %}
+			</ul>
+		{% endfor %}
+		</ul>
+	</div>
 </body>
 
 </html>

@@ -21,25 +21,21 @@ $.ajax({
 function getPostsOnPageLoad(data){
 	
 	for (i=0; i<data.feed.entry.length; i++){
-		console.log(data.feed.entry[i].gsx$title.$t);
-		console.log(data.feed.entry[i].gsx$post.$t);
-		console.log(data.feed.entry[i].gsx$timestamp.$t);
-	}
-
+	
 	var h2 = document.createElement('h2');
 	h2.setAttribute('class', 'post');
-	h2.textContent = data.feed.entry[0].gsx$title.$t;
+	h2.textContent = data.feed.entry[i].gsx$title.$t;
 	postsDiv.appendChild(h2);
 
 	var bodyDiv = document.createElement('div');
 	bodyDiv.setAttribute('class', 'body');
-	bodyDiv.textContent = data.feed.entry[0].gsx$post.$t;
+	bodyDiv.textContent = data.feed.entry[i].gsx$post.$t;
 	postsDiv.appendChild(bodyDiv);
 
 	var footer = document.createElement('footer');
-	footer.textContent = data.feed.entry[0].gsx$timestamp.$t;
+	footer.textContent = data.feed.entry[i].gsx$timestamp.$t;
 	postsDiv.appendChild(footer);
-	//<H2 class = "post">A hardcoded post</H2>
+	}
 
 }
 

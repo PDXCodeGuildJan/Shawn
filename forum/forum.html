@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <title>Forum Assignment</title>
 
     <link rel="stylesheet" media="screen" href="forum.css">
@@ -19,27 +20,28 @@
 
     </section>
 
-    <main class="post" id="main-posts" role="main">
+    <main id="main-posts" role="main">
 
         <div class = "post">
             <H2 class = "post">A hardcoded post</H2>
             <div class = "body">Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...</div>
+        </div>
+
+        <div class = "new-post">
+          
+            <H2 class = "new-post">Your post:</H2>
+            <div class ="body">
+                <form id="signup" method="post">
+                    <textarea name="textarea" rows="5" cols="80"></textarea><br/>
+                    <input type="submit" name="submit" id="submit" value="Post to Forum" />
+                </form>
+            </div>
         </div>
         
         <footer>
         </footer>
 
     </main>
-
-
-    <aside class="sidebar" role="complementary">
-        <div class="wrapper">
-
-            <div class="sidebar">
-            </div>
-
-        </div>
-    </aside>
 
 
 </div>

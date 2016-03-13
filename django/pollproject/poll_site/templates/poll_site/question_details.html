@@ -1,0 +1,26 @@
+<html>
+<body>
+
+{{ question.question_text }}
+
+
+
+
+<form>
+
+{% for choice in question.choice_set.all %}
+				
+
+  <input type="radio" name="{{choice}}" value="{{choice.id}}" > {{choice}}<br>
+
+
+{% endfor %}
+
+</form>
+
+
+
+
+
+</body>
+</html>

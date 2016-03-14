@@ -6,6 +6,10 @@ from django.http.response import HttpResponse
 #Allow getting things from DB
 from .models import Question, Choice
 
+from django.http import JsonResponse
+
+import json
+
 # Create your views here.
 
 def hello_world(request):
@@ -48,3 +52,46 @@ def question_details(request, question_id):
 	}
 
 	return render(request, 'poll_site/question_details.html', context)
+
+
+def submit_vote(request):
+	"""Handles vote submissions via AJAX."""
+
+	if request.method == 'POST':
+		print(request.body)
+		#decode request body from bytecode to normal
+		data_json = request.body.decode('utf-8')
+		print(data_json)
+		#turn the json string into a python object
+		data = json.loads(data_json)
+
+		# Get the choice at that id
+		choice = Choice.objects.get(pk=int(data['choice_id']))
+
+		# Increment the votes of the choice by 1
+		choice.votes += 1
+
+		#save the updated objec choice to db
+		choice.save()
+
+		#Get all the choices for the question just voted on
+		question = Question.objects.get(pk=int(data['question_id']))
+
+		question_choices = question.choice_set.all()
+
+		response = []
+
+		#loop through choices and dictionize
+		for choice in question_choices:
+			c_dict = {
+				'id': choice.id,
+				'text': choice.choice_text,
+				'votes': choice.votes
+			}
+
+
+			response.append(c_dict)
+		
+
+	return JsonResponse({'data': response})
+

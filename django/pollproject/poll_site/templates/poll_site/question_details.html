@@ -8,10 +8,9 @@
 
 {{ question.question_text }}
 
+<div id="question_things">
 
-
-
-<form id="question_vote">
+<form id="question_vote"><!--level 1 security-->{% csrf_token %}
 
 {% for choice in question.choice_set.all %}
 				
@@ -21,10 +20,12 @@
 
 {% endfor %}
 
-	<input type="hidden" id="question_id" value="{{ question.id }}"
+	<input type="hidden" id="question_id" value="{{ question.id }}" />
 	<input type="submit" />
 
 </form>
+
+</div>
 
 <script src="{% static 'poll_site/voting.js' %}"></script>
 

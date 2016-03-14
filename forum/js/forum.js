@@ -69,13 +69,21 @@ function submitPost(event) {
 		
 				console.log("0 error good.");	
 				
-				$.ajax({
+				setTimeout($.ajax, 3000, {
 					type: 'GET', 
 					url: getUrl, 
 					dataType: "JSONP", 
 					success: getPosts,
 				});
 
+				/*
+				$.ajax({
+					type: 'GET', 
+					url: getUrl, 
+					dataType: "JSONP", 
+					success: getPosts,
+				});
+*/
 			},
 
 			200: function() {

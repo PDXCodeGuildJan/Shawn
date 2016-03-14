@@ -1,26 +1,31 @@
-<html>
-<body>
+{% extends 'poll_site/base_template.html' %}
+
+{% load staticfiles %}
+
+{% block main_content %}
+
+<!-- EOTEMPLATE HEADER-->
 
 {{ question.question_text }}
 
 
 
 
-<form>
+<form id="question_vote">
 
 {% for choice in question.choice_set.all %}
 				
 
-  <input type="radio" name="{{choice}}" value="{{choice.id}}" > {{choice}}<br>
+	<input type="radio" name="question_choice" value="{{choice.id}}" /> {{choice}}<br/>
 
 
 {% endfor %}
 
+	<input type="hidden" id="question_id" value="{{ question.id }}"
+	<input type="submit" />
+
 </form>
 
+<script src="{% static 'poll_site/voting.js' %}"></script>
 
-
-
-
-</body>
-</html>
+{% endblock %}

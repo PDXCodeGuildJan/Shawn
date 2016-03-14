@@ -20,3 +20,8 @@ h1 {
 li {
 		color: yellow;
 }
+
+nav {
+	font-size: .7em;
+	font-family: 'Audiowide', cursive;
+}

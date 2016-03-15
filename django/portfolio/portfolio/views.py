@@ -12,6 +12,5 @@ def zen_garden_render(request):
 def javapic_render(request):
 	return render(request, 'javapic/index.html')
 
-
-def pricing_render():
+def pricing_render(request):
 	return render(request, 'pricing/pricing.html')

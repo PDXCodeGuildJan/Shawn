@@ -19,16 +19,22 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from javapic import urls as javapic_urls
 from forum import urls as forum_urls
+from my_profile import urls as my_profile_urls
 
 #This is actually in the templates folder but the framework
 #guesses that out of the file path.
 from zen_garden.views import *
+from pricing.views import *
+from javapic.views import *
+from forum.views import *
+from my_profile.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^javapic/', include(javapic_urls)),
     url(r'^zen_garden/$', zen_garden_render),
-    url(r'^forum/', include(forum_urls))
+    url(r'^forum/', include(forum_urls)),
     url(r'^pricing/$', pricing_render)
+    url(r'^profile/$', include(my_profile_urls))
     
 ]

@@ -5,7 +5,6 @@ from django.shortcuts import render
 def javapic_render(request):
 	return render(request, 'javapic/index.html')
 
-
 def join_render(request):
 	return render(request, 'javapic/join.html')
 

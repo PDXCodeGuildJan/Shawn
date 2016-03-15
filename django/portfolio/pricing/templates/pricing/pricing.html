@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Construction Pricing</title>
-    <link rel="stylesheet" href="css/red_test.css" />
+
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="{% static 'pricing/css/red_test.css' %}" />
 </head>
 <body>
     <main>
@@ -37,7 +40,7 @@
         <button id="remove-stock">Remove Stock</button>
 
     </main>
-    <script src="js/pricing.js" ></script>
+    <script src="{% static 'pricing/js/pricing.js' %}" ></script>
 </body>
 </html>
 

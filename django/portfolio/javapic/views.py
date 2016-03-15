@@ -4,3 +4,4 @@ from django.shortcuts import render
 
 def javapic_render(request):
 	return render(request, 'javapic/index.html')
+

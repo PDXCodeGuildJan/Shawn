@@ -18,6 +18,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from javapic import urls as javapic_urls
+from forum import urls as forum_urls
 
 #This is actually in the templates folder but the framework
 #guesses that out of the file path.
@@ -27,5 +28,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^javapic/', include(javapic_urls)),
     url(r'^zen_garden/$', zen_garden_render),
-    url(r'^javapic/$', javapic_render),
+    url(r'^forum/', include(forum_urls))
 ]

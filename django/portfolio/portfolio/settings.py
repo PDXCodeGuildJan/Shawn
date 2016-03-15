@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'zen_garden',
     'portfolio',
     'javapic',
+    'forum'
 ]
 
 MIDDLEWARE_CLASSES = [

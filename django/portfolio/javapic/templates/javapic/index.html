@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>javapic</title>
-    <link rel="stylesheet" href="../static/css/style.css" />
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static '../static/css/style.css' %}" >
 
 </head>
 <body>
@@ -18,6 +19,6 @@
 </main>
 
 </body>
-<script src="../js/jumbotron.js"></script>
+<script src="{% static '../static/js/jumbotron.js' %}"></script>
 
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
+
+
+    <title>Forum Assignment</title>
+
+    <link rel="stylesheet" media="screen" href="../static/forum/forum.css">
+
+</head>
+
+
+
+<body>
+<div class="page-wrapper">
+
+    <section class="intro">
+        <header role="banner">
+        <H1>Forum Assignment</H1>
+        </header>
+
+    </section>
+
+    <main role="main">
+
+        <div id="main-posts" class = "post">
+          
+        </div>
+
+        <div class = "new-post">
+          
+            <h2 class = "new-post">Your post:</h2>
+            <div class ="body">
+                <form id="signup" method="post">
+                    <input type="text" id="title" placeholder="Post title" required/><br/><br/>
+                    <textarea name="textarea" rows="5" cols="50" placeholder="Post your stuff." required></textarea><br/>
+                    <input type="submit" name="submit" id="submit" value="Post to Forum" />
+                </form>
+            </div>
+        </div>
+        
+        <footer>
+        </footer>
+
+    </main>
+
+
+</div>
+
+<a href="http://www.starwars.com" class="small">This page's design inspired by Star Wars: The Force Awakens</a>
+<script src="../static/forum/js/forum.js"></script>
+</body>
+</html>

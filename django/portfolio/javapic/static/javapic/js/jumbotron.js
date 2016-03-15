@@ -21,13 +21,13 @@ function setupStuff(picnames, numPics){
 	for (var i = 1; i <= numPics; i++) {
 		
 		if (i <10){
-			picnames[i-1] = "./images/pdxcg_0" + i + ".jpg";	
+			picnames[i-1] = "../static/javapic/images/pdxcg_0" + i + ".jpg";	
 		}
 
 		//CIRCLE BACK AFTER MVP: There is still an extra null element in this 
 		//file list causing a non-fatal warning.	
 		else {
-		picnames[i-1] = "./images/pdxcg_" + i + ".jpg";
+		picnames[i-1] = "../static/javapic/images/pdxcg_" + i + ".jpg";
 		}
 	}
 

@@ -29,4 +29,6 @@ urlpatterns = [
     url(r'^javapic/', include(javapic_urls)),
     url(r'^zen_garden/$', zen_garden_render),
     url(r'^forum/', include(forum_urls))
+    url(r'^pricing/$', pricing_render)
+    
 ]

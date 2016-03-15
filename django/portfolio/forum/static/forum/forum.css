@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Nova+Square);
+
+body {
+	background-color: black;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-size:1rem;
+	font-weight: 500;
+	color: white;
+	background-image: url(star_wars_force.jpg);
+	
+	}
+
+h1 {
+	font-family:'Nova Square', cursive;	
+	color: yellow;
+	font-size: 3.2rem;
+	margin: .3em 0em;
+	}
+
+h2 {
+	font-family:'Nova Square', cursive;
+	color: white;
+	background-color: white;
+	border-radius: 2px;
+	padding: .3rem;
+	}
+
+
+
+a {
+	text-decoration: none;	
+	}
+
+footer {
+	text-align:right;
+	margin: 1rem 0px 0px 0px;
+	font-size: .6rem;
+	color: white;
+}
+
+input {
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+#main-posts {
+	opacity: .8;
+}
+
+.page-wrapper {
+	max-width: 750px;
+	min-width: 400px;
+	margin: 4em auto;
+	}
+
+.post {
+
+	border: 1px solid;
+	border-radius: 2px;
+	margin: 7px 0px;
+	padding: .5rem 2rem;
+	background-color: black;
+	color: white;
+	}
+
+
+.new-post	{
+	border: 1px solid;
+	border-radius: 2px;
+	margin: 7px 0px;
+	padding: .5rem 2rem;
+	background-color: black;
+	color: white;
+	opacity: 1;
+	}
+
+.small {
+	font-size: .8em;
+	color: white;
+	text-align: right;
+}

@@ -146,8 +146,8 @@ function submitForm(){
 	if(theName.value && theUserName.value && theEmail.value){
 
 		//Build up a URL to pass user name on to browser.
-		var nextPagePath = ("file:///home/shawnwaldow/Documents/CodeSchool/"+
-			"Week1/javapic/javapic/gallery.html?" + theName.value);
+		var nextPagePath = (/*"file:///home/shawnwaldow/Documents/CodeSchool/"+
+			"Week1/javapic/*/"gallery.html?" + theName.value);
 		window.location.assign(nextPagePath);
 	}
 	else{

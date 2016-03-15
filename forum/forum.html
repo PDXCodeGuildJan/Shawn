@@ -2,6 +2,9 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
+
+
     <title>Forum Assignment</title>
 
     <link rel="stylesheet" media="screen" href="forum.css">
@@ -23,17 +26,16 @@
     <main role="main">
 
         <div id="main-posts" class = "post">
-          <!--  <H2 class = "post">A hardcoded post</H2>
-            <div class = "body">Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...Hardcoded content...</div>-->
+          
         </div>
 
         <div class = "new-post">
           
-            <H2 class = "new-post">Your post:</H2>
+            <h2 class = "new-post">Your post:</h2>
             <div class ="body">
                 <form id="signup" method="post">
-                    <input type="text" id="title" placeholder="Post title" required/>
-                    <textarea name="textarea" rows="5" cols="80" placeholder="Post your stuff." required></textarea><br/>
+                    <input type="text" id="title" placeholder="Post title" required/><br/><br/>
+                    <textarea name="textarea" rows="5" cols="50" placeholder="Post your stuff." required></textarea><br/>
                     <input type="submit" name="submit" id="submit" value="Post to Forum" />
                 </form>
             </div>
@@ -47,6 +49,7 @@
 
 </div>
 
+<a href="http://www.starwars.com" class="small">This page's design inspired by Star Wars: The Force Awakens</a>
 <script src="js/forum.js"></script>
 </body>
 </html>

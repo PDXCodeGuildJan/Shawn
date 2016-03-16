@@ -6,7 +6,7 @@ from .views import *
 
 urlpatterns = [
     
-    url(r'^$', my_profile_render),
-    url(r'^reality$', reality_render),
+    url(r'^$', my_profile_render, name='profile'),
+    url(r'.reality', reality_render, name='reality'),
 
 	]

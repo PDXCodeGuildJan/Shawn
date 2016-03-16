@@ -5,7 +5,10 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Dhurjati' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	
+	{% load staticfiles %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'my_profile/mystyle.css' %}">
 
 
 	<title>Shawn Waldow</title>
@@ -119,21 +122,21 @@
 
 	<section class = "shawn">
 
-		<img src="shawn.gif" alt="The man this page is about."/>
+		<img src="{% static 'my_profile/shawn.gif'%}" alt="The man this page is about."/>
 
-		<img  src="shawn2.gif" alt="Shawn posterized."/>
+		<img  src="{% static 'my_profile/shawn2.gif'%}" alt="Shawn posterized."/>
 
-		<img  src="shawn3.gif" alt="Shawn pixelated." />
+		<img  src="{% static 'my_profile/shawn3.gif'%}" alt="Shawn pixelated." />
 
-		<img  src="shawn4.gif" alt="Shawn more pixelated" />
+		<img  src="{% static 'my_profile/shawn4.gif'%}" alt="Shawn more pixelated" />
 
-		<img  src="shawn5.gif" alt="Pixel max!" />
+		<img  src="{% static 'my_profile/shawn5.gif'%}" alt="Pixel max!" />
 
 	</section>
 
 
 	<footer>
-		<a href="reality.html">Don't forget to go outside.</a>
+		<a href="{% url 'reality' %}">Don't forget to go outside.</a>
 	</footer>
 </body>
 

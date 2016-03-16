@@ -14,3 +14,6 @@ def javapic_render(request):
 
 def pricing_render(request):
 	return render(request, 'pricing/pricing.html')
+
+def my_profile_render(request):
+	return render(request, 'my_profile/profile.html')

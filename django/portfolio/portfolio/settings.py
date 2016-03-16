@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'portfolio',
     'javapic',
     'forum',
-    'pricing'
+    'pricing',
+    'my_profile'
 ]
 
 MIDDLEWARE_CLASSES = [

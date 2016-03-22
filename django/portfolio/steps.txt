@@ -1,0 +1,17 @@
+steps to add a fairly static app to a django project:
+
+1)activate a venv:
+
+$ source ./randomnamedvirtualenv/bin/activate
+
+
+2)Starting the server. Navigate to the django project directory that contains manage.py:
+
+$ python3 manage.py runserver
+
+
+3)Start a second terminal window with an activated venv (I like to do this just in case i need it superstitious reasons)
+
+4)For Apple people make sure "your elephants on" wtf that means :)
+
+5)

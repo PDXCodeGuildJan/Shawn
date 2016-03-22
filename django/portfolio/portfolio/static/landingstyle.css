@@ -1,0 +1,31 @@
+
+
+body {
+	background-color: white; 
+	font-family: 'Dhurjati', sans-serif;
+	color:black; 
+	font-size:1.2em;
+}
+footer {
+	font-size: .6em;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	margin: 1em;
+}
+a:hover {
+	color:orange;
+}
+
+span a{
+	color:orange;
+	margin: 0px;
+}
+
+span a:hover{
+	background-color:orange;
+	color:white;
+	margin: 0px;
+}

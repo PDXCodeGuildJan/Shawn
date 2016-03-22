@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>javapic</title>
-    <link rel="stylesheet" href='../../static/javapic/css/style.css' />
+    
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="{% static 'javapic/css/style.css' %}" />
 </head>
 <body>
 
@@ -22,6 +25,6 @@
         </form>
     </section>
 </main>
-<script src="../../static/javapic/js/join.js"></script>
+<script src="{% static 'javapic/js/join.js' %}"></script>
 </body>
 </html>
